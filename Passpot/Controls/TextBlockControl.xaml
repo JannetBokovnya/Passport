@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Passpot.Controls.TextBlockControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+             Loaded="TextBlockControl_OnLoaded" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="35"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270" />
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="32"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="titleTextBlock" Text="{Binding Path=Title}" TextWrapping="Wrap" Margin="4,4,0,4" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="Tahoma" Foreground="#5c5c5c" FontWeight="Bold" />
+
+            <StackPanel Grid.Column="2" Name="spTextBlock" VerticalAlignment="Center" Margin="4" HorizontalAlignment="Stretch"  />
+            <telerik:RadButton Grid.Column="3"  x:Name="button_addRelation" VerticalAlignment="Top" Click="Button_addRelation_OnClick" 
+                                Background="{x:Null}"  BorderBrush="{x:Null}" >
+                <Image  Source="/Passpot;component/Images/add_20.png"
+                                        ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, 
+                Path=ProjectResources.GridControlAddRelationButtonToolTip, Mode=OneWay}" Stretch="None"  />
+            </telerik:RadButton>
+            
+        </Grid>
+        <Border Grid.Row="1" BorderBrush="Silver" BorderThickness="1"/>
+        <controlsToolkit:BusyIndicator x:Name="busyIndicatorTextBlock" 
+										   DisplayAfter="0" Grid.RowSpan="2"
+                                        Style="{StaticResource StyleBusy}"
+										   BusyContent="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.BusyContent, Mode=OneWay}" >
+        </controlsToolkit:BusyIndicator>
+    </Grid>
+</UserControl>

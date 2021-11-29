@@ -1,0 +1,56 @@
+﻿<basics:ChildWindow x:Class="Passpot.Controls.SelectParentDialog"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                    
+                    xmlns:g="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"                    Height="600"
+                    xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+                    Title="ChildWindowSample"
+                    Loaded="ChildWindow_Loaded">
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.006*" />
+            <RowDefinition Height="0.100*"/>
+            <RowDefinition Height="0.994*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <telerikInput:RadComboBox x:Name="comboBoxParent"
+                                  Grid.Row="1"
+                                  Width="200"
+                                  HorizontalAlignment="Left"
+                                  Height="20" SelectionChanged="ComboBoxParent_SelectionChanged"
+                                  ></telerikInput:RadComboBox>
+        <StackPanel Grid.Row="2">
+            <g:RadGridView x:Name="grid"
+                           Margin="8,6,8,8"
+                          
+                           AutoGenerateColumns="False"
+                           IsReadOnly="True"
+                           
+                           ShowGroupPanel="True"  SelectionChanged="grid_SelectionChanged">
+                <g:RadGridView.Columns>
+                    <g:GridViewDataColumn Header="Ключ " DataMemberBinding="KEYONEPARENT" />
+                    <g:GridViewDataColumn Width="*" Header="Название " DataMemberBinding="NAMEONEPARENT"/>
+                </g:RadGridView.Columns>
+            </g:RadGridView>
+        </StackPanel>
+
+        <Button Content="Cancel"
+                Click="CancelButton_Click"
+                Width="75"
+                Height="23"
+                HorizontalAlignment="Right"
+                Margin="0,12,0,0"
+                Grid.Row="4" />
+        <Button Content="OK"
+                Click="OKButton_Click"
+                Width="75"
+                Height="23"
+                HorizontalAlignment="Right"
+                Margin="0,12,79,0"
+                Grid.Row="4"
+                x:Name="btnOk" />
+
+    </Grid>
+</basics:ChildWindow>    

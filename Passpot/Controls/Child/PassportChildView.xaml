@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Passpot.PassportChildView"
+             xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+             xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+             xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+             xmlns:g="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls">
+
+    <UserControl.Resources>
+
+        <!--<DataTemplate x:Key="buttonEditDeleteCellTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="editButton"
+                        Content="Edit"
+                        Margin="2"
+                        Width="50"
+                        Height="20"></Button>
+                <Button x:Name="deleteButton"
+                        Content="Delete"
+                        Margin="2"
+                        Width="50"
+                        Height="20"></Button>
+            </StackPanel>
+        </DataTemplate>-->
+
+        <DataTemplate x:Key="buttonEditDeleteCellTemplate">
+            <StackPanel Orientation="Horizontal">
+                <!--<Button x:Name="editButton"
+                        Margin="2"
+                        Width="20"
+                        Height="20"
+                        Click="OnEditButtonClick" Padding="0,0,0,0">
+                    <Button.Content>
+                        <Image Width="20" Height="20" Source="../../Images/edit.png" />
+                    </Button.Content>
+                </Button>-->
+                <Controls:RadButton  x:Name="editButton" VerticalAlignment="Center" Margin="2" Height="23"
+                               Click="OnEditButtonClick" Background="{x:Null}">
+                    <Image  Source="/Passpot;component/Images/edit.png"  Stretch="None"  />
+                </Controls:RadButton>
+
+                <!--<Button x:Name="deleteButton"
+                        Margin="2"
+                        Width="20"
+                        Height="20"
+                        Click="OnDeleteButtonClick" Padding="0,0,0,0">
+                    <Button.Content>
+                        <Image Width="20" Height="20" Source="/Passpot;component/Images/close.png" />
+                    </Button.Content>
+                </Button>-->
+
+                <Controls:RadButton  x:Name="deleteButton" VerticalAlignment="Center" Margin="2" Height="23"
+                               Click="OnDeleteButtonClick" Background="{x:Null}">
+                    <Image  Source="/Passpot;component/Images/delete_20_a.png"  Stretch="None"  />
+                </Controls:RadButton>
+
+            </StackPanel>
+        </DataTemplate>
+
+
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock  x:Name="reportChild"
+							   Grid.Row="0"
+							   Text="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.PassportChild, Mode=OneWay}"
+							   FontSize="12" 
+							   ></TextBlock>
+        <telerikInput:RadComboBox x:Name="comboBoxChild" Margin="10,0,0,0"
+                                  Grid.Row="1"
+                                  Width="200"
+                                  HorizontalAlignment="Left"
+                                  Height="20"
+                                  SelectionChanged="ComboBoxChild_SelectionChanged" />
+        <Button x:Name="buNuwChild" Margin="10,0,0,0"
+                Grid.Row="2"
+                Content="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.PassportChildBuNuwChild, Mode=OneWay}"
+                Width="50"
+                HorizontalAlignment="Left"
+                Height="20"
+                Click="buNuwChild_Click" />
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <g:RadGridView x:Name="grid"
+                       Margin="10,0,0,0"
+                       ColumnWidth="*"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                       AutoGenerateColumns="False"
+                       IsReadOnly="True"
+                       
+                       ShowGroupPanel="True">
+            </g:RadGridView>
+        </Grid>
+    </Grid>
+</UserControl>

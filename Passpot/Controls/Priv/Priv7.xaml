@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Passpot.Controls.Priv.Priv7"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              mc:Ignorable="d"
+    Width="310" Height="320">
+
+    <Grid x:Name="LayoutRoot"  >
+        <Border BorderThickness="1" x:Name="typePriv" BorderBrush="Silver" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+            <Canvas   HorizontalAlignment="Stretch"  Height="30" VerticalAlignment="Center" Margin="1,122,-1,156">
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE7E7E7" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="2"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+
+                <Image  Source="/Passpot;component/Images/arrow.png" Stretch="None" RenderTransformOrigin="2.933,2" Canvas.Left="229" Canvas.Top="10" />
+                <TextBlock Text="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.Priv8, Mode=OneWay}"   
+                               Canvas.Left="230"  FontFamily="Tahoma" />
+                <TextBlock Text="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.Priv9A, Mode=OneWay}"   
+                               Canvas.Left="230"  FontFamily="Tahoma" Foreground="Silver"  Canvas.Top="-18" />
+
+
+                <Line  StrokeThickness="32"
+                                       X1="0"
+                                       Y1="80"
+                                       X2="308"
+                                       Y2="80" >
+                    <Line.Stroke>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE7E7E7" Offset="0"/>
+                            <GradientStop Color="Gray" Offset="2"/>
+                        </LinearGradientBrush>
+                    </Line.Stroke>
+
+                </Line>
+
+
+                <Line  StrokeThickness="32"
+                                       X1="0"
+                                       Y1="145"
+                                       X2="308"
+                                       Y2="145"  >
+                    <Line.Stroke>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE7E7E7" Offset="0"/>
+                            <GradientStop Color="Gray" Offset="2"/>
+                        </LinearGradientBrush>
+                    </Line.Stroke>
+                </Line>
+
+               
+                <Image  Source="/Passpot;component/Images/arrow.png" Stretch="None" RenderTransformOrigin="2.933,2" Canvas.Left="230" Canvas.Top="76" />
+                <Image  Source="/Passpot;component/Images/arrow.png" Stretch="None" RenderTransformOrigin="2.933,2" Canvas.Left="230" Canvas.Top="141" />
+                <TextBlock Text="{Binding ProjectResources.Priv8, Mode=OneWay, Source={StaticResource ResProvider}}"   
+                	Canvas.Left="230"  FontFamily="Tahoma" Canvas.Top="66" />
+                <TextBlock Text="{Binding ProjectResources.Priv8, Mode=OneWay, Source={StaticResource ResProvider}}"   
+                	Canvas.Left="230"  FontFamily="Tahoma" Canvas.Top="131" />
+                <TextBlock Text="{Binding ProjectResources.Priv9B, Mode=OneWay, Source={StaticResource ResProvider}}"   
+                	Canvas.Left="229"  FontFamily="Tahoma" Foreground="Silver"  Canvas.Top="48" />
+                <TextBlock Text="{Binding ProjectResources.Priv9C, Mode=OneWay, Source={StaticResource ResProvider}}"   
+                	Canvas.Left="230"  FontFamily="Tahoma" Foreground="Silver"  Canvas.Top="113" />
+
+
+
+               
+
+                <Ellipse Canvas.Left="122" Canvas.Top="-75" Fill="DarkOrange" Width="8" Height="8"/>
+
+               
+
+                <TextBlock Text="A"  
+                	Canvas.Left="118" Canvas.Top="-104" Foreground="DarkOrange"  FontFamily="Tahoma" FontSize="20" RenderTransformOrigin="-0.25,-0.417"/>
+
+                <TextBlock Text="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.Priv7, Mode=OneWay}"  
+                               Canvas.Left="135" Canvas.Top="-75" Foreground="#FF4C934D"  FontFamily="Tahoma" FontStyle="Italic"/>
+
+            </Canvas>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,5 @@
+C:\My_Work\DotNet\Passport_All_99\tmp\Modules\Passport\ClientBin\Services.dll
+C:\My_Work\DotNet\Passport_All_99\tmp\Modules\Passport\ClientBin\Services.pdb
+C:\My_Work\DotNet\Passport_All_99\src_files\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
+C:\My_Work\DotNet\Passport_All_99\src_files\Services\obj\Release\Services.dll
+C:\My_Work\DotNet\Passport_All_99\src_files\Services\obj\Release\Services.pdb

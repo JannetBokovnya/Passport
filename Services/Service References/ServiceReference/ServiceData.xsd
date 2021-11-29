@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PairAll">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PairItemList" nillable="true" type="tns:ArrayOfPairItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PairAll" nillable="true" type="tns:PairAll" />
+  <xs:complexType name="StatusAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusAnswer" nillable="true" type="tns:StatusAnswer" />
+  <xs:complexType name="ArrayOfPairItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PairItem" nillable="true" type="tns:PairItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPairItem" nillable="true" type="tns:ArrayOfPairItem" />
+  <xs:complexType name="PairItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Texts" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PairItem" nillable="true" type="tns:PairItem" />
+  <xs:complexType name="FieldMetaData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FieldMetaDataList" nillable="true" type="tns:ArrayOfFieldMetaDataItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FieldMetaData" nillable="true" type="tns:FieldMetaData" />
+  <xs:complexType name="ArrayOfFieldMetaDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldMetaDataItem" nillable="true" type="tns:FieldMetaDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFieldMetaDataItem" nillable="true" type="tns:ArrayOfFieldMetaDataItem" />
+  <xs:complexType name="FieldMetaDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BASIC_FLD" type="xs:int" />
+      <xs:element minOccurs="0" name="COLOR_FLD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COLUMN_NUM" type="xs:int" />
+      <xs:element minOccurs="0" name="FLDKEY" type="xs:int" />
+      <xs:element minOccurs="0" name="FLDNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FLDTYP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HEIGHT_CONTROL" type="xs:int" />
+      <xs:element minOccurs="0" name="INPUTMASK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IS_EDITED" type="xs:int" />
+      <xs:element minOccurs="0" name="IS_PK" type="xs:int" />
+      <xs:element minOccurs="0" name="IS_VISIBLE" type="xs:int" />
+      <xs:element minOccurs="0" name="KEYDICT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANDATORYVALUE_FLD" type="xs:int" />
+      <xs:element minOccurs="0" name="NUMONPAGE" type="xs:int" />
+      <xs:element minOccurs="0" name="OUTPUTMASK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAGENUM" type="xs:int" />
+      <xs:element minOccurs="0" name="PARENT" type="ser:guid" />
+      <xs:element minOccurs="0" name="REPORT_VISIBLE" type="xs:int" />
+      <xs:element minOccurs="0" name="TITUL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TYPECONTROL" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPEVALIDATION" type="xs:int" />
+      <xs:element minOccurs="0" name="UNIQ_CONTROL_NAME" type="ser:guid" />
+      <xs:element minOccurs="0" name="WIDTH_CONTROL" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FieldMetaDataItem" nillable="true" type="tns:FieldMetaDataItem" />
+  <xs:complexType name="PassportData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PassportData" nillable="true" type="tns:PassportData" />
+  <xs:complexType name="KeyParentOnSave">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyObj_OnSaveObj_result" nillable="true" type="tns:KeyObj_OnSave" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyParentOnSave" nillable="true" type="tns:KeyParentOnSave" />
+  <xs:complexType name="KeyObj_OnSave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyObj_OnSaveObj" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyObj_OnSave" nillable="true" type="tns:KeyObj_OnSave" />
+  <xs:complexType name="KeyCementNKT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyObj_OnCementNKT_result" nillable="true" type="tns:KeyObj_OnCement" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyCementNKT" nillable="true" type="tns:KeyCementNKT" />
+  <xs:complexType name="KeyObj_OnCement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyObj_OnCementNKT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyObj_OnCement" nillable="true" type="tns:KeyObj_OnCement" />
+  <xs:complexType name="BuCopyTreeVisibleForm">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BuCopyTreeVisible_result" nillable="true" type="tns:BuCopyTreeVisible_Form" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BuCopyTreeVisibleForm" nillable="true" type="tns:BuCopyTreeVisibleForm" />
+  <xs:complexType name="BuCopyTreeVisible_Form">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuCopyTreeVisible" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuCopyTreeVisible_Form" nillable="true" type="tns:BuCopyTreeVisible_Form" />
+  <xs:complexType name="KeyPassportOnCopy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyObj_OnCopyObj_result" nillable="true" type="tns:KeyObj_OnCopy" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyPassportOnCopy" nillable="true" type="tns:KeyPassportOnCopy" />
+  <xs:complexType name="KeyObj_OnCopy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyObj_OnCopyObj" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyObj_OnCopy" nillable="true" type="tns:KeyObj_OnCopy" />
+  <xs:complexType name="KeyParentOnUpdateTree">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyParent_OnUpdateTree_result" nillable="true" type="tns:KeyParent_OnUpdate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyParentOnUpdateTree" nillable="true" type="tns:KeyParentOnUpdateTree" />
+  <xs:complexType name="KeyParent_OnUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyParent_OnUpdateTree" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyParent_OnUpdate" nillable="true" type="tns:KeyParent_OnUpdate" />
+  <xs:complexType name="KeyparentofchildTree">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Keyparentofchild_result" nillable="true" type="tns:Keyparentofchild" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyparentofchildTree" nillable="true" type="tns:KeyparentofchildTree" />
+  <xs:complexType name="Keyparentofchild">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyparentofchild_Tree" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Keyparentofchild" nillable="true" type="tns:Keyparentofchild" />
+  <xs:complexType name="KeyonShemaArcgis">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyonShema_result" nillable="true" type="tns:KeyonShema" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyonShemaArcgis" nillable="true" type="tns:KeyonShemaArcgis" />
+  <xs:complexType name="KeyonShema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyonShema_arcgis" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyonShema" nillable="true" type="tns:KeyonShema" />
+  <xs:complexType name="KeyonKartaObjList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyonKartaList_result" nillable="true" type="tns:ArrayOfKeyonKartaList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyonKartaObjList" nillable="true" type="tns:KeyonKartaObjList" />
+  <xs:complexType name="ArrayOfKeyonKartaList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyonKartaList" nillable="true" type="tns:KeyonKartaList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyonKartaList" nillable="true" type="tns:ArrayOfKeyonKartaList" />
+  <xs:complexType name="KeyonKartaList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cGeomKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nTS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyonKartaList" nillable="true" type="tns:KeyonKartaList" />
+  <xs:complexType name="AccessLevelObjKey">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessLevel_OnKey_result" nillable="true" type="tns:AccessLevel_OnKey" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccessLevelObjKey" nillable="true" type="tns:AccessLevelObjKey" />
+  <xs:complexType name="AccessLevel_OnKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccessLevel_OnKey" nillable="true" type="tns:AccessLevel_OnKey" />
+  <xs:complexType name="ButtonNKTObjKey">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ButtonNKT_OnKet_result" nillable="true" type="tns:ButtonNKT_OnKey" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ButtonNKTObjKey" nillable="true" type="tns:ButtonNKTObjKey" />
+  <xs:complexType name="ButtonNKT_OnKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ButtonNKTVisible" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ButtonNKT_OnKey" nillable="true" type="tns:ButtonNKT_OnKey" />
+  <xs:complexType name="DataEntityList_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataEntityLists" nillable="true" type="tns:ArrayOfDataEntityList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataEntityList_result" nillable="true" type="tns:DataEntityList_result" />
+  <xs:complexType name="ArrayOfDataEntityList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataEntityList" nillable="true" type="tns:DataEntityList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataEntityList" nillable="true" type="tns:ArrayOfDataEntityList" />
+  <xs:complexType name="DataEntityList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYENTITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUEENTITY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataEntityList" nillable="true" type="tns:DataEntityList" />
+  <xs:complexType name="PasportToXML">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PasportToXMLItemsList" nillable="true" type="tns:ArrayOfPasportToXMLItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PasportToXML" nillable="true" type="tns:PasportToXML" />
+  <xs:complexType name="ArrayOfPasportToXMLItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PasportToXMLItems" nillable="true" type="tns:PasportToXMLItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPasportToXMLItems" nillable="true" type="tns:ArrayOfPasportToXMLItems" />
+  <xs:complexType name="PasportToXMLItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="strToXML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PasportToXMLItems" nillable="true" type="tns:PasportToXMLItems" />
+  <xs:complexType name="FielButtonData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FielButtonDataItemList" nillable="true" type="tns:ArrayOfFielButtonDataItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FielButtonData" nillable="true" type="tns:FielButtonData" />
+  <xs:complexType name="ArrayOfFielButtonDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FielButtonDataItem" nillable="true" type="tns:FielButtonDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFielButtonDataItem" nillable="true" type="tns:ArrayOfFielButtonDataItem" />
+  <xs:complexType name="FielButtonDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAttribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CEvent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CParams" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentJpg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NButtonType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameJpg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FielButtonDataItem" nillable="true" type="tns:FielButtonDataItem" />
+  <xs:complexType name="DisplayLabels">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayLabelsItemList" nillable="true" type="tns:ArrayOfDisplayLabelsItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisplayLabels" nillable="true" type="tns:DisplayLabels" />
+  <xs:complexType name="ArrayOfDisplayLabelsItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DisplayLabelsItem" nillable="true" type="tns:DisplayLabelsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDisplayLabelsItem" nillable="true" type="tns:ArrayOfDisplayLabelsItem" />
+  <xs:complexType name="DisplayLabelsItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Сplace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Сvalue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisplayLabelsItem" nillable="true" type="tns:DisplayLabelsItem" />
+  <xs:complexType name="DataTreeViewOnObjkey">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataTreeViewOnObjkeyList" nillable="true" type="tns:ArrayOfDataTreeViewOnObjkeyItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataTreeViewOnObjkey" nillable="true" type="tns:DataTreeViewOnObjkey" />
+  <xs:complexType name="ArrayOfDataTreeViewOnObjkeyItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataTreeViewOnObjkeyItems" nillable="true" type="tns:DataTreeViewOnObjkeyItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataTreeViewOnObjkeyItems" nillable="true" type="tns:ArrayOfDataTreeViewOnObjkeyItems" />
+  <xs:complexType name="DataTreeViewOnObjkeyItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Texts" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataTreeViewOnObjkeyItems" nillable="true" type="tns:DataTreeViewOnObjkeyItems" />
+  <xs:complexType name="TreeFullHierarchyPathToObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TreeFullHierarchyPathToObjectList" nillable="true" type="tns:ArrayOfTreeFullHierarchyPathToObjectItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TreeFullHierarchyPathToObject" nillable="true" type="tns:TreeFullHierarchyPathToObject" />
+  <xs:complexType name="ArrayOfTreeFullHierarchyPathToObjectItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TreeFullHierarchyPathToObjectItems" nillable="true" type="tns:TreeFullHierarchyPathToObjectItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTreeFullHierarchyPathToObjectItems" nillable="true" type="tns:ArrayOfTreeFullHierarchyPathToObjectItems" />
+  <xs:complexType name="TreeFullHierarchyPathToObjectItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjTypeKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TreeFullHierarchyPathToObjectItems" nillable="true" type="tns:TreeFullHierarchyPathToObjectItems" />
+  <xs:complexType name="DataListHistoryObj">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataListHistoryObjList" nillable="true" type="tns:ArrayOfDataListHistoryItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataListHistoryObj" nillable="true" type="tns:DataListHistoryObj" />
+  <xs:complexType name="ArrayOfDataListHistoryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataListHistoryItems" nillable="true" type="tns:DataListHistoryItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataListHistoryItems" nillable="true" type="tns:ArrayOfDataListHistoryItems" />
+  <xs:complexType name="DataListHistoryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cnewval" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coldval" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Doperationtime" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataListHistoryItems" nillable="true" type="tns:DataListHistoryItems" />
+  <xs:complexType name="CalcPrivJson">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CalcPrivOnEditJson_result" nillable="true" type="tns:CalcPrivOnEditJson" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalcPrivJson" nillable="true" type="tns:CalcPrivJson" />
+  <xs:complexType name="CalcPrivOnEditJson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CalcPrivOnEditJsonOnKeyPassport" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcPrivOnEditJson" nillable="true" type="tns:CalcPrivOnEditJson" />
+  <xs:complexType name="AllPriv">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PrivItemsList" nillable="true" type="tns:ArrayOfPrivItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AllPriv" nillable="true" type="tns:AllPriv" />
+  <xs:complexType name="ArrayOfPrivItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrivItems" nillable="true" type="tns:PrivItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrivItems" nillable="true" type="tns:ArrayOfPrivItems" />
+  <xs:complexType name="PrivItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISEDITED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NBUILDTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NDISTANCEBEG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NDISTANCEEND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NH1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NH2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NKEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NKMORT1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NKMORT2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NKMTRUE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NKMTRUE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NX1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NX2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NY1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NY2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NZ1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NZ2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nMtKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nPipeKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrivItems" nillable="true" type="tns:PrivItems" />
+  <xs:complexType name="HashPassword">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrentUser_OnLog_result" nillable="true" type="tns:HashPassword_OnLog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HashPassword" nillable="true" type="tns:HashPassword" />
+  <xs:complexType name="HashPassword_OnLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HashPassword_OnLogBase" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HashPassword_OnLog" nillable="true" type="tns:HashPassword_OnLog" />
+  <xs:complexType name="DataMediaAttribute_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataMediaAttributeList" nillable="true" type="tns:ArrayOfDataMediaAttribute" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataMediaAttribute_result" nillable="true" type="tns:DataMediaAttribute_result" />
+  <xs:complexType name="ArrayOfDataMediaAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataMediaAttribute" nillable="true" type="tns:DataMediaAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataMediaAttribute" nillable="true" type="tns:ArrayOfDataMediaAttribute" />
+  <xs:complexType name="DataMediaAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comment_media" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_file" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type_media" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataMediaAttribute" nillable="true" type="tns:DataMediaAttribute" />
+  <xs:complexType name="DictDataOnEntityKey">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DictData_result" nillable="true" type="tns:ArrayOfDictData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictDataOnEntityKey" nillable="true" type="tns:DictDataOnEntityKey" />
+  <xs:complexType name="ArrayOfDictData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DictData" nillable="true" type="tns:DictData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDictData" nillable="true" type="tns:ArrayOfDictData" />
+  <xs:complexType name="DictData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYDICT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUEDICT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUEKEYDICT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DictData" nillable="true" type="tns:DictData" />
+  <xs:complexType name="ArrayOfDictDataFiltr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DictDataFiltr" nillable="true" type="tns:DictDataFiltr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDictDataFiltr" nillable="true" type="tns:ArrayOfDictDataFiltr" />
+  <xs:complexType name="DictDataFiltr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYDICT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUEDICT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DictDataFiltr" nillable="true" type="tns:DictDataFiltr" />
+  <xs:complexType name="nameNSIOnKey">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nameNSIonKey_result" nillable="true" type="tns:nameNSI_Key" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="nameNSIOnKey" nillable="true" type="tns:nameNSIOnKey" />
+  <xs:complexType name="nameNSI_Key">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NameNSIonkey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="nameNSI_Key" nillable="true" type="tns:nameNSI_Key" />
+  <xs:complexType name="ListNsiOnSave">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DictData_result" nillable="true" type="tns:ArrayOfOneDictData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListNsiOnSave" nillable="true" type="tns:ListNsiOnSave" />
+  <xs:complexType name="ArrayOfOneDictData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OneDictData" nillable="true" type="tns:OneDictData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOneDictData" nillable="true" type="tns:ArrayOfOneDictData" />
+  <xs:complexType name="OneDictData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYVALUEDICT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUEDICT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OneDictData" nillable="true" type="tns:OneDictData" />
+  <xs:complexType name="DictDataOne">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DictData_result" nillable="true" type="tns:ArrayOfOneDictData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictDataOne" nillable="true" type="tns:DictDataOne" />
+  <xs:complexType name="ControlAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ControlAttributeList" nillable="true" type="tns:ArrayOfControlAttributeItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ControlAttribute" nillable="true" type="tns:ControlAttribute" />
+  <xs:complexType name="ArrayOfControlAttributeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ControlAttributeItem" nillable="true" type="tns:ControlAttributeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfControlAttributeItem" nillable="true" type="tns:ArrayOfControlAttributeItem" />
+  <xs:complexType name="ControlAttributeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COLORFON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COLORTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FONTSIZE" type="xs:int" />
+      <xs:element minOccurs="0" name="HEIGHT" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPECONTROL" type="xs:int" />
+      <xs:element minOccurs="0" name="UNDERLINE" type="xs:int" />
+      <xs:element minOccurs="0" name="WIDTH" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ControlAttributeItem" nillable="true" type="tns:ControlAttributeItem" />
+  <xs:complexType name="ArrayOfAttributOneControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributOneControl" nillable="true" type="tns:AttributOneControl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttributOneControl" nillable="true" type="tns:ArrayOfAttributOneControl" />
+  <xs:complexType name="AttributOneControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COLORFON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COLORTEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FONTSIZE" type="xs:int" />
+      <xs:element minOccurs="0" name="HEIGHT" type="xs:int" />
+      <xs:element minOccurs="0" name="UNDERLINE" type="xs:int" />
+      <xs:element minOccurs="0" name="WIDTH" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttributOneControl" nillable="true" type="tns:AttributOneControl" />
+  <xs:complexType name="GridData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FieldNames" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Rows" nillable="true" type="tns:ArrayOfGridRow" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GridData" nillable="true" type="tns:GridData" />
+  <xs:complexType name="ArrayOfGridRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GridRow" nillable="true" type="tns:GridRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGridRow" nillable="true" type="tns:ArrayOfGridRow" />
+  <xs:complexType name="GridRow">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Cels" nillable="true" type="q3:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GridRow" nillable="true" type="tns:GridRow" />
+  <xs:complexType name="ThumbnailList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Thumbnails" nillable="true" type="tns:ArrayOfThumbnail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThumbnailList" nillable="true" type="tns:ThumbnailList" />
+  <xs:complexType name="ArrayOfThumbnail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Thumbnail" nillable="true" type="tns:Thumbnail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThumbnail" nillable="true" type="tns:ArrayOfThumbnail" />
+  <xs:complexType name="Thumbnail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Key" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeMedia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Thumbnail" nillable="true" type="tns:Thumbnail" />
+  <xs:complexType name="ThumbnailListBigMedia">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ThumbnailBigMedia" nillable="true" type="tns:ArrayOfThumbnailBigMedia" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThumbnailListBigMedia" nillable="true" type="tns:ThumbnailListBigMedia" />
+  <xs:complexType name="ArrayOfThumbnailBigMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThumbnailBigMedia" nillable="true" type="tns:ThumbnailBigMedia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThumbnailBigMedia" nillable="true" type="tns:ArrayOfThumbnailBigMedia" />
+  <xs:complexType name="ThumbnailBigMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThumbnailBigMedia" nillable="true" type="tns:ThumbnailBigMedia" />
+  <xs:complexType name="ArrayOfDataLinkList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataLinkList" nillable="true" type="tns:DataLinkList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataLinkList" nillable="true" type="tns:ArrayOfDataLinkList" />
+  <xs:complexType name="DataLinkList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYLINK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMELINK" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataLinkList" nillable="true" type="tns:DataLinkList" />
+  <xs:complexType name="DataConnectList_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataConnectLists" nillable="true" type="tns:ArrayOfDataConnectList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataConnectList_result" nillable="true" type="tns:DataConnectList_result" />
+  <xs:complexType name="ArrayOfDataConnectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataConnectList" nillable="true" type="tns:DataConnectList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataConnectList" nillable="true" type="tns:ArrayOfDataConnectList" />
+  <xs:complexType name="DataConnectList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYCONNECT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMECONNECT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataConnectList" nillable="true" type="tns:DataConnectList" />
+  <xs:complexType name="DataListRelationObj">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataListRelationObjList" nillable="true" type="tns:ArrayOfDataListRelationObjItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataListRelationObj" nillable="true" type="tns:DataListRelationObj" />
+  <xs:complexType name="ArrayOfDataListRelationObjItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataListRelationObjItems" nillable="true" type="tns:DataListRelationObjItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataListRelationObjItems" nillable="true" type="tns:ArrayOfDataListRelationObjItems" />
+  <xs:complexType name="DataListRelationObjItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyObj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameEntity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameObj" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataListRelationObjItems" nillable="true" type="tns:DataListRelationObjItems" />
+  <xs:complexType name="DataListLinkedObjects">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataListLinkedObjectsList" nillable="true" type="tns:ArrayOfDataListLinkedObjectsItems" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataListLinkedObjects" nillable="true" type="tns:DataListLinkedObjects" />
+  <xs:complexType name="ArrayOfDataListLinkedObjectsItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataListLinkedObjectsItems" nillable="true" type="tns:DataListLinkedObjectsItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataListLinkedObjectsItems" nillable="true" type="tns:ArrayOfDataListLinkedObjectsItems" />
+  <xs:complexType name="DataListLinkedObjectsItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataListLinkedObjectsItems" nillable="true" type="tns:DataListLinkedObjectsItems" />
+  <xs:complexType name="KeyRelationOnSave">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyRelation_OnSaveObj_result" nillable="true" type="tns:KeyRelation_OnSave" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyRelationOnSave" nillable="true" type="tns:KeyRelationOnSave" />
+  <xs:complexType name="KeyRelation_OnSave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyRelation_OnSaveObj" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyRelation_OnSave" nillable="true" type="tns:KeyRelation_OnSave" />
+  <xs:complexType name="KeyRelationOnDel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeyRelation_OnDelObj_result" nillable="true" type="tns:KeyRelation_OnDel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeyRelationOnDel" nillable="true" type="tns:KeyRelationOnDel" />
+  <xs:complexType name="KeyRelation_OnDel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyRelation_OnDelObj" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyRelation_OnDel" nillable="true" type="tns:KeyRelation_OnDel" />
+  <xs:complexType name="GetCheckOrganizationLink_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetCheckOrganizationLinkOnkeyPassport_result" nillable="true" type="tns:GetCheckOrganizationLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCheckOrganizationLink_result" nillable="true" type="tns:GetCheckOrganizationLink_result" />
+  <xs:complexType name="GetCheckOrganizationLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetCheckOrganizationLinkOnkeyPassport" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCheckOrganizationLink" nillable="true" type="tns:GetCheckOrganizationLink" />
+  <xs:complexType name="DataChildList_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataChildLists" nillable="true" type="tns:ArrayOfDataChildList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataChildList_result" nillable="true" type="tns:DataChildList_result" />
+  <xs:complexType name="ArrayOfDataChildList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataChildList" nillable="true" type="tns:DataChildList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataChildList" nillable="true" type="tns:ArrayOfDataChildList" />
+  <xs:complexType name="DataChildList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ENTITYKEYCHILDS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMECHILDS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataChildList" nillable="true" type="tns:DataChildList" />
+  <xs:complexType name="CountChild_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountChildOnEntityKey_result" nillable="true" type="tns:CountChild" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CountChild_result" nillable="true" type="tns:CountChild_result" />
+  <xs:complexType name="CountChild">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountChildOnEntityKey" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountChild" nillable="true" type="tns:CountChild" />
+  <xs:complexType name="NameObj_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NameObjectOnEntityKey_result" nillable="true" type="tns:NameObj" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NameObj_result" nillable="true" type="tns:NameObj_result" />
+  <xs:complexType name="NameObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NameObjectOnEntityKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameObj" nillable="true" type="tns:NameObj" />
+  <xs:complexType name="PassportInfo_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PassportInfo" nillable="true" type="tns:PassportInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PassportInfo_result" nillable="true" type="tns:PassportInfo_result" />
+  <xs:complexType name="PassportInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetNameObj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDeleteCurrentPassport" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEditedCurrentPasport" type="xs:int" />
+      <xs:element minOccurs="0" name="KeyEntityObj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyParentOnkeyObj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameEntityObj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameParentEntityKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameParentOnPlaseState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentEntityKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PassportInfo" nillable="true" type="tns:PassportInfo" />
+  <xs:complexType name="DataMGList_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataMGLists" nillable="true" type="tns:ArrayOfDataMGList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataMGList_result" nillable="true" type="tns:DataMGList_result" />
+  <xs:complexType name="ArrayOfDataMGList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataMGList" nillable="true" type="tns:DataMGList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataMGList" nillable="true" type="tns:ArrayOfDataMGList" />
+  <xs:complexType name="DataMGList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYMG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMEMG" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataMGList" nillable="true" type="tns:DataMGList" />
+  <xs:complexType name="DataNitList_result">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StatusAnswer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataNitLists" nillable="true" type="tns:ArrayOfDataNitList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataNitList_result" nillable="true" type="tns:DataNitList_result" />
+  <xs:complexType name="ArrayOfDataNitList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataNitList" nillable="true" type="tns:DataNitList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataNitList" nillable="true" type="tns:ArrayOfDataNitList" />
+  <xs:complexType name="DataNitList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KEYNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAMENIT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataNitList" nillable="true" type="tns:DataNitList" />
+</xs:schema>

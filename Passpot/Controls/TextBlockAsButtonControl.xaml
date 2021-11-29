@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Passpot.Controls.TextBlockAsButtonControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+             mc:Ignorable="d" Loaded="TextBlockAsButtonControl_OnLoaded"
+   >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="35"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="270" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="32" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="titleTextBlock" Text="{Binding Path=Title}" TextWrapping="Wrap" Margin="4" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="Tahoma" Foreground="#5c5c5c" FontWeight="Bold"  />
+
+            <TextBlock x:Name="buLink" Grid.Column="2" TextTrimming = "WordEllipsis" 
+                       Text="{Binding Source={StaticResource ResProvider}, 
+                Path=ProjectResources.LinkButton, Mode=OneWay}" Foreground="#5c5c5c"
+            Margin="4" TextDecorations="Underline" MouseLeftButtonDown="tb_MouseLeftButtonDownVisibleAlllink"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Center" FontFamily="Tahoma" Cursor="Hand"   />
+
+
+            <telerik:RadButton Grid.Column="3"  x:Name="button_addRelation" VerticalAlignment="Center" 
+                                Background="{x:Null}"  BorderBrush="{x:Null}" Click="Button_addRelation_OnClick" >
+                <Image  Source="/Passpot;component/Images/add_20.png"
+                                        ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, 
+                Path=ProjectResources.GridControlAddRelationButtonToolTip, Mode=OneWay}" Stretch="None"  />
+            </telerik:RadButton>
+
+        </Grid>
+        <Border Grid.Row="1" BorderBrush="Silver" BorderThickness="1"/>
+        <controlsToolkit:BusyIndicator x:Name="busyIndicatorBlock" 
+										   DisplayAfter="0" Grid.RowSpan="2"
+                                        Style="{StaticResource StyleBusy}"
+										   BusyContent="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.BusyContent, Mode=OneWay}" >
+        </controlsToolkit:BusyIndicator>
+    </Grid>
+</UserControl>

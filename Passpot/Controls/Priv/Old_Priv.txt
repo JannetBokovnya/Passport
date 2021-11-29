@@ -1,0 +1,2417 @@
+//if (!string.IsNullOrEmpty(keyNit))
+//                       {
+
+
+//                           #region//проверяем изменялась ли привязка
+
+//                           if (Model.DataHasChanged(np))
+//                           {
+
+
+//                               NavigationPrivListDouble = new List<PrivItems>();
+
+//                               //если есть данные
+//                               if (Model.NavigationPrivList.Count() > 0)
+//                               {
+//                                   NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+//                                                                                               Model.NavigationPrivList,
+//                                                                                               np,
+//                                                                                               index,
+//                                                                                               radExpander.IsExpanded);
+//                                   newUpdateItem = "2";
+//                               }
+
+//                           }
+//                           else
+//                           {
+//                               if (Model.NavigationPrivList.Count() > 0)
+//                               {
+//                                   NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+//                                                                                               Model.NavigationPrivList,
+//                                                                                               np,
+//                                                                                               index,
+//                                                                                               radExpander.IsExpanded);
+//                                   newUpdateItem = "2";
+//                               }
+
+//                           }
+
+
+//                           #endregion проверка
+//                       }
+//                       else
+//                       {
+//                           if (Model.NavigationPrivList.Count() > 0)
+//                           {
+//                               NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+//                                                                                           Model.NavigationPrivList,
+//                                                                                           np,
+//                                                                                           index,
+//                                                                                           radExpander.IsExpanded);
+//                               newUpdateItem = "2";
+//                           }
+//                           else
+//                           {
+//                               this.DialogResult = true;
+//                           }
+//                       }
+
+
+
+
+
+
+////сохранение привязки по километражу
+//private void Addpriv_OnKm()
+//{
+//    switch (Model.PassportDetailModel.TYPEPRIV)
+//    {
+//        case "1":
+//        case "8":
+//            {
+
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                (ddlNitka.SelectedItem == null) ||
+//                (tbKm.Text == ""))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+
+//                    string _km = "";
+//                    _km = tbKm.Text.Replace(",", separator);
+//                    _km = _km.Replace(".", separator);
+
+//                    ServiceDataClient.BuildPointLocationByPipeKMCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit,
+//                                                                      _km, "0", GlobalContext.Context);
+//                    this.DialogResult = true;
+//                }
+
+//                break;
+//            }
+//        case "2":
+//            {
+
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (tbKm.Text == "") ||
+//                    (tbd.Text == "") ||
+//                    ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+
+//                    string _km = "";
+//                    _km = tbKm.Text.Replace(",", separator);
+//                    _km = _km.Replace(".", separator);
+//                    string _txtKmBeginIst = "";
+//                    _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                    _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                    if (RblOnClick == false)
+//                    {
+//                        _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                    }
+//                    ServiceDataClient.BuildPointLocationByPipeKMCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit,
+//                                                                      _km, _txtKmBeginIst, GlobalContext.Context);
+//                    this.DialogResult = true;
+
+//                }
+//                break;
+//            }
+//        case "3":
+//        case "9":
+//            {
+//                if (CountPriv == 0)
+//                {
+//                    if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (tbKmA.Text == "") ||
+//                    (tbKmB.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                    }
+//                    else
+//                    {
+
+//                        string _km = "";
+//                        string _km2 = "";
+//                        _km = tbKmA.Text.Replace(",", separator);
+//                        _km = _km.Replace(".", separator);
+//                        _km2 = tbKmB.Text.Replace(",", separator);
+//                        _km2 = _km2.Replace(".", separator);
+
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMCompleted +=
+//                            ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                                                                            keyNit, _km, _km2, "0", "0", GlobalContext.Context);
+//                        ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit,
+//                                                                          _km, "0", GlobalContext.Context);
+//                        this.DialogResult = true;
+//                    }
+//                }
+//                else
+//                {
+//                    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                }
+
+
+//                break;
+//            }
+//        case "4":
+//            {
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (tbKmA.Text == "") ||
+//                    (tbKmB.Text == "") ||
+//                    (tbd.Text == "") ||
+//                    ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+
+//                    string _km = "";
+//                    string _km2 = "";
+//                    string _txtKmBeginIst = "";
+//                    _km = tbKmA.Text.Replace(",", separator);
+//                    _km = _km.Replace(".", separator);
+//                    _km2 = tbKmB.Text.Replace(",", separator);
+//                    _km2 = _km2.Replace(".", separator);
+
+//                    _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                    _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                    if (rbl.IsChecked == false)
+//                    {
+//                        _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                    }
+//                    ServiceDataClient.BuildSegmentLocationByPipeKMCompleted +=
+//                        ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+//                    ServiceDataClient.BuildSegmentLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                                                                        keyNit, _km, _km2, _txtKmBeginIst,
+//                                                                        _txtKmBeginIst, GlobalContext.Context);
+//                    //ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportKey, Model.EntityKey, keyNit, _km, "0");
+
+//                }
+
+//                break;
+//            }
+
+//        case "5":
+//            {
+
+//                //if (CountPriv == 0)
+//                //{
+//                //    if ((ddlNitka.SelectedItem == "-1") ||
+//                //        (ddlNitka.SelectedItem == null) ||
+//                //        (tbKmA.Text == "") ||
+//                //        (tbd.Text == "") ||
+//                //        ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                //    {
+//                //        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                //        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                //        _popupWindowAttantion.Show();
+//                //    }
+//                //    else
+//                //    {
+
+//                //        string _km = "";
+//                //        _km = tbKmA.Text.Replace(",", separator);
+//                //        _km = _km.Replace(".", separator);
+//                //        string _txtKmBeginIst = "";
+//                //        _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                //        _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                //        if (rbl.IsChecked == false)
+//                //        {
+//                //            _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                //        }
+//                //        ServiceDataClient.BuildPointLocationByPipeKMCompleted +=
+//                //            ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+//                //        ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                //                                                          keyNit, _km, _txtKmBeginIst, GlobalContext.Context);
+
+//                //        this.DialogResult = true;
+
+//                //    }
+//                //    break;
+//                //}
+//                //else
+//                //{
+//                //    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                //    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                //}
+
+
+//                PrivItemsNew.ListPriv = new List<SavePriv.SavePrivItems>();
+//                for (int t = 0; t < Model.NavigationPrivList.Count; t++)
+//                {
+//                    SavePriv.SavePrivItems privItems = new SavePriv.SavePrivItems();
+
+//                    privItems.CNAME = Model.NavigationPrivList[t].CNAME;
+//                    privItems.NDISTANCEBEG = Model.NavigationPrivList[t].NDISTANCEBEG;
+//                    privItems.NDISTANCEND = Model.NavigationPrivList[t].NDISTANCEND;
+//                    privItems.NH1 = Model.NavigationPrivList[t].NH1;
+//                    privItems.NH2 = Model.NavigationPrivList[t].NH2;
+//                    privItems.NKEY = Model.NavigationPrivList[t].NKEY;
+//                    privItems.NKMORT1 = Model.NavigationPrivList[t].NKMORT1;
+//                    privItems.NKMORT2 = Model.NavigationPrivList[t].NKMORT2;
+//                    privItems.NKMTRUE1 = Model.NavigationPrivList[t].NKMTRUE1;
+//                    privItems.NKMTRUE2 = Model.NavigationPrivList[t].NKMTRUE2;
+//                    privItems.NX1 = Model.NavigationPrivList[t].NX1;
+//                    privItems.NX2 = Model.NavigationPrivList[t].NX2;
+//                    privItems.NY1 = Model.NavigationPrivList[t].NY1;
+//                    privItems.NY2 = Model.NavigationPrivList[t].NY2;
+//                    privItems.NZ2 = Model.NavigationPrivList[t].NZ2;
+//                    privItems.nMtKey = Model.NavigationPrivList[t].nMtKey.ToString();
+//                    privItems.nPipeKey = Model.NavigationPrivList[t].nPipeKey.ToString();
+
+//                    PrivItemsNew.ListPriv.Add(privItems);
+//                }
+
+//                Model.PassportDetailModel.FirePropertyChanged("KeyPrivAdd");
+//                this.DialogResult = true;
+//                break;
+
+//            }
+//        case "6":
+//            {
+//                if (CountPriv == 0)
+//                {
+//                    if ((ddlNitka.SelectedItem == "-1") ||
+//                   (ddlNitka.SelectedItem == null) ||
+//                   (tbKmA.Text == "") ||
+//                   (tbKmB.Text == "") ||
+//                    (tbd.Text == "") ||
+//                        ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                    }
+//                    else
+//                    {
+
+//                        string _km = "";
+//                        string _km2 = "";
+//                        string _txtKmBeginIst = "";
+
+//                        _km = tbKmA.Text.Replace(",", separator);
+//                        _km = _km.Replace(".", separator);
+//                        _km2 = tbKmB.Text.Replace(",", separator);
+//                        _km2 = _km2.Replace(".", separator);
+
+//                        _km = tbKmA.Text.Replace(",", separator);
+//                        _km = _km.Replace(".", separator);
+//                        _km2 = tbKmB.Text.Replace(",", separator);
+//                        _km2 = _km2.Replace(".", separator);
+
+
+//                        _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                        _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                        if (rbl.IsChecked == false == false)
+//                        {
+//                            _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                        }
+
+
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMCompleted +=
+//                            ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                                                                            keyNit, _km, _km2, _txtKmBeginIst,
+//                                                                            _txtKmBeginIst, GlobalContext.Context);
+//                        //ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportKey, Model.EntityKey, keyNit, _km, "0");
+
+//                    }
+//                }
+//                else
+//                {
+//                    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                }
+//                break;
+//            }
+//    }
+//}
+
+////сохранение привязке по координатам (широта долгота)
+//private void AddPriv_OnXY()
+//{
+//    switch (Model.PassportDetailModel.TYPEPRIV)
+//    {
+//        case "1":
+//        case "2":
+//            {
+//                //редактирование или нет, сравниваем данные в каждом контроле и если изменились - сохраняем в новом экземпляре класса new
+//                //сначало формируем данные и передаем в базу- если все ок- то 
+//                //по кнопке btnOk.Click - передаем массив в основную форму паспорта и перезаписываем на и там при сохранении паспорта 
+
+//                if (Model.NavigationPrivList.Count > 0)
+//                {
+//                    if ((shirot.Text != Model.NavigationPrivList[0].NY1) ||
+//                        (dolg.Text != Model.NavigationPrivList[0].NX1) ||
+//                        (keyNit != Model.NavigationPrivList[0].nPipeKey.ToString()))
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                    }
+//                }
+
+//                else
+//                {
+//                    if (
+//                        (ddlNitka.SelectedItem == null) ||
+//                        (shirot.Text == "") ||
+//                        (dolg.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                        break;
+//                    }
+//                    else
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                    }
+
+
+//                }
+
+//                //если редактировали данные
+//                ListPrivNewItems.Add(
+//                  new PrivItems
+//                  {
+//                      CNAME = nameNit,
+//                      NX1 = dolg.Text,
+//                      NY1 = shirot.Text,
+//                      nPipeKey = keyNit
+//                  });
+
+//                //дальше формируем джейсон и передаем в базу для перерасчета привязки
+//                string jsonExport = GetJsonNewPriv(ListPrivNewItems);
+//                ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivJsonCompleted;
+//                ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, jsonExport, GlobalContext.Context);
+
+//                break;
+
+//            }
+//        case "3":
+//        case "4":
+//            {
+//                if (Model.NavigationPrivList.Count > 0)
+//                {
+//                    if ((shirotA.Text != Model.NavigationPrivList[0].NY1) ||
+//                        (dolgA.Text != Model.NavigationPrivList[0].NX1) ||
+//                        (shirotB.Text != Model.NavigationPrivList[0].NY2) ||
+//                         (dolgB.Text != Model.NavigationPrivList[0].NX2) ||
+//                        (keyNit != Model.NavigationPrivList[0].nPipeKey.ToString()))
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                        //если редактировали данные
+
+
+//                    }
+//                }
+//                else
+//                {
+//                    if (
+//                         (ddlNitka.SelectedItem == null) ||
+//                         (dolgA.Text == "") ||
+//                         (dolgB.Text == "") ||
+//                         (shirotA.Text == "") ||
+//                         (shirotB.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                        break;
+//                    }
+//                    else
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                    }
+//                }
+
+//                ListPrivNewItems.Add(
+//                        new PrivItems
+//                        {
+//                            CNAME = nameNit,
+//                            NX1 = dolgA.Text,
+//                            NY1 = shirotA.Text,
+//                            NX2 = dolgB.Text,
+//                            NY2 = shirotB.Text,
+//                            nPipeKey = keyNit
+//                        });
+
+//                //дальше формируем джейсон и передаем в базу для перерасчета привязки
+//                string jsonExport = GetJsonNewPriv(ListPrivNewItems);
+//                ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivJsonCompleted;
+//                ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, jsonExport, GlobalContext.Context);
+
+//                break;
+//            }
+
+//        case "5":
+//            {
+//                //if (CountPriv == 0)
+//                //{
+//                //    if ((ddlNitka.SelectedItem == "-1") ||
+//                //   (ddlNitka.SelectedItem == null) ||
+//                //   (dolg.Text == "") ||
+//                //   (shirot.Text == ""))
+//                //    {
+//                //        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                //        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                //        _popupWindowAttantion.Show();
+//                //    }
+//                //    else
+//                //    {
+//                //        string txtXBegin_s = dolg.Text.Replace(",", separator);
+//                //        txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                //        string txtYBegin_s = shirot.Text.Replace(",", separator);
+//                //        txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+
+
+//                //        ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//                //            ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//                //        ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportKey, Model.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+//                //        //this.DialogResult = true;
+
+//                //    }
+//                //    break;
+//                //}
+//                //else
+//                //{
+//                //    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                //    ServiceDataClient.AddlinktopipeAsync(Model.PassportKey, keyNit, GlobalContext.Context);
+//                //}
+//                //  PrivItemsNew.ListPriv.Clear();
+
+//                PrivItemsNew.ListPriv = new List<SavePriv.SavePrivItems>();
+
+//                for (int t = 0; t < Model.NavigationPrivList.Count; t++)
+//                {
+//                    SavePriv.SavePrivItems privItems = new SavePriv.SavePrivItems();
+
+//                    privItems.CNAME = Model.NavigationPrivList[t].CNAME;
+//                    privItems.NDISTANCEBEG = Model.NavigationPrivList[t].NDISTANCEBEG;
+//                    privItems.NDISTANCEND = Model.NavigationPrivList[t].NDISTANCEND;
+//                    privItems.NH1 = Model.NavigationPrivList[t].NH1;
+//                    privItems.NH2 = Model.NavigationPrivList[t].NH2;
+//                    privItems.NKEY = Model.NavigationPrivList[t].NKEY;
+//                    privItems.NKMORT1 = Model.NavigationPrivList[t].NKMORT1;
+//                    privItems.NKMORT2 = Model.NavigationPrivList[t].NKMORT2;
+//                    privItems.NKMTRUE1 = Model.NavigationPrivList[t].NKMTRUE1;
+//                    privItems.NKMTRUE2 = Model.NavigationPrivList[t].NKMTRUE2;
+//                    privItems.NX1 = Model.NavigationPrivList[t].NX1;
+//                    privItems.NX2 = Model.NavigationPrivList[t].NX2;
+//                    privItems.NY1 = Model.NavigationPrivList[t].NY1;
+//                    privItems.NY2 = Model.NavigationPrivList[t].NY2;
+//                    privItems.NZ2 = Model.NavigationPrivList[t].NZ2;
+//                    privItems.nMtKey = Model.NavigationPrivList[t].nMtKey.ToString();
+//                    privItems.nPipeKey = Model.NavigationPrivList[t].nPipeKey.ToString();
+
+//                    PrivItemsNew.ListPriv.Add(privItems);
+//                }
+
+//                Model.PassportDetailModel.FirePropertyChanged("KeyPrivAdd");
+//                this.DialogResult = true;
+//                break;
+//            }
+//        case "6":
+//            {
+//                if (CountPriv == 0)
+//                {
+//                    if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (dolgA.Text == "") ||
+//                    (dolgB.Text == "") ||
+//                    (shirotA.Text == "") ||
+//                    (shirotB.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                    }
+//                    else
+//                    {
+//                        string txtXBegin_s = dolgA.Text.Replace(",", separator);
+//                        txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                        string txtYBegin_s = shirotA.Text.Replace(",", separator);
+//                        txtYBegin_s = txtYBegin_s.Replace(".", separator);
+//                        string txtYEnd_s = shirotB.Text.Replace(",", separator);
+//                        txtYEnd_s = txtYEnd_s.Replace(".", separator);
+//                        string txtXEnd_s = dolgB.Text.Replace(",", separator);
+//                        txtXEnd_s = txtXEnd_s.Replace(".", separator);
+
+//                        ServiceDataClient.BuildSegmentLocationByPipeXYCompleted += ServiceDataClient_BuildSegmentLocationByPipeXYCompleted;
+//                        ServiceDataClient.BuildSegmentLocationByPipeXYAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, txtXEnd_s, txtYEnd_s, GlobalContext.Context);
+
+//                    }
+//                }
+//                else
+//                {
+//                    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                }
+//                break;
+//            }
+//        case "7":
+//            {
+//                if ((dolg.Text == "") ||
+//                    (shirot.Text == ""))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+//                    string txtXBegin_s = dolg.Text.Replace(",", separator);
+//                    txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                    string txtYBegin_s = shirot.Text.Replace(",", separator);
+//                    txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+
+//                    ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, "0", txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+//                }
+//                break;
+//            }
+//        case "8":
+//            {
+
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                 (ddlNitka.SelectedItem == null) ||
+//                 (shirotA.Text == "") ||
+//                 (dolgA.Text == ""))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+//                    string txtXBegin_s = shirotA.Text.Replace(",", separator);
+//                    txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                    string txtYBegin_s = dolgA.Text.Replace(",", separator);
+//                    txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+
+//                    ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+//                }
+
+//                //else
+//                //{
+//                //    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                //    ServiceDataClient.AddlinktopipeAsync(Model.PassportKey, keyNit);
+//                //}
+
+//                break;
+//            }
+//        case "9":
+//            {
+//                break;
+//            }
+
+//    }
+//}
+
+////добавление 1 и 2 типа привязки
+//void ServiceDataClient_BuildPointLocationByPipeKMCompleted(object sender, BuildPointLocationByPipeKMCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildPointLocationByPipeKMCompleted -=
+//                        ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+
+//    if (e.Result.IsValid)
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+
+//    }
+//    else
+//    {
+//        Model.MainModel.Report("Ошибка добавления привязки - " + e.Result.ErrorMessage);
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+
+
+//    }
+//}
+
+////добавление 3 типа привязки
+//void ServiceDataClient_BuildSegmentLocationByPipeKMCompleted(object sender, BuildSegmentLocationByPipeKMCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildSegmentLocationByPipeKMCompleted -=
+//                        ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+
+//    if (!e.Result.IsValid)
+//    {
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+//        Model.MainModel.Report("Ошибка создания привязки = " + e.Result.ErrorMessage);
+//    }
+//    else
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+//    }
+//}
+
+////добавление 3 типа привязки если уже есть привязка - последующие
+//void ServiceDataClient_AddlinktopipeCompleted(object sender, AddlinktopipeCompletedEventArgs e)
+//{
+//    ServiceDataClient.AddlinktopipeCompleted -= (ServiceDataClient_AddlinktopipeCompleted);
+//    if (!e.Result.IsValid)
+//    {
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+//        Model.MainModel.Report("Ошибка создания привязки = " + e.Result.ErrorMessage);
+//    }
+//    else
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+//    }
+//}
+
+
+
+
+
+////привязка 1,2,8 привязка координаты
+//void ServiceDataClient_BuildPointLocationByPipeXYCompleted(object sender, BuildPointLocationByPipeXYCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildPointLocationByPipeXYCompleted -=
+//                       ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+
+//    if (e.Result.IsValid)
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+//    }
+//    else
+//    {
+//        Model.MainModel.Report("Ошибка добавления привязки - " + e.Result.ErrorMessage);
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+
+//    }
+//}
+////привязка 3,4,9 координаты
+//void ServiceDataClient_BuildSegmentLocationByPipeXYCompleted(object sender, BuildSegmentLocationByPipeXYCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildSegmentLocationByPipeXYCompleted -= ServiceDataClient_BuildSegmentLocationByPipeXYCompleted;
+
+//    if (e.Result.IsValid)
+//    {
+
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+
+//    }
+//    else
+//    {
+//        Model.MainModel.Report("Ошибка добавления привязки - " + e.Result.ErrorMessage);
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+
+//    }
+//}  ////сохранение привязки по километражу
+//private void Addpriv_OnKm()
+//{
+//    switch (Model.PassportDetailModel.TYPEPRIV)
+//    {
+//        case "1":
+//        case "8":
+//            {
+
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                (ddlNitka.SelectedItem == null) ||
+//                (tbKm.Text == ""))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+
+//                    string _km = "";
+//                    _km = tbKm.Text.Replace(",", separator);
+//                    _km = _km.Replace(".", separator);
+
+//                    ServiceDataClient.BuildPointLocationByPipeKMCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit,
+//                                                                      _km, "0", GlobalContext.Context);
+//                    this.DialogResult = true;
+//                }
+
+//                break;
+//            }
+//        case "2":
+//            {
+
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (tbKm.Text == "") ||
+//                    (tbd.Text == "") ||
+//                    ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+
+//                    string _km = "";
+//                    _km = tbKm.Text.Replace(",", separator);
+//                    _km = _km.Replace(".", separator);
+//                    string _txtKmBeginIst = "";
+//                    _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                    _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                    if (RblOnClick == false)
+//                    {
+//                        _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                    }
+//                    ServiceDataClient.BuildPointLocationByPipeKMCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit,
+//                                                                      _km, _txtKmBeginIst, GlobalContext.Context);
+//                    this.DialogResult = true;
+
+//                }
+//                break;
+//            }
+//        case "3":
+//        case "9":
+//            {
+//                if (CountPriv == 0)
+//                {
+//                    if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (tbKmA.Text == "") ||
+//                    (tbKmB.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                    }
+//                    else
+//                    {
+
+//                        string _km = "";
+//                        string _km2 = "";
+//                        _km = tbKmA.Text.Replace(",", separator);
+//                        _km = _km.Replace(".", separator);
+//                        _km2 = tbKmB.Text.Replace(",", separator);
+//                        _km2 = _km2.Replace(".", separator);
+
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMCompleted +=
+//                            ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                                                                            keyNit, _km, _km2, "0", "0", GlobalContext.Context);
+//                        ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit,
+//                                                                          _km, "0", GlobalContext.Context);
+//                        this.DialogResult = true;
+//                    }
+//                }
+//                else
+//                {
+//                    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                }
+
+
+//                break;
+//            }
+//        case "4":
+//            {
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (tbKmA.Text == "") ||
+//                    (tbKmB.Text == "") ||
+//                    (tbd.Text == "") ||
+//                    ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+
+//                    string _km = "";
+//                    string _km2 = "";
+//                    string _txtKmBeginIst = "";
+//                    _km = tbKmA.Text.Replace(",", separator);
+//                    _km = _km.Replace(".", separator);
+//                    _km2 = tbKmB.Text.Replace(",", separator);
+//                    _km2 = _km2.Replace(".", separator);
+
+//                    _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                    _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                    if (rbl.IsChecked == false)
+//                    {
+//                        _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                    }
+//                    ServiceDataClient.BuildSegmentLocationByPipeKMCompleted +=
+//                        ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+//                    ServiceDataClient.BuildSegmentLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                                                                        keyNit, _km, _km2, _txtKmBeginIst,
+//                                                                        _txtKmBeginIst, GlobalContext.Context);
+//                    //ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportKey, Model.EntityKey, keyNit, _km, "0");
+
+//                }
+
+//                break;
+//            }
+
+//        case "5":
+//            {
+
+//                //if (CountPriv == 0)
+//                //{
+//                //    if ((ddlNitka.SelectedItem == "-1") ||
+//                //        (ddlNitka.SelectedItem == null) ||
+//                //        (tbKmA.Text == "") ||
+//                //        (tbd.Text == "") ||
+//                //        ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                //    {
+//                //        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                //        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                //        _popupWindowAttantion.Show();
+//                //    }
+//                //    else
+//                //    {
+
+//                //        string _km = "";
+//                //        _km = tbKmA.Text.Replace(",", separator);
+//                //        _km = _km.Replace(".", separator);
+//                //        string _txtKmBeginIst = "";
+//                //        _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                //        _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                //        if (rbl.IsChecked == false)
+//                //        {
+//                //            _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                //        }
+//                //        ServiceDataClient.BuildPointLocationByPipeKMCompleted +=
+//                //            ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+//                //        ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                //                                                          keyNit, _km, _txtKmBeginIst, GlobalContext.Context);
+
+//                //        this.DialogResult = true;
+
+//                //    }
+//                //    break;
+//                //}
+//                //else
+//                //{
+//                //    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                //    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                //}
+
+
+//                PrivItemsNew.ListPriv = new List<SavePriv.SavePrivItems>();
+//                for (int t = 0; t < Model.NavigationPrivList.Count; t++)
+//                {
+//                    SavePriv.SavePrivItems privItems = new SavePriv.SavePrivItems();
+
+//                    privItems.CNAME = Model.NavigationPrivList[t].CNAME;
+//                    privItems.NDISTANCEBEG = Model.NavigationPrivList[t].NDISTANCEBEG;
+//                    privItems.NDISTANCEND = Model.NavigationPrivList[t].NDISTANCEND;
+//                    privItems.NH1 = Model.NavigationPrivList[t].NH1;
+//                    privItems.NH2 = Model.NavigationPrivList[t].NH2;
+//                    privItems.NKEY = Model.NavigationPrivList[t].NKEY;
+//                    privItems.NKMORT1 = Model.NavigationPrivList[t].NKMORT1;
+//                    privItems.NKMORT2 = Model.NavigationPrivList[t].NKMORT2;
+//                    privItems.NKMTRUE1 = Model.NavigationPrivList[t].NKMTRUE1;
+//                    privItems.NKMTRUE2 = Model.NavigationPrivList[t].NKMTRUE2;
+//                    privItems.NX1 = Model.NavigationPrivList[t].NX1;
+//                    privItems.NX2 = Model.NavigationPrivList[t].NX2;
+//                    privItems.NY1 = Model.NavigationPrivList[t].NY1;
+//                    privItems.NY2 = Model.NavigationPrivList[t].NY2;
+//                    privItems.NZ2 = Model.NavigationPrivList[t].NZ2;
+//                    privItems.nMtKey = Model.NavigationPrivList[t].nMtKey.ToString();
+//                    privItems.nPipeKey = Model.NavigationPrivList[t].nPipeKey.ToString();
+
+//                    PrivItemsNew.ListPriv.Add(privItems);
+//                }
+
+//                Model.PassportDetailModel.FirePropertyChanged("KeyPrivAdd");
+//                this.DialogResult = true;
+//                break;
+
+//            }
+//        case "6":
+//            {
+//                if (CountPriv == 0)
+//                {
+//                    if ((ddlNitka.SelectedItem == "-1") ||
+//                   (ddlNitka.SelectedItem == null) ||
+//                   (tbKmA.Text == "") ||
+//                   (tbKmB.Text == "") ||
+//                    (tbd.Text == "") ||
+//                        ((rbl.IsChecked == false) && (rbr.IsChecked == false)))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                    }
+//                    else
+//                    {
+
+//                        string _km = "";
+//                        string _km2 = "";
+//                        string _txtKmBeginIst = "";
+
+//                        _km = tbKmA.Text.Replace(",", separator);
+//                        _km = _km.Replace(".", separator);
+//                        _km2 = tbKmB.Text.Replace(",", separator);
+//                        _km2 = _km2.Replace(".", separator);
+
+//                        _km = tbKmA.Text.Replace(",", separator);
+//                        _km = _km.Replace(".", separator);
+//                        _km2 = tbKmB.Text.Replace(",", separator);
+//                        _km2 = _km2.Replace(".", separator);
+
+
+//                        _txtKmBeginIst = tbd.Text.Replace(",", separator);
+//                        _txtKmBeginIst = _txtKmBeginIst.Replace(".", separator);
+//                        if (rbl.IsChecked == false == false)
+//                        {
+//                            _txtKmBeginIst = "-" + _txtKmBeginIst;
+//                        }
+
+
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMCompleted +=
+//                            ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+//                        ServiceDataClient.BuildSegmentLocationByPipeKMAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey,
+//                                                                            keyNit, _km, _km2, _txtKmBeginIst,
+//                                                                            _txtKmBeginIst, GlobalContext.Context);
+//                        //ServiceDataClient.BuildPointLocationByPipeKMAsync(Model.PassportKey, Model.EntityKey, keyNit, _km, "0");
+
+//                    }
+//                }
+//                else
+//                {
+//                    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                }
+//                break;
+//            }
+//    }
+//}
+
+////сохранение привязке по координатам (широта долгота)
+//private void AddPriv_OnXY()
+//{
+//    switch (Model.PassportDetailModel.TYPEPRIV)
+//    {
+//        case "1":
+//        case "2":
+//            {
+//                //редактирование или нет, сравниваем данные в каждом контроле и если изменились - сохраняем в новом экземпляре класса new
+//                //сначало формируем данные и передаем в базу- если все ок- то 
+//                //по кнопке btnOk.Click - передаем массив в основную форму паспорта и перезаписываем на и там при сохранении паспорта 
+
+//                if (Model.NavigationPrivList.Count > 0)
+//                {
+//                    if ((shirot.Text != Model.NavigationPrivList[0].NY1) ||
+//                        (dolg.Text != Model.NavigationPrivList[0].NX1) ||
+//                        (keyNit != Model.NavigationPrivList[0].nPipeKey.ToString()))
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                    }
+//                }
+
+//                else
+//                {
+//                    if (
+//                        (ddlNitka.SelectedItem == null) ||
+//                        (shirot.Text == "") ||
+//                        (dolg.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                        break;
+//                    }
+//                    else
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                    }
+
+
+//                }
+
+//                //если редактировали данные
+//                ListPrivNewItems.Add(
+//                  new PrivItems
+//                  {
+//                      CNAME = nameNit,
+//                      NX1 = dolg.Text,
+//                      NY1 = shirot.Text,
+//                      nPipeKey = keyNit
+//                  });
+
+//                //дальше формируем джейсон и передаем в базу для перерасчета привязки
+//                string jsonExport = GetJsonNewPriv(ListPrivNewItems);
+//                ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivJsonCompleted;
+//                ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, jsonExport, GlobalContext.Context);
+
+//                break;
+
+//            }
+//        case "3":
+//        case "4":
+//            {
+//                if (Model.NavigationPrivList.Count > 0)
+//                {
+//                    if ((shirotA.Text != Model.NavigationPrivList[0].NY1) ||
+//                        (dolgA.Text != Model.NavigationPrivList[0].NX1) ||
+//                        (shirotB.Text != Model.NavigationPrivList[0].NY2) ||
+//                         (dolgB.Text != Model.NavigationPrivList[0].NX2) ||
+//                        (keyNit != Model.NavigationPrivList[0].nPipeKey.ToString()))
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                        //если редактировали данные
+
+
+//                    }
+//                }
+//                else
+//                {
+//                    if (
+//                         (ddlNitka.SelectedItem == null) ||
+//                         (dolgA.Text == "") ||
+//                         (dolgB.Text == "") ||
+//                         (shirotA.Text == "") ||
+//                         (shirotB.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                        break;
+//                    }
+//                    else
+//                    {
+//                        ListPrivNewItems = new List<PrivItems>();
+//                    }
+//                }
+
+//                ListPrivNewItems.Add(
+//                        new PrivItems
+//                        {
+//                            CNAME = nameNit,
+//                            NX1 = dolgA.Text,
+//                            NY1 = shirotA.Text,
+//                            NX2 = dolgB.Text,
+//                            NY2 = shirotB.Text,
+//                            nPipeKey = keyNit
+//                        });
+
+//                //дальше формируем джейсон и передаем в базу для перерасчета привязки
+//                string jsonExport = GetJsonNewPriv(ListPrivNewItems);
+//                ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivJsonCompleted;
+//                ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, jsonExport, GlobalContext.Context);
+
+//                break;
+//            }
+
+//        case "5":
+//            {
+//                //if (CountPriv == 0)
+//                //{
+//                //    if ((ddlNitka.SelectedItem == "-1") ||
+//                //   (ddlNitka.SelectedItem == null) ||
+//                //   (dolg.Text == "") ||
+//                //   (shirot.Text == ""))
+//                //    {
+//                //        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                //        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                //        _popupWindowAttantion.Show();
+//                //    }
+//                //    else
+//                //    {
+//                //        string txtXBegin_s = dolg.Text.Replace(",", separator);
+//                //        txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                //        string txtYBegin_s = shirot.Text.Replace(",", separator);
+//                //        txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+
+
+//                //        ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//                //            ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//                //        ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportKey, Model.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+//                //        //this.DialogResult = true;
+
+//                //    }
+//                //    break;
+//                //}
+//                //else
+//                //{
+//                //    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                //    ServiceDataClient.AddlinktopipeAsync(Model.PassportKey, keyNit, GlobalContext.Context);
+//                //}
+//                //  PrivItemsNew.ListPriv.Clear();
+
+//                PrivItemsNew.ListPriv = new List<SavePriv.SavePrivItems>();
+
+//                for (int t = 0; t < Model.NavigationPrivList.Count; t++)
+//                {
+//                    SavePriv.SavePrivItems privItems = new SavePriv.SavePrivItems();
+
+//                    privItems.CNAME = Model.NavigationPrivList[t].CNAME;
+//                    privItems.NDISTANCEBEG = Model.NavigationPrivList[t].NDISTANCEBEG;
+//                    privItems.NDISTANCEND = Model.NavigationPrivList[t].NDISTANCEND;
+//                    privItems.NH1 = Model.NavigationPrivList[t].NH1;
+//                    privItems.NH2 = Model.NavigationPrivList[t].NH2;
+//                    privItems.NKEY = Model.NavigationPrivList[t].NKEY;
+//                    privItems.NKMORT1 = Model.NavigationPrivList[t].NKMORT1;
+//                    privItems.NKMORT2 = Model.NavigationPrivList[t].NKMORT2;
+//                    privItems.NKMTRUE1 = Model.NavigationPrivList[t].NKMTRUE1;
+//                    privItems.NKMTRUE2 = Model.NavigationPrivList[t].NKMTRUE2;
+//                    privItems.NX1 = Model.NavigationPrivList[t].NX1;
+//                    privItems.NX2 = Model.NavigationPrivList[t].NX2;
+//                    privItems.NY1 = Model.NavigationPrivList[t].NY1;
+//                    privItems.NY2 = Model.NavigationPrivList[t].NY2;
+//                    privItems.NZ2 = Model.NavigationPrivList[t].NZ2;
+//                    privItems.nMtKey = Model.NavigationPrivList[t].nMtKey.ToString();
+//                    privItems.nPipeKey = Model.NavigationPrivList[t].nPipeKey.ToString();
+
+//                    PrivItemsNew.ListPriv.Add(privItems);
+//                }
+
+//                Model.PassportDetailModel.FirePropertyChanged("KeyPrivAdd");
+//                this.DialogResult = true;
+//                break;
+//            }
+//        case "6":
+//            {
+//                if (CountPriv == 0)
+//                {
+//                    if ((ddlNitka.SelectedItem == "-1") ||
+//                    (ddlNitka.SelectedItem == null) ||
+//                    (dolgA.Text == "") ||
+//                    (dolgB.Text == "") ||
+//                    (shirotA.Text == "") ||
+//                    (shirotB.Text == ""))
+//                    {
+//                        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                        _popupWindowAttantion.Show();
+//                    }
+//                    else
+//                    {
+//                        string txtXBegin_s = dolgA.Text.Replace(",", separator);
+//                        txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                        string txtYBegin_s = shirotA.Text.Replace(",", separator);
+//                        txtYBegin_s = txtYBegin_s.Replace(".", separator);
+//                        string txtYEnd_s = shirotB.Text.Replace(",", separator);
+//                        txtYEnd_s = txtYEnd_s.Replace(".", separator);
+//                        string txtXEnd_s = dolgB.Text.Replace(",", separator);
+//                        txtXEnd_s = txtXEnd_s.Replace(".", separator);
+
+//                        ServiceDataClient.BuildSegmentLocationByPipeXYCompleted += ServiceDataClient_BuildSegmentLocationByPipeXYCompleted;
+//                        ServiceDataClient.BuildSegmentLocationByPipeXYAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, txtXEnd_s, txtYEnd_s, GlobalContext.Context);
+
+//                    }
+//                }
+//                else
+//                {
+//                    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                    ServiceDataClient.AddlinktopipeAsync(Model.PassportDetailModel.PassportKey, keyNit, GlobalContext.Context);
+//                }
+//                break;
+//            }
+//        case "7":
+//            {
+//                if ((dolg.Text == "") ||
+//                    (shirot.Text == ""))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+//                    string txtXBegin_s = dolg.Text.Replace(",", separator);
+//                    txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                    string txtYBegin_s = shirot.Text.Replace(",", separator);
+//                    txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+
+//                    ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, "0", txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+//                }
+//                break;
+//            }
+//        case "8":
+//            {
+
+//                if ((ddlNitka.SelectedItem == "-1") ||
+//                 (ddlNitka.SelectedItem == null) ||
+//                 (shirotA.Text == "") ||
+//                 (dolgA.Text == ""))
+//                {
+//                    ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//                    _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//                    _popupWindowAttantion.Show();
+//                }
+//                else
+//                {
+//                    string txtXBegin_s = shirotA.Text.Replace(",", separator);
+//                    txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//                    string txtYBegin_s = dolgA.Text.Replace(",", separator);
+//                    txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+
+//                    ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//                        ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//                    ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportDetailModel.PassportKey, Model.PassportDetailModel.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+//                }
+
+//                //else
+//                //{
+//                //    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//                //    ServiceDataClient.AddlinktopipeAsync(Model.PassportKey, keyNit);
+//                //}
+
+//                break;
+//            }
+//        case "9":
+//            {
+//                break;
+//            }
+
+//    }
+//}
+
+////добавление 1 и 2 типа привязки
+//void ServiceDataClient_BuildPointLocationByPipeKMCompleted(object sender, BuildPointLocationByPipeKMCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildPointLocationByPipeKMCompleted -=
+//                        ServiceDataClient_BuildPointLocationByPipeKMCompleted;
+
+//    if (e.Result.IsValid)
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+
+//    }
+//    else
+//    {
+//        Model.MainModel.Report("Ошибка добавления привязки - " + e.Result.ErrorMessage);
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+
+
+//    }
+//}
+
+////добавление 3 типа привязки
+//void ServiceDataClient_BuildSegmentLocationByPipeKMCompleted(object sender, BuildSegmentLocationByPipeKMCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildSegmentLocationByPipeKMCompleted -=
+//                        ServiceDataClient_BuildSegmentLocationByPipeKMCompleted;
+
+//    if (!e.Result.IsValid)
+//    {
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+//        Model.MainModel.Report("Ошибка создания привязки = " + e.Result.ErrorMessage);
+//    }
+//    else
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+//    }
+//}
+
+////добавление 3 типа привязки если уже есть привязка - последующие
+//void ServiceDataClient_AddlinktopipeCompleted(object sender, AddlinktopipeCompletedEventArgs e)
+//{
+//    ServiceDataClient.AddlinktopipeCompleted -= (ServiceDataClient_AddlinktopipeCompleted);
+//    if (!e.Result.IsValid)
+//    {
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+//        Model.MainModel.Report("Ошибка создания привязки = " + e.Result.ErrorMessage);
+//    }
+//    else
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+//    }
+//}
+
+
+
+
+
+////привязка 1,2,8 привязка координаты
+//void ServiceDataClient_BuildPointLocationByPipeXYCompleted(object sender, BuildPointLocationByPipeXYCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildPointLocationByPipeXYCompleted -=
+//                       ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+
+//    if (e.Result.IsValid)
+//    {
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+//    }
+//    else
+//    {
+//        Model.MainModel.Report("Ошибка добавления привязки - " + e.Result.ErrorMessage);
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+
+//    }
+//}
+////привязка 3,4,9 координаты
+//void ServiceDataClient_BuildSegmentLocationByPipeXYCompleted(object sender, BuildSegmentLocationByPipeXYCompletedEventArgs e)
+//{
+//    ServiceDataClient.BuildSegmentLocationByPipeXYCompleted -= ServiceDataClient_BuildSegmentLocationByPipeXYCompleted;
+
+//    if (e.Result.IsValid)
+//    {
+
+//        Model.FirePropertyChanged("KeyPrivAdd");
+//        this.DialogResult = true;
+
+
+//    }
+//    else
+//    {
+//        Model.MainModel.Report("Ошибка добавления привязки - " + e.Result.ErrorMessage);
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErr + e.Result.ErrorMessage;
+//        _popupWindowAttantion.Show();
+
+//    }
+//}
+//for (int j = 0; j < NavigationPrivList.Count; j++)
+//{
+//    if (NavigationPrivList[j].Number == typePige)
+//    {
+
+//        for (int i = 0; i < SelectMGList.Count; i++)
+//        {
+//            DataMGList dn = SelectMGList[i];
+//            if (dn.KEYMG == NavigationPrivList[j].MG.ToString())
+//            {
+//                ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[i]);
+//                break;
+//            }
+//        }
+
+
+//        break;
+//    }
+//}
+//старая привязка по координатам
+//тип 1, 2
+
+////есть данные и редактируем
+//if (PrivItems.Count > 0)
+//{
+
+//}
+//else
+//{
+
+//    if ((ddlNitka.SelectedItem == "-1") ||
+//        (ddlNitka.SelectedItem == null) ||
+//        (shirot.Text == "") ||
+//        (dolg.Text == ""))
+//    {
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//        _popupWindowAttantion.Show();
+//    }
+//    else
+//    {
+//        string txtXBegin_s = shirot.Text.Replace(",", separator);
+//        txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//        string txtYBegin_s = dolg.Text.Replace(",", separator);
+//        txtYBegin_s = txtYBegin_s.Replace(".", separator);
+
+//        //новый алгоритм добавления привязки
+
+//        //  ServiceDataClient.BuildPointLocationByPipeXYCompleted +=
+//        //      ServiceDataClient_BuildPointLocationByPipeXYCompleted;
+//        //  ServiceDataClient.BuildPointLocationByPipeXYAsync(Model.PassportKey, Model.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, GlobalContext.Context);
+
+
+
+//        //    }    
+//    }
+//}
+
+//тип 3, 4
+//if (CountPriv == 0)
+//{
+//    if ((ddlNitka.SelectedItem == "-1") ||
+//   (ddlNitka.SelectedItem == null) ||
+//   (dolgA.Text == "") ||
+//   (dolgB.Text == "") ||
+//   (shirotA.Text == "") ||
+//   (shirotB.Text == ""))
+//    {
+//        ChildWindowAttantion _popupWindowAttantion = new ChildWindowAttantion();
+//        _popupWindowAttantion.titleBox.Text = ProjectResources.PrivTitleBoxErrField;
+//        _popupWindowAttantion.Show();
+//    }
+//    else
+//    {
+//        string txtXBegin_s = dolgA.Text.Replace(",", separator);
+//        txtXBegin_s = txtXBegin_s.Replace(".", separator);
+//        string txtYBegin_s = shirotA.Text.Replace(",", separator);
+//        txtYBegin_s = txtYBegin_s.Replace(".", separator);
+//        string txtYEnd_s = shirotB.Text.Replace(",", separator);
+//        txtYEnd_s = txtYEnd_s.Replace(".", separator);
+//        string txtXEnd_s = dolgB.Text.Replace(",", separator);
+//        txtXEnd_s = txtXEnd_s.Replace(".", separator);
+
+//        ServiceDataClient.BuildSegmentLocationByPipeXYCompleted += ServiceDataClient_BuildSegmentLocationByPipeXYCompleted;
+//        ServiceDataClient.BuildSegmentLocationByPipeXYAsync(Model.PassportKey, Model.EntityKey, keyNit, txtXBegin_s, txtYBegin_s, txtXEnd_s, txtYEnd_s, GlobalContext.Context);
+
+//    }
+//}
+//else
+//{
+//    ServiceDataClient.AddlinktopipeCompleted += ServiceDataClient_AddlinktopipeCompleted;
+//    ServiceDataClient.AddlinktopipeAsync(Model.PassportKey, keyNit, GlobalContext.Context);
+//}
+//ЗАГЛУШКА!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//for (int ii = 0; ii < Model.NavigationPrivList.Count; ii++)
+//{
+
+
+//    NavigationPrivListDouble.Add(
+//        new PrivItems
+//      {
+//          CNAME = Model.NavigationPrivList[ii].CNAME,
+//          NKMORT1 = Model.NavigationPrivList[ii].NKMORT1,
+//          NDISTANCEBEG = Model.NavigationPrivList[ii].NDISTANCEBEG,
+//          NX1 = Model.NavigationPrivList[ii].NX1,
+//          NY1 = Model.NavigationPrivList[ii].NY1,
+//          NKEY = Model.NavigationPrivList[ii].NKEY,
+//          NH1 = Model.NavigationPrivList[ii].NH1,
+//          NKMTRUE1 = Model.NavigationPrivList[ii].NKMTRUE1,
+//          NX2 = Model.NavigationPrivList[ii].NX2,
+//          NY2 = Model.NavigationPrivList[ii].NY2,
+//          NKMORT2 = Model.NavigationPrivList[ii].NKMORT2,
+//          NKMTRUE2 = Model.NavigationPrivList[ii].NKMTRUE2,
+//          NDISTANCEEND = Model.NavigationPrivList[ii].NDISTANCEEND,
+//          nMtKey = Model.NavigationPrivList[ii].nMtKey.ToString(),
+//          nPipeKey = Model.NavigationPrivList[ii].nPipeKey.ToString(),
+//          NZ2 = Model.NavigationPrivList[ii].NZ2,
+//          NZ1 = Model.NavigationPrivList[ii].NZ1,
+//          NH2 = Model.NavigationPrivList[ii].NH2
+//      });
+//}
+
+//NavigationPrivListDouble.Add(
+//        new PrivItems
+//        {
+//            CNAME = nameNit,
+//            NKMORT1 = "",
+//            NDISTANCEBEG = "",
+//            NX1 = "",
+//            NY1 = "",
+//            NKEY = "",
+//            NH1 = "",
+//            NKMTRUE1 = "",
+//            NX2 = "",
+//            NY2 = "",
+//            NKMORT2 = "",
+//            NKMTRUE2 = "",
+//            NDISTANCEEND = "",
+//            nMtKey = keyMg,
+//            nPipeKey = keyNit,
+//            NZ2 = "",
+//            NZ1 = "",
+//            NH2 = ""
+//        });
+
+
+
+//if (string.IsNullOrEmpty(keyNit))
+//{
+
+//    if (Model.CurrentIndex == 0)
+//    {
+//        #region ПРОВЕРИТЬ!!!!!
+//        if (Model.NavigationPrivList.Count > 0)
+//        {
+//            //mainData.RowDefinitions[3].Height = new GridLength(35);
+
+//            //mainData.RowDefinitions[5].Height = new GridLength(35);
+//            //mainData.RowDefinitions[6].Height = new GridLength(35);
+//            //mainData.RowDefinitions[7].Height = new GridLength(35);
+
+//            mainData.RowDefinitions[2].Height = new GridLength(0);
+//            mainData.RowDefinitions[4].Height = new GridLength(0);
+
+//            expander.RowDefinitions[0].Height = new GridLength(0);
+//            expander.RowDefinitions[1].Height = new GridLength(0);
+//            expander.RowDefinitions[2].Height = new GridLength(0);
+//            expander.RowDefinitions[3].Height = new GridLength(0);
+
+//            Model.GoCurrentZak();
+//            // int indexNext = Model.CurrentIndex;
+//            InitPriv5Type(0);
+//            SelectMgOnFewPipe(Model.NavigationPrivList[0], SelectMGList);
+//            SelectPipeOnFewPipe(Model.NavigationPrivList[0], SelectNitList);
+//        }
+
+//        #endregion
+//    }
+//    else
+//    {
+
+
+//        //mainData.RowDefinitions[3].Height = new GridLength(35);
+//        //mainData.RowDefinitions[5].Height = new GridLength(35);
+//        //mainData.RowDefinitions[6].Height = new GridLength(35);
+//        //mainData.RowDefinitions[7].Height = new GridLength(35);
+
+//        mainData.RowDefinitions[2].Height = new GridLength(0);
+//        mainData.RowDefinitions[4].Height = new GridLength(0);
+
+//        expander.RowDefinitions[0].Height = new GridLength(0);
+//        expander.RowDefinitions[1].Height = new GridLength(0);
+//        expander.RowDefinitions[2].Height = new GridLength(0);
+//        expander.RowDefinitions[3].Height = new GridLength(0);
+
+//        Model.GoCurrentZak();
+//        int indexNext = Model.CurrentIndex;
+//        InitPriv5Type(indexNext);
+//        SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+//        SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+
+//        //InitControls();
+//    }
+
+//}
+//else
+//{
+//    
+//    NavigationPriv np = new NavigationPriv(nameNit, tbKmA1, tbd1, dolg1, shirot1, "", "", "", "", "", "", "", "", keyMgDouble, keyPipeDouble, "", "", "", "", "");
+
+//    if (Model.DataHasChanged(np))
+//    {
+//        //перерасчет
+//        List<PrivItems> NavigationPrivListDouble = new List<PrivItems>();
+//        //ЗАГЛУШКА!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//        for (int ii = 0; ii < Model.NavigationPrivList.Count; ii++)
+//        {
+
+
+//            NavigationPrivListDouble.Add(
+//                new PrivItems
+//                {
+//                    CNAME = Model.NavigationPrivList[ii].CNAME,
+//                    NKMORT1 = Model.NavigationPrivList[ii].NKMORT1,
+//                    NDISTANCEBEG = Model.NavigationPrivList[ii].NDISTANCEBEG,
+//                    NX1 = Model.NavigationPrivList[ii].NX1,
+//                    NY1 = Model.NavigationPrivList[ii].NY1,
+//                    NKEY = Model.NavigationPrivList[ii].NKEY,
+//                    NH1 = Model.NavigationPrivList[ii].NH1,
+//                    NKMTRUE1 = Model.NavigationPrivList[ii].NKMTRUE1,
+//                    NX2 = Model.NavigationPrivList[ii].NX2,
+//                    NY2 = Model.NavigationPrivList[ii].NY2,
+//                    NKMORT2 = Model.NavigationPrivList[ii].NKMORT2,
+//                    NKMTRUE2 = Model.NavigationPrivList[ii].NKMTRUE2,
+//                    NDISTANCEEND = Model.NavigationPrivList[ii].NDISTANCEEND,
+//                    nMtKey = Model.NavigationPrivList[ii].nMtKey.ToString(),
+//                    nPipeKey = Model.NavigationPrivList[ii].nPipeKey.ToString(),
+//                    NZ2 = Model.NavigationPrivList[ii].NZ2,
+//                    NZ1 = Model.NavigationPrivList[ii].NZ1,
+//                    NH2 = Model.NavigationPrivList[ii].NH2
+
+//                });
+//        }
+
+//        NavigationPrivListDouble.Add(
+//                new PrivItems
+//                {
+//                    CNAME = nameNit,
+//                    NKMORT1 = "",
+//                    NDISTANCEBEG = "",
+//                    NX1 = "",
+//                    NY1 = "",
+//                    NKEY = "",
+//                    NH1 = "",
+//                    NKMTRUE1 = "",
+//                    NX2 = "",
+//                    NY2 = "",
+//                    NKMORT2 = "",
+//                    NKMTRUE2 = "",
+//                    NDISTANCEEND = "",
+//                    nMtKey = keyMg,
+//                    nPipeKey = keyNit,
+//                    NZ2 = "",
+//                    NZ1 = "",
+//                    NH2 = ""
+//                });
+
+//        //сохраняем массив, КОТОРЫЙ ПРИШЕЛ ИЗ БАЗЫ
+
+//        Model.LoadData(Model.PassportDetailModel.PassportKey, index + 1, NavigationPrivListDouble);
+
+
+
+//        mainData.RowDefinitions[3].Height = new GridLength(35);
+
+//        mainData.RowDefinitions[5].Height = new GridLength(35);
+//        mainData.RowDefinitions[6].Height = new GridLength(35);
+//        mainData.RowDefinitions[7].Height = new GridLength(35);
+
+
+
+//        Model.GoPrevZak();
+//        int indexNext = Model.CurrentIndex;
+//        InitPriv5Type(indexNext);
+//        SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+//        SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+
+//    }
+//    else
+//    {
+//        if (Model.CurrentIndex == 0)
+//        {
+
+//        }
+//        else
+//        {
+//            mainData.RowDefinitions[3].Height = new GridLength(35);
+//            mainData.RowDefinitions[5].Height = new GridLength(35);
+//            mainData.RowDefinitions[6].Height = new GridLength(35);
+//            mainData.RowDefinitions[7].Height = new GridLength(35);
+//            Model.GoPrevZak();
+//            int indexNext = Model.CurrentIndex;
+//            InitPriv5Type(indexNext);
+//            SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+//            SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+//            //InitControls();
+//        }
+
+//    }
+//#region OldCode
+//if  (Model.NavigationPrivList.Count() > 0)
+//{
+//    NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem, Model.NavigationPrivList, np, index, radExpander.IsExpanded);
+//}
+//else
+//{
+//    if (!string.IsNullOrEmpty(keyNit))
+//    {
+//        //создаем новую привязку
+//        List<NavigationPriv> lnp = new List<NavigationPriv>();
+//        lnp.Add(np);
+//        NavigationPrivListDouble = HelperPriv.GetNavigationPrivListDoubleOne(lnp, NavigationPrivListDouble, radExpander.IsExpanded);
+//    }
+//    else
+//    {
+//        //if (Model.NavigationPrivList.Count() > 0)
+//        //{
+//        //    NavigationPrivListDouble = HelperPriv.GetNavigationPrivListDoubleOne(Model.NavigationPrivList, NavigationPrivListDouble, radExpander.IsExpanded);
+//        //}
+//        //else
+//        //{
+//        //    this.DialogResult = true;
+//        //}
+//    }
+//}
+//#endregion
+
+ #region Old Code
+            //var allDataFormNext = new AllDataForm(tbKmA, tbKmB, tbKm, tbd, dolg, dolgA, dolgB, shirot, shirotA, shirotB, rbr, radExpander, keyMg, keyNit);
+
+            //switch (Model.PassportDetailModel.TYPEPRIV)
+            //{
+            //    case "5":
+            //        {
+            //           // #region навигация вперед 5 тип
+            //           //// newUpdateItem = "2";
+            //           // if (string.IsNullOrEmpty(keyNit))
+            //           // {
+            //           //     return;
+            //           // }
+
+            //           // NavigationPriv np = new NavigationPriv("", allDataFormNext.tbKmA1, allDataFormNext.tbd1, allDataFormNext.dolg1, allDataFormNext.shirot1, "", "", "", "", "",
+            //           //                                        "", "", "", allDataFormNext.keyMgDouble, allDataFormNext.keyPipeDouble, "", "", "", "",
+            //           //                                        "");
+            //           // //создали новую привязку и кликнули вперед
+            //           // if (index == -1)
+            //           // {
+            //           //     //создаем новую привязку
+            //           //     List<NavigationPriv> lnp = new List<NavigationPriv>();
+            //           //     lnp.Add(np);
+            //           //     NavigationPrivListDouble = HelperPriv.GetNavigationPrivListDoubleOne(lnp,
+            //           //                                                                          NavigationPrivListDouble,
+            //           //                                                                          radExpander.IsExpanded);
+
+            //           //     //запрос в базу - можно ли создать привязку
+
+            //           //     string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //           //     if (!string.IsNullOrEmpty(xmlExport))
+            //           //     {
+            //           //         ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //           //         ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //           //                                                GlobalContext.Context);
+            //           //     }
+            //           //     else
+            //           //     {
+            //           //         Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //           //     }
+            //           // }
+            //           // else
+            //           // {
+            //           //     //проверяем изменялась ли привязка
+            //           //     if (Model.DataHasChanged(np))
+            //           //     {
+            //           //         //если есть данные
+            //           //         if (Model.NavigationPrivList.Count() > 0)
+            //           //         {
+
+            //           //             NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+            //           //                                                                         Model.NavigationPrivList, np,
+            //           //                                                                         index,
+            //           //                                                                         radExpander.IsExpanded);
+
+
+            //           //         }
+
+            //           //         //запрос в базу - можно ли создать привязку
+
+            //           //         string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //           //         if (!string.IsNullOrEmpty(xmlExport))
+            //           //         {
+            //           //             ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //           //             ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //           //                                                    GlobalContext.Context);
+            //           //         }
+            //           //         else
+            //           //         {
+            //           //             Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //           //         }
+
+            //           //     }
+            //           //     //если не редактировалось
+            //           //     else
+            //           //     {
+            //           //         if (Model.CurrentIndex == Model.NavigationPrivList.Count - 1)
+            //           //         {
+
+            //           //             //если добавить новые данные
+            //           //             tbKmA.Text = "";
+            //           //             tbd.Text = "";
+            //           //             dolg.Text = "";
+            //           //             shirot.Text = "";
+            //           //             mainData.RowDefinitions[2].Height = new GridLength(0);
+            //           //             mainData.RowDefinitions[3].Height = new GridLength(0);
+            //           //             mainData.RowDefinitions[4].Height = new GridLength(0);
+            //           //             mainData.RowDefinitions[5].Height = new GridLength(0);
+            //           //             mainData.RowDefinitions[6].Height = new GridLength(0);
+            //           //             radExpander.Visibility = Visibility.Collapsed;
+            //           //             //mainData.RowDefinitions[7].Height = new GridLength(0);
+            //           //             IsNextNewDataPipe = true;
+            //           //             ddlMG.ItemsSource = null;
+            //           //             ddlMG.ItemsSource = SelectMGList;
+            //           //             ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+            //           //             newUpdateItem = "1";
+
+            //           //         }
+            //           //         else
+            //           //         {
+            //           //             Model.GoNextZak();
+            //           //             int indexNext = Model.CurrentIndex;
+            //           //             InitPriv5Type(indexNext);
+            //           //             SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+            //           //             SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+
+            //           //         }
+
+            //           //     }
+            //           // }
+
+            //            #endregion
+            //            break;
+            //        }
+            //    case "6":
+            //        {
+
+            //            #region навигация вперед 6 тип
+            //            // newUpdateItem = "2";
+            //            if (string.IsNullOrEmpty(keyNit))
+            //            {
+            //                return;
+            //            }
+
+            //            NavigationPriv np = new NavigationPriv("", allDataFormNext.tbKmA1, allDataFormNext.tbd1, allDataFormNext.dolgA1, allDataFormNext.shirotA1,
+            //                                                   "", "", "", allDataFormNext.dolgB1, allDataFormNext.shirotB1, allDataFormNext.tbKmB1, "", "",
+            //                                                   allDataFormNext.keyMgDouble, allDataFormNext.keyPipeDouble, "", "", "", "", "");
+            //            //создали новую привязку и кликнули вперед
+            //            if (index == -1)
+            //            {
+            //                //создаем новую привязку
+            //                List<NavigationPriv> lnp = new List<NavigationPriv>();
+            //                lnp.Add(np);
+            //                NavigationPrivListDouble = HelperPriv.GetNavigationPrivListDoubleOne(lnp,
+            //                                                                                     NavigationPrivListDouble,
+            //                                                                                     radExpander.IsExpanded);
+
+            //                //запрос в базу - можно ли создать привязку
+
+            //                string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //                if (!string.IsNullOrEmpty(xmlExport))
+            //                {
+            //                    ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //                    ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //                                                           GlobalContext.Context);
+            //                }
+            //                else
+            //                {
+            //                    Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //                }
+            //            }
+            //            else
+            //            {
+            //                //проверяем изменялась ли привязка
+            //                if (Model.DataHasChanged(np))
+            //                {
+            //                    //если есть данные
+            //                    if (Model.NavigationPrivList.Count() > 0)
+            //                    {
+
+            //                        NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+            //                                                                                    Model.NavigationPrivList, np,
+            //                                                                                    index,
+            //                                                                                    radExpander.IsExpanded);
+
+
+            //                    }
+
+            //                    //запрос в базу - можно ли создать привязку
+
+            //                    string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //                    if (!string.IsNullOrEmpty(xmlExport))
+            //                    {
+            //                        ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //                        ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //                                                               GlobalContext.Context);
+            //                    }
+            //                    else
+            //                    {
+            //                        Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //                    }
+
+            //                }
+            //                //если не редактировалось
+            //                else
+            //                {
+            //                    if (Model.CurrentIndex == Model.NavigationPrivList.Count - 1)
+            //                    {
+
+            //                        //если добавить новые данные
+            //                        tbKmA.Text = "";
+            //                        tbd.Text = "";
+            //                        dolgA.Text = "";
+            //                        shirotA.Text = "";
+
+            //                        tbKmB.Text = "";
+            //                        dolgB.Text = "";
+            //                        shirotB.Text = "";
+
+            //                        mainData.RowDefinitions[2].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[3].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[4].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[5].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[6].Height = new GridLength(0);
+            //                        radExpander.Visibility = Visibility.Collapsed;
+            //                        //mainData.RowDefinitions[7].Height = new GridLength(0);
+            //                        IsNextNewDataPipe = true;
+            //                        ddlMG.ItemsSource = null;
+            //                        ddlMG.ItemsSource = SelectMGList;
+            //                        ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+            //                        newUpdateItem = "1";
+
+            //                    }
+            //                    else
+            //                    {
+            //                        Model.GoNextZak();
+            //                        int indexNext = Model.CurrentIndex;
+            //                        InitPriv6Type(indexNext);
+            //                        SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+            //                        SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+
+            //                    }
+
+            //                }
+            //            }
+
+            //            #endregion
+            //            #region навигация вперед 6 тип
+
+            //            //if (string.IsNullOrEmpty(keyNit))
+            //            //{
+            //            //    return;
+            //            //}
+
+            //            //NavigationPriv np = new NavigationPriv(nameNit, allDataFormNext.tbKmA1, allDataFormNext.tbd1, allDataFormNext.dolgA1, allDataFormNext.shirotA1,
+            //            //                                       "", "", "", allDataFormNext.dolgB1, allDataFormNext.shirotB1, allDataFormNext.tbKmB1, "", "",
+            //            //                                       allDataFormNext.keyMgDouble, allDataFormNext.keyPipeDouble, "", "", "", "", "");
+            //            //if (index == -1)
+            //            //{
+            //            //    //создаем новую привязку
+            //            //    List<NavigationPriv> lnp = new List<NavigationPriv>();
+            //            //    lnp.Add(np);
+            //            //    NavigationPrivListDouble = HelperPriv.GetNavigationPrivListDoubleOne(lnp,
+            //            //                                                                         NavigationPrivListDouble,
+            //            //                                                                         radExpander.IsExpanded);
+
+            //            //    //запрос в базу - можно ли создать привязку
+
+            //            //    string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //            //    if (!string.IsNullOrEmpty(xmlExport))
+            //            //    {
+            //            //        ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //            //        ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //            //                                               GlobalContext.Context);
+            //            //    }
+            //            //    else
+            //            //    {
+            //            //        Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //            //    }
+            //            //}
+            //            //else
+            //            //{
+            //            //    //проверяем изменялась ли привязка
+            //            //    if (Model.DataHasChanged(np))
+            //            //    {
+            //            //        //если есть данные
+            //            //        if (Model.NavigationPrivList.Count() > 0)
+            //            //        {
+            //            //            NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+            //            //                                                                        Model.NavigationPrivList, np,
+            //            //                                                                        index,
+            //            //                                                                        radExpander.IsExpanded);
+            //            //            newUpdateItem = "2";
+
+            //            //        }
+
+            //            //        //запрос в базу - можно ли создать привязку
+
+            //            //        string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //            //        if (!string.IsNullOrEmpty(xmlExport))
+            //            //        {
+            //            //            ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //            //            ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //            //                                                   GlobalContext.Context);
+            //            //        }
+            //            //        else
+            //            //        {
+            //            //            Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //            //        }
+
+            //            //    }
+            //            //    //если не редактировалось
+            //            //    else
+            //            //    {
+            //            //        if (Model.CurrentIndex == Model.NavigationPrivList.Count - 1)
+            //            //        {
+
+            //            //            //если добавить новые данные
+            //            //            tbKmA.Text = "";
+            //            //            tbd.Text = "";
+            //            //            dolg.Text = "";
+            //            //            shirot.Text = "";
+            //            //            mainData.RowDefinitions[2].Height = new GridLength(0);
+            //            //            mainData.RowDefinitions[3].Height = new GridLength(0);
+            //            //            mainData.RowDefinitions[4].Height = new GridLength(0);
+            //            //            mainData.RowDefinitions[5].Height = new GridLength(0);
+            //            //            mainData.RowDefinitions[6].Height = new GridLength(0);
+            //            //            radExpander.Visibility = Visibility.Collapsed;
+            //            //            //mainData.RowDefinitions[7].Height = new GridLength(0);
+            //            //            IsNextNewDataPipe = true;
+            //            //            ddlMG.ItemsSource = null;
+            //            //            ddlMG.ItemsSource = SelectMGList;
+            //            //            ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+            //            //            newUpdateItem = "1";
+
+            //            //        }
+            //            //        else
+            //            //        {
+            //            //            Model.GoNextZak();
+            //            //            int indexNext = Model.CurrentIndex;
+            //            //            InitPriv6Type(indexNext);
+            //            //            SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+            //            //            SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+
+            //            //        }
+
+            //            //    }
+            //            //}
+
+            //            #endregion
+            //            break;
+            //        }
+            //    case "8":
+            //        {
+            //            #region навигация вперед 8 тип
+            //            //нужен класс для проверки не пустых значений - аналогично NavigationPriv
+
+            //            if (string.IsNullOrEmpty(keyNit))
+            //            {
+            //                return;
+            //            }
+
+            //            //первый вход - когда нет привязок совсем
+            //            if (index == -1)
+            //            {
+
+            //                NavigationPriv np = new NavigationPriv(nameNit, allDataFormNext.tbKm1, "", allDataFormNext.dolg1, allDataFormNext.shirot1, "", "", "", "", "",
+            //                                                  "", "", "", allDataFormNext.keyMgDouble, allDataFormNext.keyPipeDouble, "", "", "", "",
+            //                                                  "");
+            //                //создаем новую привязку
+            //                List<NavigationPriv> lnp = new List<NavigationPriv>();
+            //                lnp.Add(np);
+            //                NavigationPrivListDouble = HelperPriv.GetNavigationPrivListDoubleOne(lnp,
+            //                                                                                     NavigationPrivListDouble,
+            //                                                                                     radExpander.IsExpanded);
+            //                //запрос в базу - можно ли создать привязку
+
+            //                string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //                if (!string.IsNullOrEmpty(xmlExport))
+            //                {
+            //                    ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //                    ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //                                                           GlobalContext.Context);
+            //                }
+            //                else
+            //                {
+            //                    Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //                }
+            //            }
+            //            else
+            //            {
+            //                //проверяем изменялась ли привязка
+            //                NavigationPriv np;
+
+            //                //т.к. перемычка то проверяем 1 или 2 нитка
+            //                if (tbmgt.Text.Contains("1"))
+            //                {
+            //                    np = new NavigationPriv(nameNit, allDataFormNext.tbKm1, "", allDataFormNext.dolg1, allDataFormNext.shirot1, "", "", "", "", "",
+            //                                                 "", "", "", allDataFormNext.keyMgDouble, allDataFormNext.keyPipeDouble, "", "", "", "",
+            //                                                 "");
+            //                }
+            //                else
+            //                {
+            //                    if (tbmgt.Text.Contains("2"))
+            //                    {
+            //                        np = new NavigationPriv(nameNit, allDataFormNext.tbKm1, "", allDataFormNext.dolg1, allDataFormNext.shirot1, "", "", "", "", "",
+            //                                                "", "", "", allDataFormNext.keyMgDouble, allDataFormNext.keyPipeDouble, "", "", "", "",
+            //                                                "");
+            //                    }
+            //                    else
+            //                    {
+            //                        return;
+            //                    }
+            //                }
+            //                if (Model.DataHasChanged(np))
+            //                {
+            //                    //если есть данные
+            //                    if (Model.NavigationPrivList.Count() > 0)
+            //                    {
+            //                        NavigationPrivListDouble = HelperPriv.GetNavigationPrivList(newUpdateItem,
+            //                                                                                    Model.NavigationPrivList, np,
+            //                                                                                    index,
+            //                                                                                    radExpander.IsExpanded);
+            //                        newUpdateItem = "2";
+
+            //                    }
+
+            //                    //запрос в базу - можно ли создать привязку
+
+            //                    string xmlExport = GetXmlInNewPriv(NavigationPrivListDouble);
+
+            //                    if (!string.IsNullOrEmpty(xmlExport))
+            //                    {
+            //                        ServiceDataClient.GetCalcPrivJsonCompleted += ServiceDataClient_GetCalcPrivXml2Completed;
+            //                        ServiceDataClient.GetCalcPrivJsonAsync(Model.PassportDetailModel.PassportKey, xmlExport,
+            //                                                               GlobalContext.Context);
+            //                    }
+            //                    else
+            //                    {
+            //                        Model.PassportDetailModel.MainModel.Report("ошибка  формирования xml Next_OnClick");
+            //                    }
+
+            //                }
+            //                //если не редактировалось
+            //                else
+            //                {
+            //                    if (Model.CurrentIndex == Model.NavigationPrivList.Count - 1)
+            //                    {
+            //                        int indexNext = Model.CurrentIndex;
+
+            //                        //у нас должно быть только 2 привязке - т.к. перемычка
+            //                        if (indexNext >= 1)
+            //                        {
+            //                            return;
+            //                        }
+            //                        tbmgt.Text = ProjectResources.PtivTitleBoxM + " " + (indexNext + 2).ToString();
+            //                        tbpipet.Text = ProjectResources.PrivTitleBoxN + " " + (indexNext + 2).ToString();
+
+            //                        mainData.RowDefinitions[2].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[3].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[4].Height = new GridLength(35);
+            //                        mainData.RowDefinitions[5].Height = new GridLength(0);
+            //                        mainData.RowDefinitions[6].Height = new GridLength(0);
+
+            //                        expander.RowDefinitions[0].Height = new GridLength(0);
+            //                        expander.RowDefinitions[1].Height = new GridLength(0);
+            //                        expander.RowDefinitions[2].Height = new GridLength(35);
+
+            //                        expander.RowDefinitions[3].Height = new GridLength(35);
+            //                        expander.RowDefinitions[4].Height = new GridLength(0);
+            //                        expander.RowDefinitions[5].Height = new GridLength(0);
+
+            //                        tbKmB.displayWatermark = false;
+            //                        tbKmB.Text = "";
+
+            //                        shirotB.setMode(false);
+            //                        shirotB.displayWatermark = false;
+            //                        shirotB.Text = "";
+            //                        dolgB.setMode(false);
+            //                        dolgB.displayWatermark = false;
+            //                        dolgB.Text = "";
+
+            //                        IsNextNewDataPipe = true;
+            //                        ddlMG.ItemsSource = null;
+            //                        ddlMG.ItemsSource = SelectMGList;
+            //                        ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+            //                        newUpdateItem = "1";
+
+            //                    }
+            //                    else
+            //                    {
+            //                        Model.GoNextZak();
+            //                        int indexNext = Model.CurrentIndex;
+            //                        InitPriv8Type(indexNext);
+            //                        SelectMgOnFewPipe(Model.NavigationPrivList[indexNext], SelectMGList);
+            //                        SelectPipeOnFewPipe(Model.NavigationPrivList[indexNext], SelectNitList);
+
+            //                    }
+
+            //                }
+            //            }
+
+            //            #endregion
+            //            break;
+            //        }
+            //}
+            #endregion
+
+
+			
+
+                    //switch (Model.PassportDetailModel.TYPEPRIV)
+                    //{
+                    //    case "5":
+                    //        {
+
+                    //            tbKmA.Text = "";
+                    //            tbd.Text = "";
+                    //            dolg.Text = "";
+                    //            shirot.Text = "";
+
+                    //            mainData.RowDefinitions[2].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[3].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[4].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[5].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[6].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[7].Height = new GridLength(0);
+                    //            IsNextNewDataPipe = true;
+                    //            ddlMG.ItemsSource = null;
+                    //            ddlMG.ItemsSource = SelectMGList;
+                    //            ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+                    //            //создаем новую привязку
+                    //            newUpdateItem = "1";
+                    //            break;
+                    //        }
+                    //    case "6":
+                    //        {
+                    //            tbmgt.Text = ProjectResources.PtivTitleBoxM + " " + (Model.NavigationPrivList.Count + 1).ToString();
+                    //            tbpipet.Text = ProjectResources.PrivTitleBoxN + " " + (Model.NavigationPrivList.Count + 1).ToString();
+
+                    //            tbKmA.Text = "";
+                    //            tbKmB.Text = "";
+                    //            tbd.Text = "";
+                    //            dolgA.Text = "";
+                    //            shirotA.Text = "";
+                    //            dolgB.Text = "";
+                    //            shirotB.Text = "";
+
+                    //            mainData.RowDefinitions[2].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[3].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[4].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[5].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[6].Height = new GridLength(0);
+                    //            mainData.RowDefinitions[7].Height = new GridLength(0);
+                    //            IsNextNewDataPipe = true;
+                    //            ddlMG.ItemsSource = null;
+                    //            ddlMG.ItemsSource = SelectMGList;
+                    //            ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+                    //            //создаем новую привязку
+                    //            newUpdateItem = "1";
+                    //            break;
+                    //        }
+
+                    //    case "8":
+                    //        {
+                    //            int indexNext = Model.CurrentIndex;
+
+                    //            //у нас должно быть только 2 привязке - т.к. перемычка
+                    //            if (indexNext > 1)
+                    //            {
+                    //                return;
+                    //            }
+
+                    //            if (indexNext == 0)
+                    //            {
+                    //                tbmgt.Text = ProjectResources.PtivTitleBoxM + " " + (indexNext + 2).ToString();
+                    //                tbpipet.Text = ProjectResources.PrivTitleBoxN + " " + (indexNext + 2).ToString();
+
+                    //                mainData.RowDefinitions[3].Height = new GridLength(0);
+                    //                mainData.RowDefinitions[4].Height = new GridLength(0);
+                    //                mainData.RowDefinitions[5].Height = new GridLength(0);
+                    //                mainData.RowDefinitions[6].Height = new GridLength(0);
+
+                    //                expander.RowDefinitions[0].Height = new GridLength(0);
+                    //                expander.RowDefinitions[1].Height = new GridLength(0);
+                    //                expander.RowDefinitions[2].Height = new GridLength(0);
+                    //                expander.RowDefinitions[3].Height = new GridLength(0);
+
+
+
+                    //                tbKmT.Text = ProjectResources.PrivKmB;
+                    //                tbKm.displayWatermark = false;
+                    //                tbKm.Text = "";
+
+                    //                tbshirotT.Text = ProjectResources.PrivShirotB;
+                    //                shirot.setMode(false);
+                    //                shirot.displayWatermark = false;
+                    //                shirot.Text = "";
+                    //                tbdolgT.Text = ProjectResources.PrivDolgB;
+                    //                dolg.setMode(false);
+                    //                dolg.displayWatermark = false;
+                    //                dolg.Text = "";
+
+                    //                IsNextNewDataPipe = true;
+                    //                ddlMG.ItemsSource = null;
+                    //                ddlMG.ItemsSource = SelectMGList;
+                    //                ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+
+                    //                newUpdateItem = "1";
+                    //            }
+                    //            else
+                    //            {
+                    //                tbmgt.Text = ProjectResources.PtivTitleBoxM + " " + (indexNext + 1).ToString();
+                    //                tbpipet.Text = ProjectResources.PrivTitleBoxN + " " + (indexNext + 1).ToString();
+
+                    //                mainData.RowDefinitions[3].Height = new GridLength(0);
+                    //                mainData.RowDefinitions[4].Height = new GridLength(0);
+                    //                mainData.RowDefinitions[5].Height = new GridLength(0);
+                    //                mainData.RowDefinitions[6].Height = new GridLength(0);
+
+                    //                expander.RowDefinitions[0].Height = new GridLength(0);
+                    //                expander.RowDefinitions[1].Height = new GridLength(0);
+                    //                expander.RowDefinitions[2].Height = new GridLength(0);
+                    //                expander.RowDefinitions[3].Height = new GridLength(0);
+
+
+
+                    //                tbKmT.Text = ProjectResources.PrivKmA;
+                    //                tbKm.displayWatermark = false;
+                    //                tbKm.Text = "";
+
+                    //                tbshirotT.Text = ProjectResources.PrivShirotA;
+                    //                shirot.setMode(false);
+                    //                shirot.displayWatermark = false;
+                    //                shirot.Text = "";
+                    //                tbdolgT.Text = ProjectResources.PrivDolgA;
+                    //                dolg.setMode(false);
+                    //                dolg.displayWatermark = false;
+                    //                dolg.Text = "";
+
+                    //                IsNextNewDataPipe = true;
+                    //                ddlMG.ItemsSource = null;
+                    //                ddlMG.ItemsSource = SelectMGList;
+                    //                ddlMG.SelectedIndex = ddlMG.Items.IndexOf(SelectMGList[0]);
+
+                    //                newUpdateItem = "1";
+                    //            }
+
+
+                    //            break;
+                    //        }
+                    //}
+

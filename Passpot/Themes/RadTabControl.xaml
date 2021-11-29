@@ -1,0 +1,535 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:primitives="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls.Navigation"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:tabControl="clr-namespace:Telerik.Windows.Controls.TabControl;assembly=Telerik.Windows.Controls.Navigation"
+    xmlns:chromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Telerik.Windows.Controls">
+
+
+
+    <Thickness x:Key="TabItem_OuterBorderThickness">1 1 1 0</Thickness>
+    <SolidColorBrush x:Key="ControlForeground_NormalTabControl" Color="#FF5c5c5c"/>
+    <SolidColorBrush x:Key="TabItem_Background_Normal" Color="Transparent"/>
+    <SolidColorBrush x:Key="TabItem_OuterBorder_Normal" Color="Transparent"/>
+    <SolidColorBrush x:Key="TabItem_InnerBorder_Normal" Color="Transparent"/>
+    <Thickness x:Key="TabItem_InnerBorderThickness">1 1 1 0</Thickness>
+    <CornerRadius x:Key="TabItem_InnerCornerRadius">2 2 0 0</CornerRadius>
+    <CornerRadius x:Key="TabItem_OuterCornerRadius">3 3 0 0</CornerRadius>
+    <Thickness x:Key="TabItem_Margin">0 2 0 0</Thickness>
+    <SolidColorBrush x:Key="TabItem_OuterBorder_MouseOver" Color="#FFd869"/>
+
+    <SolidColorBrush x:Key="TabItem_InnerBorder_MouseOver" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="TabItem_OuterBorder_Selected" Color="#FFc0c0c0"/>
+    <LinearGradientBrush x:Key="TabItem_Background_Selected" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="White"/>
+        <GradientStop Color="#FFFAFAFA" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TabItem_InnerBorder_Selected" Color="#FFFFFFFF"/>
+    <Thickness x:Key="TabItem_Margin_Selected">0</Thickness>
+    <SolidColorBrush x:Key="TabItem_OuterBorder_SelectedMouseOver" Color="#FFd869"/>
+
+
+
+    <ControlTemplate x:Key="TabItemTemplate" TargetType="telerik:RadTabItem">
+        <Grid x:Name="wrapper">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStateGroup">
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="MouseOverVisual"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectionVisual"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SelectedMouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectionVisual"/>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="SelectionVisual">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TabItem_OuterBorder_SelectedMouseOver}"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.1" To="0.3" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HeaderElement"/>
+                            <DoubleAnimation Duration="0:0:0.1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NormalVisual"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="PlacementStates">
+                    <VisualState x:Name="HorizontalTop"/>
+                    <VisualState x:Name="HorizontalLeft">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="OrientationTransform">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="180"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="HorizontalRight"/>
+                    <VisualState x:Name="HorizontalBottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="OrientationTransform">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="180"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="VerticalTop">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="OrientationTransform">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="VerticalLeft">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="OrientationTransform">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="90"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="VerticalRight">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="OrientationTransform">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="VerticalBottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="OrientationTransform">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused"/>
+                    <VisualState x:Name="Focused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="NormalVisual" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}" CornerRadius="{StaticResource TabItem_OuterCornerRadius}" Margin="{StaticResource TabItem_Margin}">
+                <Border BorderBrush="{StaticResource TabItem_InnerBorder_Normal}" 
+                            BorderThickness="{StaticResource TabItem_InnerBorderThickness}" CornerRadius="{StaticResource TabItem_InnerCornerRadius}"/>
+            </Border>
+            <Border x:Name="MouseOverVisual" BorderBrush="{StaticResource TabItem_OuterBorder_MouseOver}" 
+                        BorderThickness="{StaticResource TabItem_OuterBorderThickness}" Background="#FFf6dd" 
+                        CornerRadius="{StaticResource TabItem_OuterCornerRadius}" Margin="{StaticResource TabItem_Margin}" Opacity="0">
+                <Border BorderBrush="{StaticResource TabItem_InnerBorder_MouseOver}" 
+                            BorderThickness="{StaticResource TabItem_InnerBorderThickness}" CornerRadius="{StaticResource TabItem_InnerCornerRadius}"/>
+            </Border>
+            <Border x:Name="SelectionVisual" BorderBrush="{StaticResource TabItem_OuterBorder_Selected}" 
+                        BorderThickness="{StaticResource TabItem_OuterBorderThickness}" 
+                        Background="{StaticResource TabItem_Background_Selected}" CornerRadius="{StaticResource TabItem_OuterCornerRadius}" Margin="{StaticResource TabItem_Margin_Selected}" Opacity="0">
+                <Border BorderBrush="{StaticResource TabItem_InnerBorder_Selected}" BorderThickness="{StaticResource TabItem_InnerBorderThickness}" 
+                            CornerRadius="{StaticResource TabItem_InnerCornerRadius}" />
+            </Border>
+            <telerik:LayoutTransformControl x:Name="OrientationTransform">
+                <ContentPresenter x:Name="HeaderElement" ContentTemplate="{TemplateBinding HeaderTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </telerik:LayoutTransformControl>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="RadTabItemStyle1" TargetType="telerik:RadTabItem">
+        <Setter Property="MinWidth" Value="5"/>
+        <Setter Property="BorderThickness" Value="{StaticResource TabItem_OuterBorderThickness}"/>
+        <Setter Property="Foreground" Value="{StaticResource ControlForeground_NormalTabControl}"/>
+        <Setter Property="MinHeight" Value="5"/>
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Background" Value="{StaticResource TabItem_Background_Normal}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabItem_OuterBorder_Normal}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="6 3"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template" Value="{StaticResource TabItemTemplate}"/>
+    </Style>
+    <SolidColorBrush x:Key="TabControl_ContentBorderBrush" Color="#FFc0c0c0"/>
+    <SolidColorBrush x:Key="TabControl_ContentBackground" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ControlInnerBorder_NormalTabControl" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ControlOuterBorder_Checked" Color="#FFFFC92B"/>
+    <LinearGradientBrush x:Key="ControlBackground_Checked" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFDCAB" Offset="0"/>
+        <GradientStop Color="#FFFFD18F" Offset="0.5"/>
+        <GradientStop Color="#FFFE9227" Offset="0.5"/>
+        <GradientStop Color="#FFFFD74E" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ControlInnerBorder_CheckedTabControl" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ControlOuterBorder_MouseOver" Color="#FFFFC92B"/>
+    <SolidColorBrush x:Key="ControlInnerBorder_MouseOverTabControl" Color="#FFFFFFFF"/>
+    <LinearGradientBrush x:Key="ControlBackground_MouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFFBDA" Offset="0"/>
+        <GradientStop Color="#FFFEEBAE" Offset="0.50"/>
+        <GradientStop Color="#FFFFD25A" Offset="0.50"/>
+        <GradientStop Color="#FFFFFBA3" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ControlOuterBorder_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF282828"/>
+        <GradientStop Color="#FF5F5F5F" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ControlInnerBorder_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFB69A78"/>
+        <GradientStop Color="#FFFFE17A" Offset="0.126"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ControlBackground_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFDCAB" Offset="0"/>
+        <GradientStop Color="#FFFFD18F" Offset="0.5"/>
+        <GradientStop Color="#FFFE9227" Offset="0.5"/>
+        <GradientStop Color="#FFFFBA74" Offset="0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ControlElement_Normal" Color="#FF000000"/>
+    <LinearGradientBrush x:Key="ControlBackground_NormalTabControl" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+        <GradientStop Color="#FFDCDCDC" Offset="0.50"/>
+        <GradientStop Color="#FFADADAD" Offset="0.50"/>
+        <GradientStop Color="#FFD4D4D4" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ControlOuterBorder_NormalTabControl" Color="#FF848484"/>
+    <Style x:Key="DropDownButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource ControlOuterBorder_MouseOver}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="InnerBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource ControlInnerBorder_MouseOverTabControl}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource ControlBackground_MouseOver}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource ControlOuterBorder_Pressed}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="InnerBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource ControlInnerBorder_Pressed}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource ControlBackground_Pressed}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckedVisual"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <Border x:Name="InnerBorder" BorderBrush="{StaticResource ControlInnerBorder_NormalTabControl}" BorderThickness="1"/>
+                        </Border>
+                        <Border x:Name="CheckedVisual" BorderBrush="{StaticResource ControlOuterBorder_Checked}" BorderThickness="{TemplateBinding BorderThickness}" Background="{StaticResource ControlBackground_Checked}" Opacity="0">
+                            <Border BorderBrush="{StaticResource ControlInnerBorder_CheckedTabControl}" BorderThickness="1"/>
+                        </Border>
+                        <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Center" Margin="{TemplateBinding Padding}" UseLayoutRounding="True" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value=""/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Data="M0,0 L6,0 6,1 0,1 M0,2 L6,2 6,3 5,3 5,4 4,4 4,5 2,5 2,4 1,4 1,3 0,3 0,2" Fill="{StaticResource ControlElement_Normal}"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="5 3"/>
+        <Setter Property="telerik:RadDockPanel.Dock" Value="Right"/>
+        <Setter Property="Background" Value="{StaticResource ControlBackground_NormalTabControl}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder_NormalTabControl}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+    <SolidColorBrush x:Key="ControlBackground" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ControlOuterBorderTabControl" Color="#FF848484"/>
+    <SolidColorBrush x:Key="TabControl_DropDownHeaderBrush" Color="Transparent"/>
+    <Style x:Key="DropDownStyle" TargetType="tabControl:DropDownMenu">
+        <Setter Property="Background" Value="{StaticResource ControlBackground}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="MaxHeight" Value="500"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorderTabControl}"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <telerik:RadWrapPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="tabControl:DropDownMenu">
+                    <Grid>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <Border BorderBrush="{StaticResource ControlOuterBorderTabControl}" BorderThickness="0 2 0 0">
+                                <ItemsPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Border>
+                        <Rectangle x:Name="BorderMaskElement" Fill="{StaticResource TabControl_DropDownHeaderBrush}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <SolidColorBrush x:Key="TabControl_HeaderBackground" Color="#FFBFBFBF"/>
+    <CornerRadius x:Key="TabControl_LeftScrollButton_CornerRadius">2 0 0 2</CornerRadius>
+    <telerik:TransparentTheme x:Key="ThemeTabControl"/>
+    <Style x:Key="LeftScrollButtonStyle" TargetType="RepeatButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ButtonBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ButtonBorder">
+                            <Grid>
+                                <chromes:ButtonChrome x:Name="ButtonVisual" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{StaticResource TabControl_LeftScrollButton_CornerRadius}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderEnabled="{TemplateBinding IsEnabled}" telerik:StyleManager.Theme="{StaticResource ThemeTabControl}"/>
+                                <Path x:Name="Path" Data="F1 M 110.692,342.252L 110.692,352.682L 104.594,347.467L 110.692,342.252 Z" Fill="{StaticResource ControlElement_Normal}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Height="7" Margin="{TemplateBinding Padding}" Stretch="Uniform" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="5"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="17"/>
+        <Setter Property="Content" Value=""/>
+        <Setter Property="Padding" Value="5 1"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="telerik:RadDockPanel.Dock" Value="Left"/>
+        <Setter Property="Background" Value="{StaticResource ControlBackground_NormalTabControl}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder_NormalTabControl}"/>
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+    <CornerRadius x:Key="TabControl_RightScrollButton_CornerRadius">0 2 2 0</CornerRadius>
+    <Style x:Key="RightScrollButtonStyle" TargetType="RepeatButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ButtonBorder">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ButtonBorder">
+                            <Grid>
+                                <chromes:ButtonChrome x:Name="ButtonVisual" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{StaticResource TabControl_RightScrollButton_CornerRadius}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderEnabled="{TemplateBinding IsEnabled}" telerik:StyleManager.Theme="{StaticResource ThemeTabControl}"/>
+                                <Path x:Name="Path" Data="M0.5,0.5 L5.2,5.4 L5.2,5.4 L0.5,10.5 z" Fill="{StaticResource ControlElement_Normal}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Height="7" Margin="{TemplateBinding Padding}" Stretch="Uniform" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="5"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="17"/>
+        <Setter Property="Content" Value=""/>
+        <Setter Property="Padding" Value="5 1"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="telerik:RadDockPanel.Dock" Value="Left"/>
+        <Setter Property="Background" Value="{StaticResource ControlBackground_NormalTabControl}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder_NormalTabControl}"/>
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+    <Style x:Key="EmptyScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ScrollContentPresenter x:Name="ScrollContentPresenter" Cursor="{TemplateBinding Cursor}" ContentTemplate="{TemplateBinding ContentTemplate}" Margin="{TemplateBinding Padding}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="TabControlTemplate" TargetType="telerik:RadTabControl">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Disabled"/>
+                    <VisualState x:Name="Normal"/>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="DropDownDisplayStates">
+                    <VisualState x:Name="DropDownButtonCollapsed"/>
+                    <VisualState x:Name="DropDownButtonVisible">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="DropDownButtonElement">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="PlacementStates">
+                    <VisualState x:Name="Top"/>
+                    <VisualState x:Name="Left">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="HeaderDockedElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="-90"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentBorder">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="0 1 1 1"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="HeaderDockedElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="90"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentBorder">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="1 1 0 1"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Bottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="LayoutTransform" Storyboard.TargetName="HeaderDockedElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <RotateTransform Angle="180"/>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderThickness" Storyboard.TargetName="ContentBorder">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="1 1 1 0"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <telerik:RadDockPanel LastChildFill="True">
+                <telerik:LayoutTransformControl x:Name="HeaderDockedElement" telerik:RadDockPanel.Dock="Top">
+                    <Grid>
+                        <Border x:Name="HeaderBackground" Background="{StaticResource TabControl_HeaderBackground}" Visibility="{TemplateBinding BackgroundVisibility}"/>
+                        <Border BorderBrush="{StaticResource TabControl_ContentBorderBrush}" BorderThickness="0 0 0 1"/>
+                        <telerik:RadDockPanel Canvas.ZIndex="10">
+                            <ToggleButton x:Name="DropDownButtonElement" telerik:RadDockPanel.Dock="Right" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="2 4 4 2" Style="{TemplateBinding DropDownButtonStyle}" Visibility="Collapsed">
+                                <telerik:RadContextMenu.ContextMenu>
+                                    <tabControl:DropDownMenu x:Name="DropDownMenuElement" DisplayMemberPath="{TemplateBinding DropDownDisplayMemberPath}" ItemTemplate="{TemplateBinding ItemDropDownContentTemplate}" ItemTemplateSelector="{TemplateBinding ItemDropDownContentTemplateSelector}" Placement="Bottom" Style="{TemplateBinding DropDownStyle}" StaysOpen="False"/>
+                                </telerik:RadContextMenu.ContextMenu>
+                            </ToggleButton>
+                            <RepeatButton x:Name="LeftScrollButtonElement" Margin="4 4 2 2" Style="{StaticResource LeftScrollButtonStyle}" Visibility="{Binding ComputedHorizontalScrollBarVisibility, ElementName=ScrollViewerElement}"/>
+                            <RepeatButton x:Name="RightScrollButtonElement" telerik:RadDockPanel.Dock="Right" Margin="2 4 2 2" Style="{StaticResource RightScrollButtonStyle}" Visibility="{Binding ComputedHorizontalScrollBarVisibility, ElementName=ScrollViewerElement}"/>
+                            <ScrollViewer x:Name="ScrollViewerElement" BorderThickness="0" HorizontalScrollBarVisibility="{Binding (ScrollViewer.HorizontalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}" IsTabStop="False" Margin="2 4 2 0" Style="{StaticResource EmptyScrollViewerStyle}" VerticalScrollBarVisibility="Disabled">
+                                <ItemsPresenter/>
+                            </ScrollViewer>
+                        </telerik:RadDockPanel>
+                    </Grid>
+                </telerik:LayoutTransformControl>
+                <Border x:Name="ContentBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                    <ContentPresenter x:Name="ContentElement" ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
+                </Border>
+            </telerik:RadDockPanel>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="RadTabControlStyle1" TargetType="telerik:RadTabControl">
+        <Setter Property="MinWidth" Value="5"/>
+        <Setter Property="MinHeight" Value="26"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TabControl_ContentBorderBrush}"/>
+        <Setter Property="BorderThickness" Value="1 0 1 1"/>
+        <Setter Property="Background" Value="{StaticResource TabControl_ContentBackground}"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <primitives:TabWrapPanel/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DropDownButtonStyle" Value="{StaticResource DropDownButtonStyle}"/>
+        <Setter Property="DropDownStyle" Value="{StaticResource DropDownStyle}"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Template" Value="{StaticResource TabControlTemplate}"/>
+    </Style>
+
+</ResourceDictionary>

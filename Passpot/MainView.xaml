@@ -1,0 +1,154 @@
+﻿<UserControl xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerikDocking="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Docking"
+             xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+             xmlns:components="clr-namespace:Passpot.components"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+
+
+             x:Class="Passpot.MainView"
+             Loaded="OnLoaded" MouseRightButtonDown="MainView_OnMouseRightButtonDown" MouseRightButtonUp="MainView_OnMouseRightButtonUp">
+
+   <Grid  x:Name="gridAll">
+        <Grid x:Name="LayoutRoot"  
+          VerticalAlignment="Stretch"
+          HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" x:Name="RightColumn"  />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+            
+            <Border HorizontalAlignment="Stretch" Grid.Column="0" VerticalAlignment="Stretch"   Margin="5,5,0,5" SizeChanged="Grid_SizeChanged" >
+            <Border x:Name="PanelTree"  />
+        </Border>
+        
+        <!--<controls:GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="6" 
+                        Background="#FFECECEC"   BorderThickness="10" Margin="5,5,5,0" BorderBrush="Red" />-->
+
+
+        <!--<components:ExtendedGridSplitter Name="GridSplitter" ShowsPreview="True" Grid.Column="1" />-->
+
+        <!--<components:ExtenderButton Grid.Column="1" ></components:ExtenderButton>-->
+        <components:ExtendedSplitter Name="GridSplitter" ShowsPreview="True" Grid.Column="1" Width="8"
+                                                 Background="#FFECECEC" BorderThickness="10" Margin="5,5,5,0"
+                                                 HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                                     CollapseButtonClicked="GridSplitter_OnCollapseButtonClicked"/>
+        
+        
+        <Border HorizontalAlignment="Stretch"  Grid.Column="2" VerticalAlignment="Stretch" >
+            <Grid x:Name="passportForm"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Border x:Name="contentHolder" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Stretch"  />
+                <Border x:Name="contentHolder2" Grid.Row="0" BorderThickness="0" HorizontalAlignment="Stretch" />
+
+
+
+                <ListBox x:Name="reportListBox" 
+                                          Margin="0"
+                                         Grid.Row="1"
+                                         Visibility="Visible"
+                                         KeyDown="reportListBox_KeyDown"
+                                         ItemsSource="{Binding Reports}"
+                                         HorizontalAlignment="Stretch"
+                                         SelectionMode="Multiple" />
+                <controls:GridSplitter Grid.Row="1"
+                                                       HorizontalAlignment="Stretch"
+                                                       VerticalAlignment="Top"
+                                                       Height="5"/>
+            </Grid>
+        </Border>
+
+
+      
+        <controlsToolkit:BusyIndicator x:Name="busyIndicatorAll" IsBusy="{Binding IsShowBusy}"
+										   DisplayAfter="0" Grid.ColumnSpan="4"
+										   BusyContent="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.BusyContent, Mode=OneWay}"
+                                           Style="{StaticResource StyleBusy}">
+        </controlsToolkit:BusyIndicator>
+       
+    </Grid>
+    </Grid>
+</UserControl>
+
+<!---->  
+    
+      <!--<telerikDocking:RadDocking Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"  >
+            <telerikDocking:RadSplitContainer InitialPosition="DockedLeft" x:Name="tDockedLeft" MinWidth="400" >
+                <telerikDocking:RadPaneGroup BorderThickness="0">
+                    <telerikDocking:RadPane x:Name="radpane"
+                                            PaneHeaderVisibility="Collapsed"
+                                            IsPinned="True"
+                                            IsHidden="False"
+                                            CanUserClose="False" >
+                        <Border x:Name="PanelTree"  />
+                    </telerikDocking:RadPane>
+                </telerikDocking:RadPaneGroup>
+            </telerikDocking:RadSplitContainer>
+            <telerikDocking:RadDocking.DocumentHost >
+                <telerikDocking:RadSplitContainer BorderThickness="0">
+                    <telerikDocking:RadPaneGroup BorderThickness="0">
+                        <telerikDocking:RadPane x:Name="radpane2" Width="0" BorderThickness="0" Height="0"
+                                            IsPinned="True"
+                                            IsHidden="False"
+                                            CanUserClose="False"
+                                            PaneHeaderVisibility="Collapsed">
+                          
+                            <Grid x:Name="passportForm"  >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+                                <Border x:Name="contentHolder" Grid.Row="0" BorderThickness="0" />
+                                <Border x:Name="contentHolder2" Grid.Row="0" BorderThickness="0" />
+
+                                <ListBox x:Name="reportListBox" 
+                                          Margin="0"
+                                         Grid.Row="1"
+                                         Visibility="Visible"
+                                         KeyDown="reportListBox_KeyDown"
+                                         ItemsSource="{Binding Reports}"
+                                         HorizontalAlignment="Stretch"
+                                         SelectionMode="Multiple" />
+                                <controls:GridSplitter Grid.Row="1"
+                                                       HorizontalAlignment="Stretch"
+                                                       VerticalAlignment="Top"
+                                                       Height="5" />
+
+                            </Grid>
+                           
+                        </telerikDocking:RadPane>
+                    </telerikDocking:RadPaneGroup>
+                </telerikDocking:RadSplitContainer>
+            </telerikDocking:RadDocking.DocumentHost>
+        </telerikDocking:RadDocking>-->
+<!--Grid.ColumnSpan="3"-->
+
+<!--<StackPanel Orientation="Vertical"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Stretch"
+                                        Grid.Column="0"
+                                        x:Name="PanelTree">
+                                <Button x:Name="passportButton"
+                                        Content="Паспорт таблица"
+                                        Visibility="Collapsed"
+                                        Margin="4"
+                                        Click="PassportButton_Click" />
+                                <Button x:Name="passportDetailButton"
+                                        Content="Подробности паспорта"
+                                        Visibility="Collapsed"
+                                        Margin="4"
+                                        Click="PassportDetailButton_Click" />
+                                <Button x:Name="passportDetailButton2"
+                                        Content="Паспорт с групировкой"
+                                        Visibility="Collapsed"
+                                        Margin="4"
+                                        Click="passportDetailButton_Click_1" />
+                             
+
+                            </StackPanel>-->

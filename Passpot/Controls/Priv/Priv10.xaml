@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Passpot.Controls.Priv.Priv10"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="310" Height="320">
+
+
+    <Grid x:Name="LayoutRoot"  >
+        <Border BorderThickness="1" x:Name="typePriv" BorderBrush="Silver" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+            <Canvas   HorizontalAlignment="Stretch"   VerticalAlignment="Stretch" Margin="0,0,-1,0" >
+                <Rectangle Height="93.405" Width="84.806" Canvas.Left="50.398" Canvas.Top="118.008" Fill="#33FF8C00" UseLayoutRounding="False"
+                           d:LayoutRounding="Auto" Stroke="DarkOrange" StrokeThickness="6">
+                    <Rectangle.RenderTransform>
+                        <CompositeTransform Rotation="330.976" SkewX="40"/>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+                
+                <Ellipse Canvas.Left="51" Canvas.Top="113" Fill="DarkOrange" Width="10" Height="10" RenderTransformOrigin="2.7,7.2"/>
+                <Ellipse Canvas.Left="122" Canvas.Top="74" Fill="DarkOrange" Width="10" Height="10" RenderTransformOrigin="2.7,7.2"/>
+                <Ellipse Canvas.Left="156" Canvas.Top="155" Fill="DarkOrange" Width="10" Height="10" RenderTransformOrigin="2.7,7.2"/>
+                <Ellipse Canvas.Left="228" Canvas.Top="115" Fill="DarkOrange" Width="10" Height="10" RenderTransformOrigin="2.7,7.2"/>
+
+                <Line   Stroke="DarkOrange" StrokeDashArray="6 6" StrokeThickness="1"
+                                       X1="55"
+                                       Y1="120"
+                                       X2="55"
+                                       Y2="270" />
+                <Line   Stroke="DarkOrange" StrokeDashArray="6 6" StrokeThickness="1"
+                                       X1="161"
+                                       Y1="165"
+                                       X2="161"
+                                       Y2="300" />
+
+                <Line   Stroke="DarkOrange" StrokeDashArray="6 6" StrokeThickness="1"
+                                       X1="128"
+                                       Y1="80"
+                                       X2="128"
+                                       Y2="230" />
+                <Line   Stroke="DarkOrange" StrokeDashArray="6 6" StrokeThickness="1"
+                                       X1="233"
+                                       Y1="125"
+                                       X2="233"
+                                       Y2="275" />
+
+                <TextBlock Text="1"  
+                	Canvas.Left="40" Canvas.Top="89" Foreground="DarkOrange"  FontFamily="Tahoma" FontSize="20" RenderTransformOrigin="-0.25,-0.417"/>
+                <TextBlock Text="2"  
+                	Canvas.Left="111" Canvas.Top="50" Foreground="DarkOrange"  FontFamily="Tahoma" FontSize="20" RenderTransformOrigin="-0.25,-0.417"/>
+                <TextBlock Text="3"  
+                	Canvas.Left="235" Canvas.Top="89" Foreground="DarkOrange"  FontFamily="Tahoma" FontSize="20" RenderTransformOrigin="-0.25,-0.417"/>
+                <TextBlock Text="4"  
+                	Canvas.Left="155" Canvas.Top="126" Foreground="DarkOrange"  FontFamily="Tahoma" FontSize="20" RenderTransformOrigin="-0.25,-0.417"/>
+
+                <TextBlock Text="{Binding ProjectResources.Priv71, Mode=OneWay, Source={StaticResource ResProvider}}"  
+                	Canvas.Left="62" Canvas.Top="261" Foreground="#FF4C934D"  FontFamily="Tahoma" />
+                <TextBlock Text="{Binding ProjectResources.Priv72, Mode=OneWay, Source={StaticResource ResProvider}}"  
+                	Canvas.Left="72" Canvas.Top="204" Foreground="#FF4C934D"  FontFamily="Tahoma" />
+                <TextBlock Text="{Binding ProjectResources.Priv74, Mode=OneWay, Source={StaticResource ResProvider}}"  
+                	Canvas.Left="169" Canvas.Top="295" Foreground="#FF4C934D"  FontFamily="Tahoma" />
+                <TextBlock Text="{Binding ProjectResources.Priv73, Mode=OneWay, Source={StaticResource ResProvider}}"  
+                	Canvas.Left="181" Canvas.Top="169" Foreground="#FF4C934D"  FontFamily="Tahoma" />
+            </Canvas>
+        </Border>
+    </Grid>
+</UserControl>

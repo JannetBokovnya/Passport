@@ -1,0 +1,144 @@
+﻿<controls:ChildWindow x:Class="Passpot.Controls.ChildWindowLookAllLink"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                      xmlns:telerikGridView="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+                      xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+                      xmlns:telerikTab="clr-namespace:Telerik.Windows.Controls.GridView;assembly=Telerik.Windows.Controls.GridView"
+                      xmlns:data="clr-namespace:Telerik.Windows.Data;assembly=Telerik.Windows.Data"
+                      Width="600" Height="400" 
+           >
+    <controls:ChildWindow.Resources>
+      
+        <DataTemplate x:Key="buttonDeleteCellTemplate">
+            <Button x:Name="deleteButton"  Background="{x:Null}" BorderBrush="{x:Null}"
+                                    Click="DeleteButton_OnClick" 
+                                     telerik:StyleManager.Theme="Transparent" >
+                <Button.Content>
+                    <Image  Width="18" Height="18"  Source="/Passpot;component/Images/delete_20.png"  Stretch="None"/>
+                </Button.Content>
+            </Button>
+        </DataTemplate>
+
+
+
+
+        <Style TargetType="telerikTab:GridViewCell" x:Key="StyleCell">
+            <Setter Property="Padding" Value="15,0,0,0"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="#0096db"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <Style TargetType="telerikTab:GridViewHeaderCell" x:Key="HeaderStyleCell">
+            <Setter Property="Padding" Value="15,0,0,0"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <!--<Style TargetType="telerikTab:GridViewGroupRow" x:Name="GridViewGroupRow">
+            <Setter Property="Background" Value="#1C0096DB" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>-->
+        <Style TargetType="telerikTab:GridViewRow">
+            <Setter Property="FontSize" Value="11" />
+        </Style>
+        <Style TargetType="telerikTab:GridViewIndentCell">
+            <Setter Property="Background" Value="#1C0096DB" />
+        </Style>
+
+    </controls:ChildWindow.Resources>
+
+    <controls:ChildWindow.Style>
+        <StaticResource ResourceKey="ChildWindowStyleAll"/>
+    </controls:ChildWindow.Style>
+    
+    
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="tbNameObj" HorizontalAlignment="Center" VerticalAlignment="Center"  
+                       FontFamily="Tahoma" FontSize="18" FontWeight="Bold" Foreground="#FF4C934D" 
+                       />
+        </StackPanel>
+
+        <telerikGridView:RadGridView  Grid.Row="1" x:Name="grid" 
+        		 telerik:StyleManager.Theme="Transparent" 
+        		 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+        		AutoGenerateColumns="False"
+        		IsReadOnly="True"
+        		SelectionUnit="FullRow"
+        		CanUserFreezeColumns="False"
+        		IsSynchronizedWithCurrentItem="True"   
+        		ShowGroupPanel="True" 
+        		Background="White" 
+                AutoExpandGroups="True" 
+        		VerticalGridLinesBrush="White" ColumnWidth="*" CanUserReorderColumns="True" 
+        		CanUserResizeColumns="False" CanUserResizeRows="False"
+                
+                CanUserSortColumns="False" TabNavigation="Cycle"  
+                GroupPanelBackground="Transparent" 
+                GroupPanelForeground="#FF5C5C5C" 
+                BorderBrush="Silver"
+                FontWeight="Bold" 
+                HeaderRowStyle="{StaticResource GridViewHeaderRowStyle1}" 
+                GroupPanelStyle="{StaticResource GridViewGroupPanelStyle1}" 
+                GroupRowStyle="{StaticResource GridViewGroupRowStyle}" 
+                GroupPanelItemStyle="{StaticResource GridViewGroupPanelItemStyle1}" 
+                RowStyle="{StaticResource GridViewRowStyle1}"                                      >
+          
+           
+        </telerikGridView:RadGridView>
+    </Grid>
+</controls:ChildWindow>
+
+
+
+<!--<telerikGridView:RadGridView.GroupDescriptors>
+                <data:GroupDescriptor  Member="NameEntity" 
+                                       DisplayContent="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.GridRelationNameEntity,  Mode=OneWay}"/>
+            </telerikGridView:RadGridView.GroupDescriptors>-->
+
+<!--<telerik:RadGridView.GroupDescriptors>
+    <telerik:ColumnGroupDescriptor Column="{Binding Columns[NameObj], ElementName=RadGridView1}" SortDirection="Ascending" />
+</telerik:RadGridView.GroupDescriptors>-->
+
+
+<!--<telerikGridView:RadGridView.Columns>
+
+                <telerikGridView:GridViewColumn x:Name="columdelete"
+                                            Width="40">
+                    <telerikGridView:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="deleteButton"  Background="{x:Null}" BorderBrush="{x:Null}"
+                                    Width="20" Height="20" Click="DeleteButton_OnClick"
+                                     telerik:StyleManager.Theme="Transparent" >
+                                <Button.Content>
+                                    <Image Width="20" Height="20" Source="/Passpot;component/Images/delete_20.png"  Stretch="None"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </telerikGridView:GridViewColumn.CellTemplate>
+                </telerikGridView:GridViewColumn>
+
+                <telerikGridView:GridViewDataColumn UniqueName="KeyObj" Header="KeyObj" IsVisible="False" />
+                <telerikGridView:GridViewDataColumn UniqueName="NameEntity" IsVisible="True"  HeaderCellStyle="{StaticResource HeaderStyleCell}" 
+                                                    HeaderTextAlignment="Center" 
+                                                Header="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.GridRelationNameEntity, Mode=OneWay}"  />
+                <telerikGridView:GridViewDataColumn UniqueName="NameObj" HeaderTextAlignment="Center"
+                                                    CellStyle="{StaticResource StyleCell}"  HeaderCellStyle="{StaticResource HeaderStyleCell}"
+                                                    TextDecorations="Underline"
+                                                Header="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.GridRelationNameObj, Mode=OneWay}" />
+            </telerikGridView:RadGridView.Columns>-->
+

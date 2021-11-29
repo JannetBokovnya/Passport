@@ -1,0 +1,17 @@
+C:\My_Work\DotNet\Passport_All_99\tmp\Modules\Passport\ClientBin\Media.dll
+C:\My_Work\DotNet\Passport_All_99\tmp\Modules\Passport\ClientBin\Media.pdb
+C:\My_Work\DotNet\Passport_All_99\tmp\Modules\Passport\ClientBin\en\Media.resources.dll
+C:\My_Work\DotNet\Passport_All_99\tmp\Modules\Passport\ClientBin\ru-Ru\Media.resources.dll
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.csprojResolveAssemblyReference.cache
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\OpenBigMedia.g.cs
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\MediaChildWindowDelete.g.cs
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\PhotoBrowserContol.g.cs
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.g.resources
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.Resources.ProjectResources.resources
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.Resources.ProjectResources.en.resources
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.Resources.ProjectResources.ru-Ru.resources
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.csproj.GenerateResource.Cache
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\en\Media.resources.dll
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\ru-Ru\Media.resources.dll
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.dll
+C:\My_Work\DotNet\Passport_All_99\src_files\Media\obj\Release\Media.pdb

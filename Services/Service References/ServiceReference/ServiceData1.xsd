@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CreateRootOfTree">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rootKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="visibleNode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRootOfTreeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CreateRootOfTreeResult" nillable="true" type="q1:PairAll" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextNode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nTreeKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="visibleNode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyPassport" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextNodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetNextNodeResult" nillable="true" type="q2:PairAll" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iKeyEntity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iTypePassport" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MetaDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MetaDataResult" nillable="true" type="q3:FieldMetaData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPassport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="intypePassport" type="xs:int" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPassportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPassportResult" nillable="true" type="q4:PassportData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePassport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iEntityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iParentKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="passportData" nillable="true" type="q5:PassportData" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="password" nillable="true" type="q6:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePassportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SavePassportResult" nillable="true" type="q7:KeyParentOnSave" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CementNkt_OnkeyNKT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CementNkt_OnkeyNKTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CementNkt_OnkeyNKTResult" nillable="true" type="q8:KeyCementNKT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuCopyVisible">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuCopyVisibleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="BuCopyVisibleResult" nillable="true" type="q9:BuCopyTreeVisibleForm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DeleteObjResult" nillable="true" type="q10:StatusAnswer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyPassport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CopyPassportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CopyPassportResult" nillable="true" type="q11:KeyPassportOnCopy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UpdateParentResult" nillable="true" type="q12:KeyParentOnUpdateTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParenttoChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParenttoChildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="UpdateParenttoChildResult" nillable="true" type="q13:KeyparentofchildTree" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnKeyObjOnShema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tsdiagram" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tsobject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnKeyObjOnShemaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ReturnKeyObjOnShemaResult" nillable="true" type="q14:KeyonShemaArcgis" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnVisibleObjOnKarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnVisibleObjOnKartaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ReturnVisibleObjOnKartaResult" nillable="true" type="q15:KeyonKartaObjList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnAccessObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnAccessObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ReturnAccessObjResult" nillable="true" type="q16:AccessLevelObjKey" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnVisibleNKTObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnVisibleNKTObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ReturnVisibleNKTObjResult" nillable="true" type="q17:ButtonNKTObjKey" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataAllEntityObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataAllEntityObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataAllEntityObjResult" nillable="true" type="q18:DataEntityList_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetXMLPassportToObjKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetXMLPassportToObjKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetXMLPassportToObjKeyResult" nillable="true" type="q19:PasportToXML" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetButtonToolbar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="buttonTollBar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetButtonToolbarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetButtonToolbarResult" nillable="true" type="q20:FielButtonData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisplayLabels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisplayLabelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDisplayLabelsResult" nillable="true" type="q21:DisplayLabels" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnTreeOnObjKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnTreeOnObjKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ReturnTreeOnObjKeyResult" nillable="true" type="q22:DataTreeViewOnObjkey" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnAllTreeOnObjKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnAllTreeOnObjKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ReturnAllTreeOnObjKeyResult" nillable="true" type="q23:DataTreeViewOnObjkey" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeFullHierarchyPathToObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeFullHierarchyPathToObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetTreeFullHierarchyPathToObjectResult" nillable="true" type="q24:TreeFullHierarchyPathToObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataHistoryObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataHistoryObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataHistoryObjResult" nillable="true" type="q25:DataListHistoryObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalcPrivJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strJason" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalcPrivJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCalcPrivJsonResult" nillable="true" type="q26:CalcPrivJson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPriv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPrivResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetAllPrivResult" nillable="true" type="q27:AllPriv" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLinkToPipeByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="p_nkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLinkToPipeByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DeleteLinkToPipeByKeyResult" nillable="true" type="q28:StatusAnswer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetHashPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="in_cpass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetHashPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SetHashPasswordResult" nillable="true" type="q29:HashPassword" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMediaFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mediaFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mediaFileName_small" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="typeMedia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMediaFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="InsertMediaFileResult" nillable="true" type="q30:StatusAnswer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMediaOnObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mediaKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMediaOnObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DeleteMediaOnObjResult" nillable="true" type="q31:StatusAnswer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passpoerKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaAttributeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMediaAttributeResult" nillable="true" type="q32:DataMediaAttribute_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictValueData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iKeyEntity" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictValueDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DictValueDataResult" nillable="true" type="q33:DictDataOnEntityKey" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictDataFiltr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictDataFiltrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DictDataFiltrResult" nillable="true" type="q34:ArrayOfDictDataFiltr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNameNsiOnKeyNSI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inKeyNSI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNameNsiOnKeyNSIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetNameNsiOnKeyNSIResult" nillable="true" type="q35:nameNSIOnKey" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveNsi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="i_nKeyNsiValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="i_cNsiValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="i_nKeyNsi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveNsiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SaveNsiResult" nillable="true" type="q36:ListNsiOnSave" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OneDictValueData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iKeyDict" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OneDictValueDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="OneDictValueDataResult" nillable="true" type="q37:DictDataOne" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttrControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttrControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AttrControlResult" nillable="true" type="q38:ControlAttribute" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttrOneControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iTypeControl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AttrOneControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AttrOneControlResult" nillable="true" type="q39:ArrayOfAttributOneControl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ipassportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iTypePassport" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inParentKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetGridDataResult" nillable="true" type="q40:GridData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThumbnailList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passportKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mediaType" type="xs:int" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThumbnailListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetThumbnailListResult" nillable="true" type="q41:ThumbnailList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mediaKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetMediaFileResult" nillable="true" type="q42:ThumbnailListBigMedia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataLinkResult" nillable="true" type="q43:ArrayOfDataLinkList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataConnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataConnectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataConnectResult" nillable="true" type="q44:DataConnectList_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataRelationObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyFld" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataRelationObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataRelationObjResult" nillable="true" type="q45:DataListRelationObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListLinkedObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entitykey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fieldname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linkedentitykey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linkedobjects" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListLinkedObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetListLinkedObjectsResult" nillable="true" type="q46:DataListLinkedObjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRelationObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyFld" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyRelation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRelationObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="SaveRelationObjResult" nillable="true" type="q47:KeyRelationOnSave" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelRelationObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjkey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyFld" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="keyRelation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelRelationObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DelRelationObjResult" nillable="true" type="q48:KeyRelationOnDel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EntityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ObjParentKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LinkType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCheckLinkResult" nillable="true" type="q49:GetCheckOrganizationLink_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataChildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataChildResult" nillable="true" type="q50:DataChildList_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountChildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetCountChildResult" nillable="true" type="q51:CountChild_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNameObj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNameObjResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetNameObjResult" nillable="true" type="q52:NameObj_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPassportInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inObjKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPassportInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPassportInfoResult" nillable="true" type="q53:PassportInfo_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataMGList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataMGListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataMGListResult" nillable="true" type="q54:DataMGList_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataNitList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inKeyMg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="context" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataNitListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataNitListResult" nillable="true" type="q55:DataNitList_result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

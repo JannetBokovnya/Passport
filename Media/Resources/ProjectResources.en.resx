@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="checkDetal" xml:space="preserve">
+    <value>View details</value>
+  </data>
+  <data name="gridAllObj" xml:space="preserve">
+    <value>The name  object type</value>
+  </data>
+  <data name="GridViewClearFilter" xml:space="preserve">
+    <value>Сlear  filter</value>
+  </data>
+  <data name="GridViewFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="GridViewFilterAnd" xml:space="preserve">
+    <value>And</value>
+  </data>
+  <data name="GridViewFilterContains" xml:space="preserve">
+    <value>contains</value>
+  </data>
+  <data name="GridViewFilterEndsWith" xml:space="preserve">
+    <value>ending on</value>
+  </data>
+  <data name="GridViewFilterIsEqualTo" xml:space="preserve">
+    <value>equal</value>
+  </data>
+  <data name="GridViewFilterIsNotEqualTo" xml:space="preserve">
+    <value>not equal</value>
+  </data>
+  <data name="GridViewFilterSelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="GridViewFilterShowRowsWithValueThat" xml:space="preserve">
+    <value>Show strings where the value...</value>
+  </data>
+  <data name="GridViewFilterStartsWith" xml:space="preserve">
+    <value>starting from</value>
+  </data>
+  <data name="GridViewGroupPanelText" xml:space="preserve">
+    <value>Move the column for grouping</value>
+  </data>
+  <data name="GridViewGroupPanelTopTextGrouped" xml:space="preserve">
+    <value>Grouped by:</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Hellow!</value>
+  </data>
+  <data name="nameEntityObj" xml:space="preserve">
+    <value>Object name:</value>
+  </data>
+  <data name="CountFunctionGrid" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="buTransit" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="cancelButtonPasport" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="childTabItem" xml:space="preserve">
+    <value>Child objects</value>
+  </data>
+  <data name="ChildWindowAttantion" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
+  <data name="ChildWindowDictTitle" xml:space="preserve">
+    <value>Adding, editing of dictionaries</value>
+  </data>
+  <data name="ChildWindowHistoriPassportTitle" xml:space="preserve">
+    <value>View of passport change history</value>
+  </data>
+  <data name="ControlDateTime" xml:space="preserve">
+    <value>Select date</value>
+  </data>
+  <data name="dataTabItem" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="documentTabItem" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="editButtonPasport" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ExpanderAddNewMedia" xml:space="preserve">
+    <value>Add new media material</value>
+  </data>
+  <data name="factoryPassportTabItem" xml:space="preserve">
+    <value>Factory pasport</value>
+  </data>
+  <data name="historiButton" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="insertCurrentRecordDict" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="KEYDICT" xml:space="preserve">
+    <value>The key values ​​of a dictionary</value>
+  </data>
+  <data name="mediaTabItem" xml:space="preserve">
+    <value>Media materials</value>
+  </data>
+  <data name="photoTabItem" xml:space="preserve">
+    <value>Photos</value>
+  </data>
+  <data name="saveButtonPasport" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="shemaTabItem" xml:space="preserve">
+    <value>Schemes</value>
+  </data>
+  <data name="TextBlockZnachDict" xml:space="preserve">
+    <value>Value :</value>
+  </data>
+  <data name="textNameDict" xml:space="preserve">
+    <value>Dictionary number:</value>
+  </data>
+  <data name="ToolTipDeletePasport" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ToolTipExelPasport" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="ToolTipHelpPasport" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="ToolTipNewPasport" xml:space="preserve">
+    <value>Create new passport</value>
+  </data>
+  <data name="ToolTipWordPasport" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="VALUEDICT" xml:space="preserve">
+    <value>Dictionary value</value>
+  </data>
+  <data name="CancelButtonHistory" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="GridViewCFieldName" xml:space="preserve">
+    <value>Attribute name</value>
+  </data>
+  <data name="GridViewColdval" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="GridViewCUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="GridViewDoperationtime" xml:space="preserve">
+    <value>Date / Time</value>
+  </data>
+  <data name="TextBlockHistory" xml:space="preserve">
+    <value>No data</value>
+  </data>
+  <data name="ChildWindowLinkObjGridViewObjName" xml:space="preserve">
+    <value>Instance name of link object</value>
+  </data>
+  <data name="ChildWindowLinkObjTitle" xml:space="preserve">
+    <value>Child Links</value>
+  </data>
+  <data name="PrivDolg" xml:space="preserve">
+    <value>Longitude,˚</value>
+  </data>
+  <data name="PrivGbBegin" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="PrivGbEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="PrivKm" xml:space="preserve">
+    <value>Kilometrage, m</value>
+  </data>
+  <data name="PrivKmGeod" xml:space="preserve">
+    <value>Km geod., m</value>
+  </data>
+  <data name="PrivKoord" xml:space="preserve">
+    <value>Coordinates</value>
+  </data>
+  <data name="PrivRbLeft" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="PrivRbRight" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="PrivShirot" xml:space="preserve">
+    <value>Latitude,˚</value>
+  </data>
+  <data name="PrivTbKm_ist" xml:space="preserve">
+    <value>Distance, m</value>
+  </data>
+  <data name="PrivTitle" xml:space="preserve">
+    <value>Linking</value>
+  </data>
+  <data name="PrivTitleBoxN" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="PrivTxtKm_Raspol" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="PtivTitleBoxM" xml:space="preserve">
+    <value>MGP</value>
+  </data>
+  <data name="DeleteRelationButtonToolTip" xml:space="preserve">
+    <value>Delete link</value>
+  </data>
+  <data name="DictDataFiltr" xml:space="preserve">
+    <value>&lt;Undefined&gt;</value>
+  </data>
+  <data name="GridControlColumn" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="GridRelationNameEntity" xml:space="preserve">
+    <value>Object type name</value>
+  </data>
+  <data name="GridRelationNameObj" xml:space="preserve">
+    <value>Instance name of link object</value>
+  </data>
+  <data name="LinkTableTitle" xml:space="preserve">
+    <value>Object links</value>
+  </data>
+  <data name="NewRelationButtonToolTip" xml:space="preserve">
+    <value>Create new link</value>
+  </data>
+  <data name="PrivTitleBoxErr" xml:space="preserve">
+    <value>Error creating of linking!</value>
+  </data>
+  <data name="PrivTitleBoxErrField" xml:space="preserve">
+    <value>Not all fields are filled!</value>
+  </data>
+  <data name="BusyContent" xml:space="preserve">
+    <value>Data loading</value>
+  </data>
+  <data name="FileUploadAddFileButon" xml:space="preserve">
+    <value>Select file</value>
+  </data>
+  <data name="FileUploadClearButton" xml:space="preserve">
+    <value>Сlear</value>
+  </data>
+  <data name="FileUploadComment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="FileUploadLoadButton" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="FileUploadMessage" xml:space="preserve">
+    <value>Same name of files</value>
+  </data>
+  <data name="FileUploadNameFile" xml:space="preserve">
+    <value>File name:</value>
+  </data>
+  <data name="FileUploadProgress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="FileUploadSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="FileUploadStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="FileUploadTypeFile" xml:space="preserve">
+    <value>File type:</value>
+  </data>
+  <data name="GridControlAddRelationButtonToolTip" xml:space="preserve">
+    <value>Add link object</value>
+  </data>
+  <data name="GridControlDeleteRelationButtonToolTip" xml:space="preserve">
+    <value>Delete object link</value>
+  </data>
+  <data name="GridControlLinkObj" xml:space="preserve">
+    <value>Object links</value>
+  </data>
+  <data name="GridControlMessage" xml:space="preserve">
+    <value>Removal object not selected in table</value>
+  </data>
+  <data name="GridControlMessageDel" xml:space="preserve">
+    <value>Delete the link with object?</value>
+  </data>
+  <data name="GridControlMessageTitle" xml:space="preserve">
+    <value>Confirm deletion</value>
+  </data>
+  <data name="HashControlTitleBox" xml:space="preserve">
+    <value>Repeat password</value>
+  </data>
+  <data name="PrivControl" xml:space="preserve">
+    <value>Linking</value>
+  </data>
+  <data name="PrivControlDelete" xml:space="preserve">
+    <value>Delete link?</value>
+  </data>
+  <data name="PrivControlLinkTableWindowTitle" xml:space="preserve">
+    <value>Object linking</value>
+  </data>
+  <data name="TextNameDict2" xml:space="preserve">
+    <value>Dictionary name</value>
+  </data>
+  <data name="TreeControlTabItem" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="TreeControlTooltip" xml:space="preserve">
+    <value>Refresh tree</value>
+  </data>
+  <data name="TreeControlTooltipCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="PassportChild" xml:space="preserve">
+    <value>No child objects</value>
+  </data>
+  <data name="PassportChildBuNuwChild" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="PassportChildTitleBox" xml:space="preserve">
+    <value>Delete the passport of child objects along with links</value>
+  </data>
+  <data name="MediaDel" xml:space="preserve">
+    <value>Delete media material?</value>
+  </data>
+  <data name="PassportViewAttantion" xml:space="preserve">
+    <value>Removal object not selected in table</value>
+  </data>
+  <data name="PassportViewNameEntityObj" xml:space="preserve">
+    <value>All objects</value>
+  </data>
+  <data name="PassportViewPopupWindow" xml:space="preserve">
+    <value>Delete object</value>
+  </data>
+  <data name="PassportViewPopupWindow1" xml:space="preserve">
+    <value>along with links</value>
+  </data>
+  <data name="NumberExeption" xml:space="preserve">
+    <value>Valid only the numbers</value>
+  </data>
+  <data name="TreeControlTabItemTree" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="PrintButtonToolbar" xml:space="preserve">
+    <value>Format print</value>
+  </data>
+  <data name="PrivSelectMg" xml:space="preserve">
+    <value>Select MGP...</value>
+  </data>
+  <data name="exportGridDate" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="exportGridName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="GridViewFilterDoesNotContain" xml:space="preserve">
+    <value>Does not contain</value>
+  </data>
+  <data name="GridViewFilterIsContainedIn" xml:space="preserve">
+    <value>Is contained in</value>
+  </data>
+  <data name="GridViewFilterIsNotContainedIn" xml:space="preserve">
+    <value>Is not contained in</value>
+  </data>
+  <data name="GridViewFilterOr" xml:space="preserve">
+    <value>Or</value>
+  </data>
+  <data name="AllTreeControlTooltip" xml:space="preserve">
+    <value>All objects</value>
+  </data>
+  <data name="BackTreeControlTooltip" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ForwardTreeControlTooltip" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="LinkControlEditAdd" xml:space="preserve">
+    <value>Add link...</value>
+  </data>
+  <data name="ChildWindowLinkObj" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="LinkAll" xml:space="preserve">
+    <value>Show all link items...</value>
+  </data>
+  <data name="LinkAllHide" xml:space="preserve">
+    <value>Hide the full list of links items...</value>
+  </data>
+  <data name="LinkButton" xml:space="preserve">
+    <value>List of passports</value>
+  </data>
+  <data name="ChildLinkObjAll" xml:space="preserve">
+    <value>List of related objects</value>
+  </data>
+  <data name="Priv1" xml:space="preserve">
+    <value>Select extended object ...</value>
+  </data>
+  <data name="Priv2" xml:space="preserve">
+    <value>Enter geodetic kilometrage...</value>
+  </data>
+  <data name="Priv3" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="Priv4" xml:space="preserve">
+    <value>Enter latitude  WGS…</value>
+  </data>
+  <data name="Priv1P1" xml:space="preserve">
+    <value>Point object linking</value>
+  </data>
+  <data name="Priv1P2" xml:space="preserve">
+    <value>on the axis own gas pipeline</value>
+  </data>
+  <data name="Priv7" xml:space="preserve">
+    <value>(latitude and longitude)</value>
+  </data>
+  <data name="Priv8" xml:space="preserve">
+    <value>gas stroke</value>
+  </data>
+  <data name="Priv9" xml:space="preserve">
+    <value>MGP, Line</value>
+  </data>
+  <data name="PrivDolg2" xml:space="preserve">
+    <value>Enter longitude WGS ...</value>
+  </data>
+  <data name="PrivDistLeft" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="PrivDistRigth" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="PrivKmA" xml:space="preserve">
+    <value>Kilometrage A, m</value>
+  </data>
+  <data name="PrivKmB" xml:space="preserve">
+    <value>Kilometrage B, m</value>
+  </data>
+  <data name="PrivDistTxt" xml:space="preserve">
+    <value>Enter distance to the gas pipeline…</value>
+  </data>
+  <data name="PrivKmATxt" xml:space="preserve">
+    <value>Enter kilometrage of object beginning…</value>
+  </data>
+  <data name="PrivKmBTxt" xml:space="preserve">
+    <value>Enter kilometrage of object end...</value>
+  </data>
+  <data name="PrivLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="PrivShirotA" xml:space="preserve">
+    <value>Latitude A,˚</value>
+  </data>
+  <data name="PrivShirotATxt" xml:space="preserve">
+    <value>Enter initial latitude in WGS ...</value>
+  </data>
+  <data name="Priv2P2" xml:space="preserve">
+    <value>off-axis own gas pipeline</value>
+  </data>
+  <data name="Priv3P1" xml:space="preserve">
+    <value>Line object linking</value>
+  </data>
+  <data name="PrivDolgA" xml:space="preserve">
+    <value>Longitude A,˚</value>
+  </data>
+  <data name="PrivDolgATxt" xml:space="preserve">
+    <value>Enter initial longitude in WGS ...</value>
+  </data>
+  <data name="PrivDolgB" xml:space="preserve">
+    <value>Longitude B,˚</value>
+  </data>
+  <data name="PrivDolgBTxt" xml:space="preserve">
+    <value>Enter final longitude in WGS ...</value>
+  </data>
+  <data name="PrivShirot2" xml:space="preserve">
+    <value>Enter latitude in WGS...</value>
+  </data>
+  <data name="PrivShirotB" xml:space="preserve">
+    <value>Latitude B,˚</value>
+  </data>
+  <data name="PrivShirotBTxt" xml:space="preserve">
+    <value>Enter final latitude in WGS ...</value>
+  </data>
+  <data name="Priv5P2" xml:space="preserve">
+    <value>off-axes all gas pipelines of corridor</value>
+  </data>
+  <data name="Priv9A" xml:space="preserve">
+    <value>MGP, Line 1</value>
+  </data>
+  <data name="Priv9B" xml:space="preserve">
+    <value>MGP, Line 2</value>
+  </data>
+  <data name="Priv9C" xml:space="preserve">
+    <value>MGP, Line N</value>
+  </data>
+  <data name="PrivTbKm_istA" xml:space="preserve">
+    <value>Distance A, m</value>
+  </data>
+  <data name="PrivTbKm_istB" xml:space="preserve">
+    <value>Distance B, m</value>
+  </data>
+  <data name="PrivKmA1" xml:space="preserve">
+    <value>Kilometrage А1, m</value>
+  </data>
+  <data name="PrivKmA2" xml:space="preserve">
+    <value>Kilometrage А2, m</value>
+  </data>
+  <data name="PrivKmB1" xml:space="preserve">
+    <value>Kilometrage B1, m</value>
+  </data>
+  <data name="PrivKmB2" xml:space="preserve">
+    <value>Kilometrage B2, m</value>
+  </data>
+  <data name="Priv71" xml:space="preserve">
+    <value>Latitude and longitude 1</value>
+  </data>
+  <data name="Priv72" xml:space="preserve">
+    <value>Latitude and longitude 2</value>
+  </data>
+  <data name="Priv73" xml:space="preserve">
+    <value>Latitude and longitude 3</value>
+  </data>
+  <data name="Priv74" xml:space="preserve">
+    <value>Latitude and longitude 4</value>
+  </data>
+  <data name="Priv10P1" xml:space="preserve">
+    <value>Point, line or polygonal object linking</value>
+  </data>
+  <data name="Priv10P2" xml:space="preserve">
+    <value>without connection with gas pipelines</value>
+  </data>
+  <data name="Priv7P2" xml:space="preserve">
+    <value>without connection with gas pipelines</value>
+  </data>
+  <data name="Priv8P2" xml:space="preserve">
+    <value>on the axes of two gas pipelines of corridor</value>
+  </data>
+  <data name="Priv9P2" xml:space="preserve">
+    <value>on the axes of several gas pipelines</value>
+  </data>
+  <data name="PrivControlEditAdd" xml:space="preserve">
+    <value>Add linking...</value>
+  </data>
+  <data name="Childpriv" xml:space="preserve">
+    <value>Kilometrage A</value>
+  </data>
+  <data name="ChildprivB" xml:space="preserve">
+    <value>Kilometrage B</value>
+  </data>
+  <data name="ChildprivM" xml:space="preserve">
+    <value>, m</value>
+  </data>
+  <data name="PrivDolgA1" xml:space="preserve">
+    <value>Longitude A</value>
+  </data>
+  <data name="PrivDolgB1" xml:space="preserve">
+    <value>Longitude B</value>
+  </data>
+  <data name="PrivGr" xml:space="preserve">
+    <value>,˚</value>
+  </data>
+  <data name="PrivShirotA1" xml:space="preserve">
+    <value>Latitude A</value>
+  </data>
+  <data name="PrivShirotB1" xml:space="preserve">
+    <value>Latitude B</value>
+  </data>
+  <data name="CheckLink0" xml:space="preserve">
+    <value>User error</value>
+  </data>
+  <data name="CheckLink1" xml:space="preserve">
+    <value>You can not add a link in excess of permitted cardinality.</value>
+  </data>
+  <data name="CheckLink2" xml:space="preserve">
+    <value>Objects can not establish a link "part-contains".</value>
+  </data>
+  <data name="CheckLink3" xml:space="preserve">
+    <value>Unable to determine the nature of the parent oobekta.</value>
+  </data>
+  <data name="CheckLink4" xml:space="preserve">
+    <value>No permission to create this object</value>
+  </data>
+  <data name="ErrSavePasportMessage" xml:space="preserve">
+    <value>Error saving passports</value>
+  </data>
+  <data name="Priv9Gr" xml:space="preserve">
+    <value>,˚</value>
+  </data>
+  <data name="PrivDolg9A" xml:space="preserve">
+    <value>Долгота A</value>
+  </data>
+  <data name="PrivDolg9B" xml:space="preserve">
+    <value>Долгота B</value>
+  </data>
+  <data name="PrivKm9m" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="PrivKmA9" xml:space="preserve">
+    <value>Kilometrage A</value>
+  </data>
+  <data name="PrivKmB9" xml:space="preserve">
+    <value>Kilometrage B</value>
+  </data>
+  <data name="PrivShirot9A" xml:space="preserve">
+    <value>Latitude A</value>
+  </data>
+  <data name="PrivShirot9B" xml:space="preserve">
+    <value>Latitude B</value>
+  </data>
+  <data name="PrivDolg1" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="PrivShirot1" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="UploadBrowseAppend" xml:space="preserve">
+    <value>Add more files</value>
+  </data>
+  <data name="UploadCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="UploadCaptionSelect" xml:space="preserve">
+    <value>Select files to upload</value>
+  </data>
+  <data name="UploadCaptionSelected" xml:space="preserve">
+    <value>Selected Files:</value>
+  </data>
+  <data name="UploadComment" xml:space="preserve">
+    <value>Comment to add files</value>
+  </data>
+  <data name="UploadDrag" xml:space="preserve">
+    <value>Drag the files to download</value>
+  </data>
+  <data name="UploadTotal" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="UploadUpload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="UploadBrowse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="UploadFiles" xml:space="preserve">
+    <value>Add new files</value>
+  </data>
+  <data name="photoAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="photoOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="mediaComment" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="UploadBufferSizeSoBig" xml:space="preserve">
+    <value>BufferSize too big. Please set it to a smaller value.</value>
+  </data>
+  <data name="UploadCaptionUploaded" xml:space="preserve">
+    <value>Upload Done</value>
+  </data>
+  <data name="UploadCaptionUploading" xml:space="preserve">
+    <value>Uploading...</value>
+  </data>
+  <data name="UploadHandlerNotFoundOrFailed" xml:space="preserve">
+    <value>Handler not found or execution of the handler failed!</value>
+  </data>
+  <data name="UploadItemDismissed" xml:space="preserve">
+    <value>Item dismissed.</value>
+  </data>
+  <data name="UploadPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="UploadRestriction" xml:space="preserve">
+    <value>Some of selected files are restricted by:</value>
+  </data>
+  <data name="UploadRestrictionCount" xml:space="preserve">
+    <value>Max number of uploaded files;</value>
+  </data>
+  <data name="UploadRestrictionSize" xml:space="preserve">
+    <value>Max file size;</value>
+  </data>
+  <data name="UploadRestrictionTotalSize" xml:space="preserve">
+    <value>Total size of all uploaded files;</value>
+  </data>
+  <data name="UploadResume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="UploadUnknownError" xml:space="preserve">
+    <value>Unknown error!</value>
+  </data>
+  <data name="UploadUploadServiceUrlInvalidPropertyValue" xml:space="preserve">
+    <value>Invalid upload url. Please make sure the url is absolute!</value>
+  </data>
+  <data name="UploadUploadServiceUrlSetProperty" xml:space="preserve">
+    <value>Property UploadServiceUrl not set</value>
+  </data>
+  <data name="MediaDelToolTip" xml:space="preserve">
+    <value>Delete media material</value>
+  </data>
+  <data name="saveMediaOnDisk" xml:space="preserve">
+    <value>Save Media on Disk</value>
+  </data>
+  <data name="NoMedia" xml:space="preserve">
+    <value>Media material not selected</value>
+  </data>
+  <data name="NoMediaType" xml:space="preserve">
+    <value>Type media material not selected</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="NewPassport" xml:space="preserve">
+    <value>New passport</value>
+  </data>
+  <data name="EnterDate" xml:space="preserve">
+    <value>Select Date</value>
+  </data>
+  <data name="GridViewFilterDateTime" xml:space="preserve">
+    <value>Select Date</value>
+  </data>
+  <data name="GridViewFilterDistinctValueNull" xml:space="preserve">
+    <value>[null]</value>
+  </data>
+  <data name="GridViewFilterDistinctValueStringEmpty" xml:space="preserve">
+    <value>[empty]</value>
+  </data>
+  <data name="GridViewFilterIsEmpty" xml:space="preserve">
+    <value>Is empty</value>
+  </data>
+  <data name="GridViewFilterIsGreaterThan" xml:space="preserve">
+    <value>Is greater then</value>
+  </data>
+  <data name="GridViewFilterIsGreaterThanOrEqualTo" xml:space="preserve">
+    <value>Is greater then or equal to</value>
+  </data>
+  <data name="GridViewFilterIsLessThan" xml:space="preserve">
+    <value>Is less then</value>
+  </data>
+  <data name="GridViewFilterIsLessThanOrEqualTo" xml:space="preserve">
+    <value>Is less then or equal to</value>
+  </data>
+  <data name="GridViewFilterIsNotEmpty" xml:space="preserve">
+    <value>Is not empty</value>
+  </data>
+  <data name="GridViewFilterIsNotNull" xml:space="preserve">
+    <value>Is not null</value>
+  </data>
+  <data name="GridViewFilterIsNull" xml:space="preserve">
+    <value>Is null</value>
+  </data>
+  <data name="RadDataPagerOf" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="RadDataPagerPage" xml:space="preserve">
+    <value>Page</value>
+  </data>
+</root>

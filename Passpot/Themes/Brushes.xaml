@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+   <!--//цвет рамки при наведении мыши, фокусе и выборе - селект-->
+    <!--<Color x:Key="FocuseHoverBorderColorTextBox">#ffd869</Color>--><!--
+    <SolidColorBrush x:Key="FocuseHoverBrushesColor" Color="#ffd869"/>
+    <Color x:Key="MouseOverHoverBorderColorTextBox">#ffd869</Color>
+
+    --><!--//цвет рамки в нормальном состоянии--><!--
+    <Color x:Key="NormalBorderColorTextBox">#c0c0c0</Color>
+    --><!--//цвет текста--><!--
+    <Color x:Key="TextColorTextBox">#FF5c5c5c</Color>
+
+    --><!--//цвет рамки задизабленной-->
+    <!--<Color x:Key ="DisableColorTextBox" >#a0a0a0</Color>--><!--
+    <SolidColorBrush x:Key="DisableBrushesColorTextBox" Color="#a0a0a0"></SolidColorBrush>-->
+
+</ResourceDictionary>

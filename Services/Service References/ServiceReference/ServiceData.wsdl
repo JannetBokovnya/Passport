@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceData" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:26313/Modules/Passport/ServiceData.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceData_CreateRootOfTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRootOfTree" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_CreateRootOfTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRootOfTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetNextNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextNode" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetNextNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_MetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:MetaData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_MetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetPassport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassport" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetPassport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SavePassport_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePassport" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SavePassport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePassportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_CementNkt_OnkeyNKT_InputMessage">
+    <wsdl:part name="parameters" element="tns:CementNkt_OnkeyNKT" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_CementNkt_OnkeyNKT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CementNkt_OnkeyNKTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_BuCopyVisible_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuCopyVisible" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_BuCopyVisible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuCopyVisibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DeleteObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DeleteObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_CopyPassport_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyPassport" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_CopyPassport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyPassportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_UpdateParent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParent" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_UpdateParent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_UpdateParenttoChild_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParenttoChild" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_UpdateParenttoChild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParenttoChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnKeyObjOnShema_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnKeyObjOnShema" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnKeyObjOnShema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnKeyObjOnShemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnVisibleObjOnKarta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnVisibleObjOnKarta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnVisibleObjOnKarta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnVisibleObjOnKartaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnAccessObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnAccessObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnAccessObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnAccessObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnVisibleNKTObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnVisibleNKTObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnVisibleNKTObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnVisibleNKTObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataAllEntityObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataAllEntityObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataAllEntityObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataAllEntityObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetXMLPassportToObjKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXMLPassportToObjKey" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetXMLPassportToObjKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXMLPassportToObjKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetButtonToolbar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetButtonToolbar" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetButtonToolbar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetButtonToolbarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDisplayLabels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisplayLabels" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDisplayLabels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisplayLabelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnTreeOnObjKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnTreeOnObjKey" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnTreeOnObjKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnTreeOnObjKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnAllTreeOnObjKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnAllTreeOnObjKey" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_ReturnAllTreeOnObjKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnAllTreeOnObjKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetTreeFullHierarchyPathToObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTreeFullHierarchyPathToObject" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetTreeFullHierarchyPathToObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTreeFullHierarchyPathToObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataHistoryObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataHistoryObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataHistoryObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataHistoryObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetCalcPrivJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalcPrivJson" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetCalcPrivJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalcPrivJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetAllPriv_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPriv" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetAllPriv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPrivResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DeleteLinkToPipeByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLinkToPipeByKey" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DeleteLinkToPipeByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLinkToPipeByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SetHashPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetHashPassword" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SetHashPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetHashPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_InsertMediaFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMediaFile" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_InsertMediaFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMediaFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DeleteMediaOnObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMediaOnObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DeleteMediaOnObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMediaOnObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetMediaAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetMediaAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DictValueData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DictValueData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DictValueData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DictValueDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DictDataFiltr_InputMessage">
+    <wsdl:part name="parameters" element="tns:DictDataFiltr" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DictDataFiltr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DictDataFiltrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetNameNsiOnKeyNSI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameNsiOnKeyNSI" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetNameNsiOnKeyNSI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameNsiOnKeyNSIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SaveNsi_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveNsi" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SaveNsi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveNsiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_OneDictValueData_InputMessage">
+    <wsdl:part name="parameters" element="tns:OneDictValueData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_OneDictValueData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OneDictValueDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_AttrControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:AttrControl" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_AttrControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AttrControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_AttrOneControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:AttrOneControl" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_AttrOneControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AttrOneControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetGridData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGridData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetGridData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGridDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetThumbnailList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbnailList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetThumbnailList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbnailListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetMediaFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaFile" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetMediaFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataLink" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataConnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataConnect" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataConnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataRelationObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataRelationObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataRelationObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataRelationObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetListLinkedObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListLinkedObjects" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetListLinkedObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListLinkedObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SaveRelationObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRelationObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_SaveRelationObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRelationObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DelRelationObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRelationObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_DelRelationObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRelationObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetCheckLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckLink" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetCheckLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataChild_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataChild" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataChild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetCountChild_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountChild" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetCountChild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetNameObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameObj" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetNameObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetPassportInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassportInfo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetPassportInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataMGList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataMGList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataMGList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataMGListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataNitList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataNitList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceData_GetDataNitList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataNitListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceData">
+    <wsdl:operation name="CreateRootOfTree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/CreateRootOfTree" message="tns:IServiceData_CreateRootOfTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/CreateRootOfTreeResponse" message="tns:IServiceData_CreateRootOfTree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetNextNode" message="tns:IServiceData_GetNextNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetNextNodeResponse" message="tns:IServiceData_GetNextNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MetaData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/MetaData" message="tns:IServiceData_MetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/MetaDataResponse" message="tns:IServiceData_MetaData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetPassport" message="tns:IServiceData_GetPassport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetPassportResponse" message="tns:IServiceData_GetPassport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePassport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/SavePassport" message="tns:IServiceData_SavePassport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/SavePassportResponse" message="tns:IServiceData_SavePassport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CementNkt_OnkeyNKT">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/CementNkt_OnkeyNKT" message="tns:IServiceData_CementNkt_OnkeyNKT_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/CementNkt_OnkeyNKTResponse" message="tns:IServiceData_CementNkt_OnkeyNKT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuCopyVisible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/BuCopyVisible" message="tns:IServiceData_BuCopyVisible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/BuCopyVisibleResponse" message="tns:IServiceData_BuCopyVisible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/DeleteObj" message="tns:IServiceData_DeleteObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/DeleteObjResponse" message="tns:IServiceData_DeleteObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyPassport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/CopyPassport" message="tns:IServiceData_CopyPassport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/CopyPassportResponse" message="tns:IServiceData_CopyPassport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/UpdateParent" message="tns:IServiceData_UpdateParent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/UpdateParentResponse" message="tns:IServiceData_UpdateParent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParenttoChild">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/UpdateParenttoChild" message="tns:IServiceData_UpdateParenttoChild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/UpdateParenttoChildResponse" message="tns:IServiceData_UpdateParenttoChild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnKeyObjOnShema">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/ReturnKeyObjOnShema" message="tns:IServiceData_ReturnKeyObjOnShema_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/ReturnKeyObjOnShemaResponse" message="tns:IServiceData_ReturnKeyObjOnShema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnVisibleObjOnKarta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/ReturnVisibleObjOnKarta" message="tns:IServiceData_ReturnVisibleObjOnKarta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/ReturnVisibleObjOnKartaResponse" message="tns:IServiceData_ReturnVisibleObjOnKarta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccessObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/ReturnAccessObj" message="tns:IServiceData_ReturnAccessObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/ReturnAccessObjResponse" message="tns:IServiceData_ReturnAccessObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnVisibleNKTObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/ReturnVisibleNKTObj" message="tns:IServiceData_ReturnVisibleNKTObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/ReturnVisibleNKTObjResponse" message="tns:IServiceData_ReturnVisibleNKTObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataAllEntityObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataAllEntityObj" message="tns:IServiceData_GetDataAllEntityObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataAllEntityObjResponse" message="tns:IServiceData_GetDataAllEntityObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLPassportToObjKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetXMLPassportToObjKey" message="tns:IServiceData_GetXMLPassportToObjKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetXMLPassportToObjKeyResponse" message="tns:IServiceData_GetXMLPassportToObjKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonToolbar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetButtonToolbar" message="tns:IServiceData_GetButtonToolbar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetButtonToolbarResponse" message="tns:IServiceData_GetButtonToolbar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisplayLabels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDisplayLabels" message="tns:IServiceData_GetDisplayLabels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDisplayLabelsResponse" message="tns:IServiceData_GetDisplayLabels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTreeOnObjKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/ReturnTreeOnObjKey" message="tns:IServiceData_ReturnTreeOnObjKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/ReturnTreeOnObjKeyResponse" message="tns:IServiceData_ReturnTreeOnObjKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAllTreeOnObjKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/ReturnAllTreeOnObjKey" message="tns:IServiceData_ReturnAllTreeOnObjKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/ReturnAllTreeOnObjKeyResponse" message="tns:IServiceData_ReturnAllTreeOnObjKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreeFullHierarchyPathToObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetTreeFullHierarchyPathToObject" message="tns:IServiceData_GetTreeFullHierarchyPathToObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetTreeFullHierarchyPathToObjectResponse" message="tns:IServiceData_GetTreeFullHierarchyPathToObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataHistoryObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataHistoryObj" message="tns:IServiceData_GetDataHistoryObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataHistoryObjResponse" message="tns:IServiceData_GetDataHistoryObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalcPrivJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetCalcPrivJson" message="tns:IServiceData_GetCalcPrivJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetCalcPrivJsonResponse" message="tns:IServiceData_GetCalcPrivJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPriv">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetAllPriv" message="tns:IServiceData_GetAllPriv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetAllPrivResponse" message="tns:IServiceData_GetAllPriv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkToPipeByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/DeleteLinkToPipeByKey" message="tns:IServiceData_DeleteLinkToPipeByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/DeleteLinkToPipeByKeyResponse" message="tns:IServiceData_DeleteLinkToPipeByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetHashPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/SetHashPassword" message="tns:IServiceData_SetHashPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/SetHashPasswordResponse" message="tns:IServiceData_SetHashPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMediaFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/InsertMediaFile" message="tns:IServiceData_InsertMediaFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/InsertMediaFileResponse" message="tns:IServiceData_InsertMediaFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMediaOnObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/DeleteMediaOnObj" message="tns:IServiceData_DeleteMediaOnObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/DeleteMediaOnObjResponse" message="tns:IServiceData_DeleteMediaOnObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetMediaAttribute" message="tns:IServiceData_GetMediaAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetMediaAttributeResponse" message="tns:IServiceData_GetMediaAttribute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DictValueData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/DictValueData" message="tns:IServiceData_DictValueData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/DictValueDataResponse" message="tns:IServiceData_DictValueData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DictDataFiltr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/DictDataFiltr" message="tns:IServiceData_DictDataFiltr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/DictDataFiltrResponse" message="tns:IServiceData_DictDataFiltr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameNsiOnKeyNSI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetNameNsiOnKeyNSI" message="tns:IServiceData_GetNameNsiOnKeyNSI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetNameNsiOnKeyNSIResponse" message="tns:IServiceData_GetNameNsiOnKeyNSI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveNsi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/SaveNsi" message="tns:IServiceData_SaveNsi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/SaveNsiResponse" message="tns:IServiceData_SaveNsi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OneDictValueData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/OneDictValueData" message="tns:IServiceData_OneDictValueData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/OneDictValueDataResponse" message="tns:IServiceData_OneDictValueData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AttrControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/AttrControl" message="tns:IServiceData_AttrControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/AttrControlResponse" message="tns:IServiceData_AttrControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AttrOneControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/AttrOneControl" message="tns:IServiceData_AttrOneControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/AttrOneControlResponse" message="tns:IServiceData_AttrOneControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetGridData" message="tns:IServiceData_GetGridData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetGridDataResponse" message="tns:IServiceData_GetGridData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnailList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetThumbnailList" message="tns:IServiceData_GetThumbnailList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetThumbnailListResponse" message="tns:IServiceData_GetThumbnailList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetMediaFile" message="tns:IServiceData_GetMediaFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetMediaFileResponse" message="tns:IServiceData_GetMediaFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataLink" message="tns:IServiceData_GetDataLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataLinkResponse" message="tns:IServiceData_GetDataLink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataConnect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataConnect" message="tns:IServiceData_GetDataConnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataConnectResponse" message="tns:IServiceData_GetDataConnect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataRelationObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataRelationObj" message="tns:IServiceData_GetDataRelationObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataRelationObjResponse" message="tns:IServiceData_GetDataRelationObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListLinkedObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetListLinkedObjects" message="tns:IServiceData_GetListLinkedObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetListLinkedObjectsResponse" message="tns:IServiceData_GetListLinkedObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRelationObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/SaveRelationObj" message="tns:IServiceData_SaveRelationObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/SaveRelationObjResponse" message="tns:IServiceData_SaveRelationObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRelationObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/DelRelationObj" message="tns:IServiceData_DelRelationObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/DelRelationObjResponse" message="tns:IServiceData_DelRelationObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetCheckLink" message="tns:IServiceData_GetCheckLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetCheckLinkResponse" message="tns:IServiceData_GetCheckLink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataChild">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataChild" message="tns:IServiceData_GetDataChild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataChildResponse" message="tns:IServiceData_GetDataChild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountChild">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetCountChild" message="tns:IServiceData_GetCountChild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetCountChildResponse" message="tns:IServiceData_GetCountChild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetNameObj" message="tns:IServiceData_GetNameObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetNameObjResponse" message="tns:IServiceData_GetNameObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassportInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetPassportInfo" message="tns:IServiceData_GetPassportInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetPassportInfoResponse" message="tns:IServiceData_GetPassportInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataMGList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataMGList" message="tns:IServiceData_GetDataMGList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataMGListResponse" message="tns:IServiceData_GetDataMGList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataNitList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceData/GetDataNitList" message="tns:IServiceData_GetDataNitList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceData/GetDataNitListResponse" message="tns:IServiceData_GetDataNitList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceData" type="tns:IServiceData">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateRootOfTree">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/CreateRootOfTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextNode">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetNextNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MetaData">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/MetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassport">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetPassport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePassport">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/SavePassport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CementNkt_OnkeyNKT">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/CementNkt_OnkeyNKT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuCopyVisible">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/BuCopyVisible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/DeleteObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyPassport">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/CopyPassport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParent">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/UpdateParent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParenttoChild">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/UpdateParenttoChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnKeyObjOnShema">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/ReturnKeyObjOnShema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnVisibleObjOnKarta">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/ReturnVisibleObjOnKarta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccessObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/ReturnAccessObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnVisibleNKTObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/ReturnVisibleNKTObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataAllEntityObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataAllEntityObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLPassportToObjKey">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetXMLPassportToObjKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonToolbar">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetButtonToolbar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisplayLabels">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDisplayLabels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTreeOnObjKey">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/ReturnTreeOnObjKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAllTreeOnObjKey">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/ReturnAllTreeOnObjKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTreeFullHierarchyPathToObject">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetTreeFullHierarchyPathToObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataHistoryObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataHistoryObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalcPrivJson">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetCalcPrivJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPriv">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetAllPriv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLinkToPipeByKey">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/DeleteLinkToPipeByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetHashPassword">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/SetHashPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMediaFile">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/InsertMediaFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMediaOnObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/DeleteMediaOnObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaAttribute">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetMediaAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictValueData">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/DictValueData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DictDataFiltr">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/DictDataFiltr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameNsiOnKeyNSI">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetNameNsiOnKeyNSI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNsi">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/SaveNsi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneDictValueData">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/OneDictValueData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttrControl">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/AttrControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttrOneControl">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/AttrOneControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGridData">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetGridData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnailList">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetThumbnailList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaFile">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetMediaFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataLink">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataConnect">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataRelationObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataRelationObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListLinkedObjects">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetListLinkedObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRelationObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/SaveRelationObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRelationObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/DelRelationObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckLink">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetCheckLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataChild">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountChild">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetCountChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameObj">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetNameObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassportInfo">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetPassportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataMGList">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataMGList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataNitList">
+      <soap:operation soapAction="http://tempuri.org/IServiceData/GetDataNitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceData">
+    <wsdl:port name="BasicHttpBinding_IServiceData" binding="tns:BasicHttpBinding_IServiceData">
+      <soap:address location="http://localhost:26313/Modules/Passport/ServiceData.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

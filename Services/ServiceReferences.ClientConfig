@@ -1,0 +1,18 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IServiceData" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="TransportCredentialOnly" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+      <client>
+        <endpoint address="http://gis.it-transit/Modules/Passport/ServiceData.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IServiceData"
+          contract="ServiceReference.IServiceData" name="BasicHttpBinding_IServiceData" />
+      </client>
+    </system.serviceModel>
+</configuration>
+

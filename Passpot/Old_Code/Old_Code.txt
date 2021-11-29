@@ -1,0 +1,705 @@
+TreeControl
+
+   <!--<DataTemplate x:Name="FuncionarioTemplate">
+            <core:RadDockPanel Margin="2" MaxWidth="200">
+                <TextBlock Text="{Binding Nome}" FontWeight="Bold" core:RadDockPanel.Dock="Top" />
+                <TextBlock Text="{Binding Cargo}" core:RadDockPanel.Dock="Left" />
+            </core:RadDockPanel>
+        </DataTemplate>-->
+
+		<!--кнопки с бордером-->
+<!--<Border Height="34" BorderBrush="Silver" BorderThickness="1" HorizontalAlignment="Left"
+                CornerRadius="3" Margin="5,5,0,-5"
+                Style="{StaticResource BorderStyle1}">
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24"/>
+                    <ColumnDefinition Width="24"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnCopy" Grid.Column="0" 
+                    Click="btnCopy_Click" 
+                        Width="24" Height="24" 
+                        HorizontalAlignment="Left" 
+                        Visibility="Visible"  Style="{StaticResource bkey}" >
+                </Button>
+                <Button x:Name="btnRefreshTree" Click="btnRefreshTree_Click" Grid.Column="1"  
+                                     Width="24" Height="24" HorizontalAlignment="Left" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="20" Height="20" Source="../ToolBar/Images/redo.png"
+						              ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.TreeControlTooltip, Mode=OneWay}" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>-->
+
+<!--core:StyleManager.Theme="Vista"-->
+<!--<Border BorderBrush="#FFFFFFFF" 
+				                    CornerRadius="1"
+				                    BorderThickness="1"
+				                    Background="#FFFFFFFF" x:Name="brdTreeView">-->
+
+
+<!--<telerik:RadGridView x:Name="grid"  FontFamily="Tahoma"
+                                 Margin="0,0,10,0"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 IsSynchronizedWithCurrentItem="True"
+                                 AutoGenerateColumns="False"
+                                 IsReadOnly="True"
+                                 ShowColumnHeaders="False"
+                                 MinWidth="160"
+                                 ShowGroupPanel="False"  
+                                 CanUserInsertRows="False" 
+                                 RowIndicatorVisibility="Collapsed" 
+                                 GridLinesVisibility="None"
+                                 
+                                 >
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewColumn  Width="40" >
+                                    <telerik:GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                              
+                                <Button x:Name="buLookAllTable"
+                                    Margin="2"
+                                    Width="20"
+                                    Height="20"
+                                    Click="buLookAllTable_Click" Padding="0,0,0,0" >
+                                                <Button.Content>
+                                                    <Image Width="20" Height="20" Source="../ToolBar/Images/ok.png" />
+                                                </Button.Content>
+                                            </Button>
+                                        </DataTemplate>
+                                    </telerik:GridViewColumn.CellTemplate>
+                                </telerik:GridViewColumn>
+                                <telerik:GridViewDataColumn UniqueName="KEYENTITY" Header="KEYENTITY" IsVisible="False"  />
+                                <telerik:GridViewDataColumn UniqueName="VALUEENTITY" 
+                                                            Header="{Binding Source={StaticResource ResProvider}, 
+                                                            Path=ProjectResources.gridAllObj, Mode=OneWay}"
+                                                            TextDecorations="Underline"/>
+
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>-->
+
+
+<!--DragEnded="RadTreeView_DragEnded"-->
+
+<!--IsDragTooltipEnabled="False"-->
+<!--ItemTemplate="{StaticResource PairTemplate}"-->
+
+<!--ExpanderStyle="{StaticResource ExpanderStyle1}"-->
+<!--Height="650"-->
+
+
+
+<!--    MinHeight="160"  Height="550" -->
+
+<!---->
+    <!--PreviewDragStarted="RadTreeView_PreviewDragStarted"
+										   PreviewDragEnded="RadTreeView_PreviewDragEnded"-->
+
+<!--<controls:TabControl x:Name="tree_findTabControl" SelectionChanged="tree_findTabControl_SelectionChanged"
+	    				 VerticalAlignment="Stretch"
+						 HorizontalAlignment="Stretch" >
+            <controls:TabItem Header="Дерево объектов" x:Name="treeTabItem">
+                <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <telerikNavigation:RadToolBar  Grid.Row="3"  x:Name="mainToolBar"  >
+                        <telerikNavigation:RadToolBarSeparator />
+                        <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"  />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btnRefreshTree" Click="btnRefreshTree_Click" Padding="0,0,0,0"
+                                    Grid.Row="1" Width="28" HorizontalAlignment="Left" Grid.Column="0" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="20" Height="20" Source="../ToolBar/Images/redo.png"
+						              ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.TreeControlTooltip, Mode=OneWay}" />
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnCopy" Click="btnCopy_Click" Width="34" HorizontalAlignment="Right" 
+                        Grid.Column="2" Visibility="Collapsed">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="16" Height="16" Source="../ToolBar/Images/copy.png"
+						   ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.TreeControlTooltipCopy, Mode=OneWay}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </telerikNavigation:RadToolBar>
+                    <Border BorderBrush="#FFFFFFFF" 
+				                    CornerRadius="1"
+				                    BorderThickness="1"
+				                    Grid.Row="4" 
+				                    Background="#FFFFFFFF" x:Name="brdTreeView">
+                        <ScrollViewer x:Name="treeDataScroll" 
+                                              VerticalScrollBarVisibility="Auto" 
+                                              HorizontalScrollBarVisibility="Auto"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Stretch">
+
+
+                            <StackPanel x:Name="passportHolder"	Orientation="Vertical">
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </controls:TabItem>
+            <controls:TabItem Header="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.TreeControlTabItem, Mode=OneWay}" 
+                              x:Name="gridTabItem" >
+                <Border>
+                    <StackPanel  VerticalAlignment="Top">
+                        <telerik:RadGridView x:Name="grid"
+                                 Margin="0,0,10,0"
+                                 Grid.Column="1"
+                                 HorizontalAlignment="Stretch"
+                                 IsSynchronizedWithCurrentItem="True"
+                                 AutoGenerateColumns="False"
+                                 IsReadOnly="True"
+                                 ShowColumnHeaders="True"
+                                 MinWidth="160"
+                                 ShowGroupPanel="False"  
+                                 CanUserInsertRows="False" 
+                                 RowIndicatorVisibility="Visible" 
+                                 IsFilteringAllowed="True" 
+                                 ColumnWidth="*">
+                            <telerik:RadGridView.Columns>
+                                <telerik:GridViewColumn  Width="40" >
+                                    <telerik:GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button x:Name="buLookAllTable"
+                                    Margin="2"
+                                    Width="20"
+                                    Height="20"
+                                    Click="buLookAllTable_Click" Padding="0,0,0,0" >
+                                                <Button.Content>
+                                                    <Image Width="20" Height="20" Source="../ToolBar/Images/ok.png" />
+                                                </Button.Content>
+                                            </Button>
+                                        </DataTemplate>
+                                    </telerik:GridViewColumn.CellTemplate>
+                                </telerik:GridViewColumn>
+                                <telerik:GridViewDataColumn UniqueName="KEYENTITY" Header="KEYENTITY" IsVisible="False"  />
+                                <telerik:GridViewDataColumn UniqueName="VALUEENTITY" Header="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.gridAllObj, Mode=OneWay}"  />
+
+                            </telerik:RadGridView.Columns>
+                        </telerik:RadGridView>
+                    </StackPanel>
+                </Border>
+            </controls:TabItem>
+        </controls:TabControl>-->
+
+<!--<Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>-->
+<!--<telerikNavigation:RadToolBar  Grid.Row="3"  x:Name="mainToolBar"  >
+                        <telerikNavigation:RadToolBarSeparator />
+                        <Grid  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"  />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btnRefreshTree" Click="btnRefreshTree_Click" Padding="0,0,0,0"
+                                    Grid.Row="1" Width="28" HorizontalAlignment="Left" Grid.Column="0" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="20" Height="20" Source="../ToolBar/Images/redo.png"
+						              ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.TreeControlTooltip, Mode=OneWay}" />
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="btnCopy" Click="btnCopy_Click" Width="34" HorizontalAlignment="Right" 
+                        Grid.Column="2" Visibility="Collapsed">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="16" Height="16" Source="../ToolBar/Images/copy.png"
+						   ToolTipService.ToolTip="{Binding Source={StaticResource ResProvider}, Path=ProjectResources.TreeControlTooltipCopy, Mode=OneWay}" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </telerikNavigation:RadToolBar>-->
+					--------------
+
+					//private void RbSearch_OnClick(object sender, RoutedEventArgs e)
+//{
+
+
+//    foreach (var item in gridObjType.Items)
+//    {
+//        if (item is DataEntityList)
+//        {
+//            var gp = item as DataEntityList;
+//            if (string.Equals(gp.VALUEENTITY, textBoxFilterValue.Text))
+//            {
+//                gridObjType.SelectedItem = item;
+//                gridObjType.ScrollIntoView(item);
+//            }
+//        }
+//    }
+
+//    this.gridObjType.ScrollIntoViewAsync(this.gridObjType.Items[this.gridObjType.Items.Count - 1], //the row
+//                          this.gridObjType.Columns[this.gridObjType.Columns.Count - 1], //the column
+//                          new Action<FrameworkElement>((f) =>
+//                          {
+//                              (f as GridViewRow).IsSelected = true; // the callback method; if it is not necessary, you may set that parameter to null;
+//                          }));
+
+
+//}
+
+//void OKButtonDelete(object sender, RoutedEventArgs e)
+//       {
+//           _popupWindowDelete.OKButtonDelete.Click -= OKButtonDelete;
+
+//           if (_popupWindowDelete.DialogResult == true)
+//           {
+//               //передаем ключ парента
+//               PassportModel.DeletePassport("123");
+
+//           }
+//       }
+//меленькое укороченное дерево по ключу объекта
+//void ReturnTreeOnObjKeyCompleted(object sender, ReturnTreeOnObjKeyCompletedEventArgs e)
+//       {
+//           var res = e.Result;
+//           if (res.IsValid)
+//           {
+//               Source = new List<ObjOnTree>();
+//               if (e.Result.DataTreeViewOnObjkeyList.Count > 0)
+//               {
+//                   Collection<DataTreeViewOnObjkeyItems> ttt = e.Result.DataTreeViewOnObjkeyList;
+
+//                   FillSource("0", ttt);
+
+//                   var template =
+//                       this.Resources["PairTemplateObjTree"] as Telerik.Windows.Controls.HierarchicalDataTemplate;
+//                   treeView.ItemTemplate = template;
+
+
+//                   var templateStyle = this.Resources["myItemContainerStyle"] as System.Windows.Style;
+//                   treeView.ItemContainerStyle = templateStyle;
+//                   treeView.ItemsSource = Source;
+//                   treeView.IsSingleExpandPath = true;
+//                   //treeView.IsExpandOnSingleClickEnabled = true;
+
+//               }
+
+
+//           }
+//           else
+//           {
+//               MainModel.Report("Дерево объектов err = " + res.ErrorMessage); // Выводим сообщение об ошибке
+//           }
+
+
+//       }
+
+//private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
+//{
+//    tree_findTabControl.Height = Math.Max(300, this.ActualHeight - 500); 
+//    //treeDataScroll.Height = this.ActualHeight ;
+//    //string ii = this.ActualHeight.ToString();
+//    //treeDataScroll.Height = Math.Max(300, this.ActualHeight - 150);
+//    //by Gaitov
+//    //Получаем высоту родительского окна и отступаем 115px от его верха.
+//    double parentHeight = MainView._height - 115;
+//    if (parentHeight > 0)
+//    {
+//        brdTreeView.MaxHeight = parentHeight;
+//        //treeDataScroll.Height = parentHeight;
+//    }
+//    //treeDataScroll.Height = Math.Max(MainView._height - 115, this.ActualHeight - 200);
+//}
+
+//by Gaitov
+//Попытка изменить размер данного UserControl(а) при изменении размера родительского окна
+//        public void ResizeFromMain(double parentHeight)
+//        {
+//            //this.Height = parentHeight - 115;
+//        }
+
+////var targetDropbeginItem = e.DraggedItems[0] as Pair;
+
+
+//               Pair cc = targetDropbeginItem as Pair;
+//               string keyDragBegin = cc.Key;
+
+//               string[] arrBegin = keyDragBegin.Split('z');
+//               string keyDragBegin1 = arrBegin[1];
+
+//               if (!string.IsNullOrEmpty(arrBegin[3]))
+//               {
+
+//                   if (targetDropItem != null)
+//                   {
+//                       Pair c = targetDropItem.Item as Pair;
+//                       string keyDragEnded = c.Key;
+//                       string[] arrEnd = keyDragEnded.Split('z');
+//                       if (!string.IsNullOrEmpty(arrEnd[3]))
+//                       {
+
+//                           string keyDragEnd = arrEnd[1];
+
+//                           //(e.Source as RadTreeViewItem).Background = new SolidColorBrush(Colors.Red);
+//                           proxy = new ServiceDataClient();
+//                           proxy.UpdateParentCompleted += proxy_UpdateParentCompleted;
+//                           proxy.UpdateParentAsync(keyDragStart, arrEnd[1]);
+
+//                           e.Handled = true;
+
+//                       }
+//                       else
+//                       {
+//                           string keyDragEnd = arrEnd[1];
+//                           (e.Source as RadTreeViewItem).Background = new SolidColorBrush(Colors.Red);
+//                           proxy = new ServiceDataClient();
+//                           proxy.UpdateParentCompleted += proxy_UpdateParentCompleted;
+//                           proxy.UpdateParentAsync(keyDragStart, keyDragEnd);
+//                           e.Handled = true;
+
+//                       }
+//                   }
+
+//               }
+//               else
+//               {
+//                   e.Handled = true;
+//               }
+
+//private void RadTreeView_DragEnded(object sender, RadTreeViewDragEndedEventArgs e)
+//{
+//    if (parentOnChald == "1")
+//    {
+
+
+//        //// Get the drop position.
+//        //DropPosition dropPosition = e.DropPosition;
+
+//        //RadTreeViewItem targetDropItem = e.TargetDropItem;
+
+
+
+
+//    }
+//    e.Handled = true;
+
+//}
+//private Collection<RadTreeViewItem> GetAllItemContainers(Telerik.Windows.Controls.ItemsControl itemsControl)
+//{
+//    Collection<RadTreeViewItem> allItems = new Collection<RadTreeViewItem>();
+//    for (int i = 1; i < itemsControl.Items.Count; i++)
+//    {
+//        // try to get the item Container  
+//        object iii = itemsControl.ItemContainerGenerator.ContainerFromIndex(i);
+//        RadTreeViewItem childItemContainer = itemsControl.ItemContainerGenerator.ContainerFromIndex(i) as RadTreeViewItem;
+//        // the item container maybe null if it is still not generated from the runtime  
+//        if (childItemContainer != null)
+//        {
+//            allItems.Add(childItemContainer);
+//            Collection<RadTreeViewItem> childItems = GetAllItemContainers(childItemContainer);
+//            foreach (RadTreeViewItem childItem in childItems)
+//            {
+//                allItems.Add(childItem);
+//            }
+//        }
+//    }
+//    return allItems;
+//}
+//if ("b".Equals(arr[3]))
+//{
+//    fw = FontWeights.Bold;
+//}
+//private void OnDropQuery(object sender, DragDropQueryEventArgs e)
+//     {
+
+//var destination = e.Options.Destination as RadTreeViewItem;
+//var cue = e.Options.DragCue as TreeViewDragCue;
+//// Do not allow dropping inside items which start with "B", only handle cases
+//// where a drop is currently allowed.
+//if (destination != null
+//    && e.Options.Status == DragStatus.DropDestinationQuery
+//    //&& e.QueryResult == true
+//    && destination.DropPosition == DropPosition.Inside)
+////&& (destination.Item as MyViewModel).Title.StartsWith("B"))
+//{
+//    var kk = destination.Item as Pair;
+
+
+//    string keyDragEnded = kk.Key;
+//    string[] arrEnd = keyDragEnded.Split('z');
+
+//    if (!string.IsNullOrEmpty(arrEnd[3]))
+//    {
+//        string keyDragEnded1 = arrEnd[1];
+//        cue.DragActionContent = "Нельзя перенести";
+//        e.Handled = true;
+//        e.QueryResult = false;
+//    }
+//    else
+//    {
+
+//        // e.Handled = true;
+//        // e.QueryResult = false;
+//        // We only need to give a reason:
+//        cue.DragActionContent = "Ок";
+
+
+//    }
+
+
+//    // Debying a drop will set the cue.IsDropPossible = false
+
+//}
+//   }
+//private void RadTreeView_PreviewDragStarted(object sender, RadTreeViewDragEventArgs e)
+//        {
+//            if (_rootKey == "3")
+//            {
+//                if (e.DraggedItems.Count > 0)
+//                {
+
+//                    //RadTreeView targetDropbeginItem = e.DraggedItems[0] as RadTreeView;
+//                    var targetDropbeginItem = e.DraggedItems[0] as Pair;
+
+//                    Pair cc = targetDropbeginItem as Pair;
+//                    string keyDragBegin = cc.Key;
+
+//                    string[] arrBegin = keyDragBegin.Split('z');
+//                    string keyDragBegin1 = arrBegin[1];
+
+//                    if (!string.IsNullOrEmpty(arrBegin[3]))
+//                    {
+//                        keyDragStart = arrBegin[1];
+//                    }
+//                    else
+//                    {
+//                        e.Handled = true;
+//                    }
+//                }
+//            }
+//        }
+//void ItemContainerGenerator_StatusChanged_1(object sender, EventArgs e)
+//        {
+
+//            for (int i = 0; i < currentItem.Items.Count; i++)
+//            {
+//                RadTreeViewItem childItemContainer = currentItem.ItemContainerGenerator.ContainerFromIndex(i) as RadTreeViewItem;
+//                if (childItemContainer != null && childItemContainer.Items.Count > 0)
+//                {
+//                    childItemContainer.IsExpanded = true;
+//                    if (childItemContainer.ItemContainerGenerator.Status != GeneratorStatus.ContainersGenerated)
+//                    {
+//                        childItemContainer.ItemContainerGenerator.StatusChanged += ItemContainerGenerator_StatusChanged_1;
+//                    }
+//                    else
+//                    {
+//                        string combinedKey = ((Pair)currentItem.Items[i]).Key;
+//                        arr = combinedKey.Split('z');
+//                        if (arr.Length >= 4)
+//                            if (!string.IsNullOrEmpty(arr[3]))
+//                            {
+//                                if (keyPassportOnGrid == arr[1])
+//                                {
+
+//                                    currentItem = childItemContainer;
+//                                    Pair c = currentItem.Item as Pair;
+//                                    if (c != null)
+//                                    {
+//                                        currentItem.IsSelected = true;
+//                                        currentItem.Focus();
+//                                        currentItem.FontWeight = FontWeights.Bold;
+//                                        proxy = new ServiceDataClient();
+//                                        proxy.GetNextNodeCompleted += proxy_GetNextNodeCompleted;
+//                                        proxy.GetNextNodeAsync(c.Key, _rootKey);
+//                                        break;
+//                                    }
+
+//                                }
+//                            }
+//                    }
+
+//                }
+//            }
+
+
+//#region Клик в таблице показывается списочная форма
+//        private void buLookAllTable_Click(object sender, RoutedEventArgs e)
+//        {
+//            string artifactId = GridHelper.GetKeyByClick(sender, "KEYENTITY", gridObjType);
+//            //Model.NeedOpenPassport = new PassportOpenParam() { EntityKey = artifactId, ParentKey = "-1", IsShowAllField = true, IsShowTreeOnFindkey = true };
+//            Model.NeedOpenPassport = new PassportOpenParam() { EntityKey = artifactId, ParentKey = "-1", IsShowAllField = true, IsShowTreeOnFindkey = true };
+
+
+//        }
+//        #endregion
+
+
+
+//if (currentItem.ItemContainerGenerator.Status == GeneratorStatus.ContainersGenerated)
+//{
+//    currentItem.ItemContainerGenerator.StatusChanged -= ItemContainerGenerator_StatusChanged;
+//    for (int i = 0; i < currentItem.Items.Count; i++)
+//    {
+//        string combinedKey = ((Pair)currentItem.Items[i]).Key;
+//        arr = combinedKey.Split('z');
+//        if (arr.Length >= 4)
+//            if (!string.IsNullOrEmpty(arr[3]))
+//            {
+//                if (keyPassportOnGrid == arr[1])
+//                {
+
+//                    RadTreeViewItem childItemContainer = currentItem.ItemContainerGenerator.ContainerFromIndex(i) as RadTreeViewItem;
+
+//                    currentItem = childItemContainer;
+//                    Pair c = currentItem.Item as Pair;
+//                    if (c != null)
+//                    {
+//                        currentItem.IsSelected = true;
+//                        currentItem.Focus();
+//                        currentItem.FontWeight = FontWeights.Bold;
+//                        proxy = new ServiceDataClient();
+//                        proxy.GetNextNodeCompleted += proxy_GetNextNodeCompleted;
+//                        proxy.GetNextNodeAsync(c.Key, _rootKey);
+//                        break;
+//                    }
+
+//                }
+//            }
+//    }
+
+//}
+//}
+
+//private void RbSearch_OnClick(object sender, RoutedEventArgs e)
+//{
+//    string selectString =
+//    "Name Like '%" + textBoxFilterValue.Text.Trim() + "%'";
+
+//    for (int i = 0; i < gridObjType.r.RowCount; i++)
+
+
+//   //// gridObjType..GridData.Rows
+
+//   ////GridViewDataRows 
+//   // DataRow allRows =
+//   //     ((DataTable)gridObjType.ItemsSource).Rows;
+
+//   // DataRow[] searchedRows =
+//   //     ((DataTable)myDataGridView.DataSource).
+//   //         Select(selectString);
+
+//   // int rowIndex = allRows.IndexOf(searchedRows[0]);
+
+//   // myDataGridView.CurrentCell =
+//   //     myDataGridView[0, rowIndex];  
+//}
+
+
+////passportdetal
+
+          //if (tab.Name.Equals("photoTabItem", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    var image = editButton.Content as Image;
+            //    Uri uri = new Uri("/Passpot;component/Images/add_24_a.png", UriKind.Relative);
+            //    image.Source = new BitmapImage(uri);
+            //    editButton.IsEnabled = true;
+            //    mediaType = 1;
+            //    photoBrowserControl.InitPage(Model.PassportKey, forceLoad, mediaType);
+
+            //}
+            //else
+            //    if (tab.Name.Equals("shemaTabItem", StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        var image = editButton.Content as Image;
+            //        Uri uri = new Uri("/Passpot;component/Images/add_24_a.png", UriKind.Relative);
+            //        image.Source = new BitmapImage(uri);
+            //        editButton.IsEnabled = true;
+            //        mediaType = 2;
+            //        shemaBrowserControl.InitPage(Model.PassportKey, forceLoad, mediaType);
+            //    }
+            //    else
+            //        if (tab.Name.Equals("documentTabItem", StringComparison.OrdinalIgnoreCase))
+            //        {
+            //            var image = editButton.Content as Image;
+            //            Uri uri = new Uri("/Passpot;component/Images/add_24_a.png", UriKind.Relative);
+            //            image.Source = new BitmapImage(uri);
+            //            editButton.IsEnabled = true;
+            //            mediaType = 3;
+            //            documentBrowserControl.InitPage(Model.PassportKey, forceLoad, mediaType);
+            //        }
+            //        else
+            //            if (tab.Name.Equals("factoryPassportTabItem", StringComparison.OrdinalIgnoreCase))
+            //            {
+            //                var image = editButton.Content as Image;
+            //                Uri uri = new Uri("/Passpot;component/Images/add_24_a.png", UriKind.Relative);
+            //                image.Source = new BitmapImage(uri);
+            //                editButton.IsEnabled = true;
+            //                mediaType = 4;
+            //                factoryPassportBrowserControl.InitPage(Model.PassportKey, forceLoad, mediaType);
+            //            }
+            //            else
+            //                if (tab.Name.Equals("allTabItem", StringComparison.OrdinalIgnoreCase))
+            //                {
+            //                    var image = editButton.Content as Image;
+            //                    Uri uri = new Uri("/Passpot;component/Images/add_24_a.png", UriKind.Relative);
+            //                    image.Source = new BitmapImage(uri);
+            //                    editButton.IsEnabled = true;
+            //                    mediaType = 0;
+            //                    allBrowserControl.InitPage(Model.PassportKey, forceLoad, mediaType);
+            //                    //allFoto.Children.Clear();
+            //                    //allFoto.Children.Add(allBrowserControl);
+
+            //                }
+
+  //Временная кнопка!! - убрать!
+        private void buExportTPA_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (Model.EntityKey == "15936672")
+            {
+                string path = HtmlPage.Document.DocumentUri.AbsoluteUri;
+                int indexSlash = path.LastIndexOf('/');
+                path = path.Substring(0, indexSlash);
+                string uri = path + "/ShablonExport/ExportFromTPA.aspx?passportIDParent=" + Model.KeyParentInfo;
+                HtmlPage.Window.Navigate(new Uri(uri), "_blank");
+            }
+            else
+            {
+                if (Model.EntityKey == "15936870")//40873
+                {
+                    string path = HtmlPage.Document.DocumentUri.AbsoluteUri;
+                    int indexSlash = path.LastIndexOf('/');
+                    path = path.Substring(0, indexSlash);
+                    string uri = path + "/ShablonExport/ExportFromUKZ.aspx?passportIDParent=" + Model.PassportKey; //.KeyParentInfo;
+                    HtmlPage.Window.Navigate(new Uri(uri), "_blank");
+                }
+            }
+            
+
+         
+            
+           // string uri = "http://localhost:26313/BaseApp/Modules/Passport/ShablonExport/ExportFromTPA.aspx?passportIDParent=" + Model.KeyParentInfo;
+          //  HtmlPage.Window.Navigate(new Uri(uri), "_blank");
+            //HtmlPage.Window.Navigate(new Uri(uri));
+            
+        }
+
+        private void pasportDataScroll_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+         
+               //Model.MainModel.Report("e.Handled = " + e.Handled.ToString());
+               //Model.MainModel.Report(" Delta = " + e.Delta.ToString());
+               //Model.MainModel.Report("OriginalSource  = " + e.OriginalSource.ToString());
+         
+            
+        }

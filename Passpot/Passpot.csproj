@@ -1,0 +1,856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76E4898A-4858-4E31-84AD-721EFA8D1A19}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Passpot</RootNamespace>
+    <AssemblyName>Passpot</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en;ru-RU</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Passpot.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Passpot.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FJ.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="system" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\System.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Windows.Controls.Data.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>Bin\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Utils, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Xml.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Transparent, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Themes.Transparent.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8, Version=2014.1.224.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Windows.Themes.Windows8.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Business\CustomFilterBehavior.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\CustomLocalizationManager.cs" />
+    <Compile Include="Business\DataTable\ButtonOnTollbar.cs" />
+    <Compile Include="Business\ChildGridData.cs" />
+    <Compile Include="Business\CustomFilterDescriptor.cs" />
+    <Compile Include="Business\EventParam.cs" />
+    <Compile Include="Business\ExportingModel.cs" />
+    <Compile Include="Business\JsonHelper.cs" />
+    <Compile Include="Business\ListRelationObj.cs" />
+    <Compile Include="Business\MyViewModelObjByType.cs" />
+    <Compile Include="Business\ObjByType.cs" />
+    <Compile Include="Business\PasswordModel.cs" />
+    <Compile Include="Business\TreeOpenParam.cs" />
+    <Compile Include="Business\XmlHelper.cs" />
+    <Compile Include="components\CustomTextBlock.cs" />
+    <Compile Include="Controls\ChildWindowMedia.xaml.cs">
+      <DependentUpon>ChildWindowMedia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseDataControl.xaml.cs">
+      <DependentUpon>BaseDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LinkControlInVisible.xaml.cs">
+      <DependentUpon>LinkControlInVisible.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\AllDataForm.cs" />
+    <Compile Include="Controls\Priv\ContextMenuBehavior.cs" />
+    <Compile Include="Controls\Priv\HelperPriv.cs" />
+    <Compile Include="Controls\Priv\PrivChildModel.cs" />
+    <Compile Include="Controls\Priv\PrivInGrid.xaml.cs">
+      <DependentUpon>PrivInGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\SavePriv.cs" />
+    <Compile Include="Business\SaveVkladka.cs" />
+    <Compile Include="Business\ScriptableClass.cs" />
+    <Compile Include="Business\SenderWindow.cs" />
+    <Compile Include="Business\UpdateSourceTriggerHelper.cs" />
+    <Compile Include="Business\ValidationRule.cs" />
+    <Compile Include="Business\ValidPassword.cs" />
+    <Compile Include="code\SessionEnd.cs" />
+    <Compile Include="components\ExtendedGridSplitter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="components\ExtendedSplitter.cs" />
+    <Compile Include="Controls\ChildWindowAttantion.xaml.cs">
+      <DependentUpon>ChildWindowAttantion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindowHistoriPassport.xaml.cs">
+      <DependentUpon>ChildWindowHistoriPassport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Business\ConnectGridData.cs" />
+    <Compile Include="Business\ConnectModel.cs" />
+    <Compile Include="Business\DataTable\Data.cs" />
+    <Compile Include="Business\DataTable\Dynamic.cs" />
+    <Compile Include="Controls\TreeControlView.xaml.cs">
+      <DependentUpon>TreeControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IGridData.cs" />
+    <Compile Include="Business\Interfaces.cs" />
+    <Compile Include="Business\LinkModel.cs" />
+    <Compile Include="Model\MainModel.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Business\ObjOnTree.cs" />
+    <Compile Include="Model\PassportModel.cs" />
+    <Compile Include="Model\PassportDetailModel.cs" />
+    <Compile Include="Business\NumberModel.cs" />
+    <Compile Include="Business\PassportOpenParam.cs" />
+    <Compile Include="Business\TextModel.cs" />
+    <Compile Include="code\ByteConverter.cs" />
+    <Compile Include="code\FileUpload.cs" />
+    <Compile Include="code\ScrollHelper.cs" />
+    <Compile Include="code\UploadProgressChangedEventArgs.cs" />
+    <Compile Include="Controls\ButtonControl.xaml.cs">
+      <DependentUpon>ButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonInToolBar.xaml.cs">
+      <DependentUpon>ButtonInToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckBoxControl.xaml.cs">
+      <DependentUpon>CheckBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindow.xaml.cs">
+      <DependentUpon>ChildWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindowDelete.xaml.cs">
+      <DependentUpon>ChildWindowDelete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindowDict.xaml.cs">
+      <DependentUpon>ChildWindowDict.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindowLinkObj.xaml.cs">
+      <DependentUpon>ChildWindowLinkObj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindowLookAllLink.xaml.cs">
+      <DependentUpon>ChildWindowLookAllLink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\ChildWindowNewPriv.xaml.cs">
+      <DependentUpon>ChildWindowNewPriv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindowRelationObj.xaml.cs">
+      <DependentUpon>ChildWindowRelationObj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBoxControl.xaml.cs">
+      <DependentUpon>ComboBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataEditControlGroop.xaml.cs">
+      <DependentUpon>DataEditControlGroop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataListControl.xaml.cs">
+      <DependentUpon>DataListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataPickerControl.xaml.cs">
+      <DependentUpon>DataPickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataTimePickerControl.xaml.cs">
+      <DependentUpon>DataTimePickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileUploadControl.xaml.cs">
+      <DependentUpon>FileUploadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileUploadRowControl.xaml.cs">
+      <DependentUpon>FileUploadRowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FindKeyOnTree.cs" />
+    <Compile Include="Controls\GridControl.xaml.cs">
+      <DependentUpon>GridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Grid\GridHelper.cs" />
+    <Compile Include="Controls\Grid\GridToOffic.cs" />
+    <Compile Include="Controls\HashControl.xaml.cs">
+      <DependentUpon>HashControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LinkControlEdit.xaml.cs">
+      <DependentUpon>LinkControlEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListBoxControl.xaml.cs">
+      <DependentUpon>ListBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NumberControl.xaml.cs">
+      <DependentUpon>NumberControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlusPair.cs" />
+    <Compile Include="Controls\Priv\NavigationPriv.cs" />
+    <Compile Include="Controls\Priv\Priv1.xaml.cs">
+      <DependentUpon>Priv1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv10.xaml.cs">
+      <DependentUpon>Priv10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv2.xaml.cs">
+      <DependentUpon>Priv2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv3.xaml.cs">
+      <DependentUpon>Priv3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv4.xaml.cs">
+      <DependentUpon>Priv4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv5.xaml.cs">
+      <DependentUpon>Priv5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv6.xaml.cs">
+      <DependentUpon>Priv6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv7.xaml.cs">
+      <DependentUpon>Priv7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv8.xaml.cs">
+      <DependentUpon>Priv8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\Priv9.xaml.cs">
+      <DependentUpon>Priv9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\PrivLinkControl.xaml.cs">
+      <DependentUpon>PrivLinkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Priv\PrivNewControlTexBlock.xaml.cs">
+      <DependentUpon>PrivNewControlTexBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectParentDialog.xaml.cs">
+      <DependentUpon>SelectParentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\test11.xaml.cs">
+      <DependentUpon>test11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TestControl.xaml.cs">
+      <DependentUpon>TestControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBlockAsButtonControl.xaml.cs">
+      <DependentUpon>TextBlockAsButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBlockControl.xaml.cs">
+      <DependentUpon>TextBlockControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBoxAndButton.xaml.cs">
+      <DependentUpon>TextBoxAndButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextControl.xaml.cs">
+      <DependentUpon>TextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextLabelControl.xaml.cs">
+      <DependentUpon>TextLabelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeControl.xaml.cs">
+      <DependentUpon>TreeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeControl_Only.xaml.cs">
+      <DependentUpon>TreeControl_Only.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeControl_OnlyAdd.cs" />
+    <Compile Include="Business\WatermarkTextBox.cs" />
+    <Compile Include="MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TreeModel.cs" />
+    <Compile Include="PassportView.xaml.cs">
+      <DependentUpon>PassportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PassportDetailView.xaml.cs">
+      <DependentUpon>PassportDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\ChildWindowMedia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindowAttantion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindowHistoriPassport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ButtonInToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CheckBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ChildWindow.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ChildWindowDelete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ChildWindowDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ChildWindowLinkObj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindowLookAllLink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BaseDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LinkControlInVisible.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\ChildWindowNewPriv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindowRelationObj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ComboBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DataEditControlGroop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DataListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataPickerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DataTimePickerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FileUploadControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FileUploadRowControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\GridControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HashControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LinkControlEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ListBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NumberControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Priv\Priv1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\Priv9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\PrivInGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\PrivLinkControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Priv\PrivNewControlTexBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SelectParentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\test11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextBlockAsButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextBlockControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TextBoxAndButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TextControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TextLabelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TreeControl_Only.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PassportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PassportDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\PasswordBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadButtonAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ChildWindowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadDataPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadGridViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadRadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\RadTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ToolKitBusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Themes\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Themes\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Themes\mediard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GridSplitter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Splitter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Themes\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\save_24_a.png" />
+    <Resource Include="Images\save_24_d.png" />
+    <Resource Include="Images\od-ukz_24_a.png" />
+    <Content Include="Old_Code\Old_Code.txt" />
+    <Resource Include="Images\format-print_24_a.png" />
+    <Resource Include="Images\delete_24_a.png" />
+    <Resource Include="Images\delete_24_d.png" />
+    <Resource Include="Images\add_24_a.png" />
+    <Resource Include="Images\add_24_d.png" />
+    <Resource Include="Images\history_24_a.png" />
+    <Resource Include="Images\doc-export_24_a.png" />
+    <Resource Include="Images\xls-export_24_a.png" />
+    <Resource Include="Images\cancel_24_a.png" />
+    <Resource Include="Images\cancel_24_d.png" />
+    <Resource Include="Images\edit_24_a.png" />
+    <Resource Include="Images\edit_24_d.png" />
+    <Resource Include="Images\ok_24_a.png" />
+    <Resource Include="Images\ok_24_d.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\ok.png" />
+    <Resource Include="Images\orange_folder_new.png" />
+    <None Include="Design\projectGuides.guides" />
+    <None Include="Properties\AppManifest.xml" />
+    <Content Include="clientaccesspolicy.xml" />
+    <Content Include="Controls\Priv\Old_Priv.txt" />
+    <Content Include="crossdomain.xml" />
+    <Resource Include="Images\arrow-left2.png" />
+    <Resource Include="Images\arrow-right2.png" />
+    <Resource Include="Images\delete_1.png" />
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\filter_16.png" />
+    <Resource Include="Images\undo_24_a.png" />
+    <Resource Include="Images\undo_24_d.png" />
+    <Resource Include="Images\map.png" />
+    <Resource Include="Images\export_to_xml.png" />
+    <Resource Include="Images\import_from_xml.png" />
+    <Resource Include="Images\print_to_word.png" />
+    <Resource Include="Images\profile_24_a.png" />
+    <Resource Include="Images\ts.png" />
+    <Resource Include="Images\add_20_a.png" />
+    <Resource Include="Images\back_20_a.png" />
+    <Resource Include="Images\delete_20_a.png" />
+    <Resource Include="Images\next_20_a.png" />
+    <Resource Include="Images\smart_24_a.png" />
+    <Resource Include="Images\smart_24_d.png" />
+    <Resource Include="Images\left_24_a.png" />
+    <Resource Include="Images\right_24_a.png" />
+    <Resource Include="Images\show_24_a.png" />
+    <Resource Include="Images\add_20.png" />
+    <Resource Include="Images\delete_20.png" />
+    <Resource Include="Images\arrow.png" />
+    <Resource Include="Images\first-16.png" />
+    <Resource Include="Images\last-16.png" />
+    <Resource Include="Images\next-16.png" />
+    <Resource Include="Images\previous-16.png" />
+    <Resource Include="readme.txt" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Child\" />
+    <Folder Include="ToolBar\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Media\Media.csproj">
+      <Project>{e9705b40-a919-416d-9cce-d0a33d271243}</Project>
+      <Name>Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{9AD43982-8195-4AD6-AA0D-66052B254A3A}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

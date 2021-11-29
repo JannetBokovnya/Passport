@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="gridAllObj" xml:space="preserve">
+    <value>Название типа объекта</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Тест Привет!</value>
+  </data>
+  <data name="nameEntityObj" xml:space="preserve">
+    <value>Название объекта:</value>
+  </data>
+  <data name="checkDetal" xml:space="preserve">
+    <value>Показать детали</value>
+  </data>
+  <data name="GridViewClearFilter" xml:space="preserve">
+    <value>Очистить фильтр</value>
+  </data>
+  <data name="GridViewFilter" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="GridViewFilterAnd" xml:space="preserve">
+    <value>И</value>
+  </data>
+  <data name="GridViewFilterContains" xml:space="preserve">
+    <value>содержит</value>
+  </data>
+  <data name="GridViewFilterEndsWith" xml:space="preserve">
+    <value>заканчивая на</value>
+  </data>
+  <data name="GridViewFilterIsEqualTo" xml:space="preserve">
+    <value>равно</value>
+  </data>
+  <data name="GridViewFilterIsNotEqualTo" xml:space="preserve">
+    <value>не равно</value>
+  </data>
+  <data name="GridViewFilterSelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="GridViewFilterShowRowsWithValueThat" xml:space="preserve">
+    <value>Показать строки, где значение...</value>
+  </data>
+  <data name="GridViewFilterStartsWith" xml:space="preserve">
+    <value>начиная с</value>
+  </data>
+  <data name="GridViewGroupPanelText" xml:space="preserve">
+    <value>Перенесите колонку для группировки</value>
+  </data>
+  <data name="GridViewGroupPanelTopTextGrouped" xml:space="preserve">
+    <value>Сгруппировано по: </value>
+  </data>
+  <data name="CountFunctionGrid" xml:space="preserve">
+    <value>Всего:</value>
+  </data>
+  <data name="buTransit" xml:space="preserve">
+    <value>Вернуться</value>
+  </data>
+  <data name="cancelButtonPasport" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="childTabItem" xml:space="preserve">
+    <value>Дочерние объекты</value>
+  </data>
+  <data name="ChildWindowAttantion" xml:space="preserve">
+    <value>Внимание</value>
+  </data>
+  <data name="ChildWindowDictTitle" xml:space="preserve">
+    <value>Добавление, редактирование словарей</value>
+  </data>
+  <data name="ChildWindowHistoriPassportTitle" xml:space="preserve">
+    <value>Просмотр истории изменения в паспорте</value>
+  </data>
+  <data name="ControlDateTime" xml:space="preserve">
+    <value>Выбрать дату</value>
+  </data>
+  <data name="dataTabItem" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="documentTabItem" xml:space="preserve">
+    <value>Документы</value>
+  </data>
+  <data name="editButtonPasport" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="ExpanderAddNewMedia" xml:space="preserve">
+    <value>Добавить новый медиаматериал</value>
+  </data>
+  <data name="factoryPassportTabItem" xml:space="preserve">
+    <value>Заводской паспорт</value>
+  </data>
+  <data name="historiButton" xml:space="preserve">
+    <value>История изменения паспорта</value>
+  </data>
+  <data name="insertCurrentRecordDict" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="KEYDICT" xml:space="preserve">
+    <value>Ключ значения словаря</value>
+  </data>
+  <data name="mediaTabItem" xml:space="preserve">
+    <value>Медиаматериалы</value>
+  </data>
+  <data name="photoTabItem" xml:space="preserve">
+    <value>Фотографии</value>
+  </data>
+  <data name="saveButtonPasport" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="shemaTabItem" xml:space="preserve">
+    <value>Схемы</value>
+  </data>
+  <data name="TextBlockZnachDict" xml:space="preserve">
+    <value>Значение :</value>
+  </data>
+  <data name="textNameDict" xml:space="preserve">
+    <value>Словарь номер :</value>
+  </data>
+  <data name="ToolTipDeletePasport" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ToolTipExelPasport" xml:space="preserve">
+    <value>Сохранить в .xls</value>
+  </data>
+  <data name="ToolTipHelpPasport" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="ToolTipNewPasport" xml:space="preserve">
+    <value>Создать новый паспорт</value>
+  </data>
+  <data name="ToolTipWordPasport" xml:space="preserve">
+    <value>Сохранить в .doc</value>
+  </data>
+  <data name="VALUEDICT" xml:space="preserve">
+    <value>Значение словаря</value>
+  </data>
+  <data name="CancelButtonHistory" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="GridViewCFieldName" xml:space="preserve">
+    <value>Название атрибута</value>
+  </data>
+  <data name="GridViewColdval" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="GridViewCUser" xml:space="preserve">
+    <value>Автор изменений</value>
+  </data>
+  <data name="GridViewDoperationtime" xml:space="preserve">
+    <value>Дата/время</value>
+  </data>
+  <data name="TextBlockHistory" xml:space="preserve">
+    <value>Нет данных.</value>
+  </data>
+  <data name="ChildWindowLinkObjGridViewObjName" xml:space="preserve">
+    <value>Название экземпляра объекта связи</value>
+  </data>
+  <data name="ChildWindowLinkObjTitle" xml:space="preserve">
+    <value>Добавление связанного объекта</value>
+  </data>
+  <data name="PrivDolg" xml:space="preserve">
+    <value>Долгота,˚</value>
+  </data>
+  <data name="PrivGbBegin" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="PrivGbEnd" xml:space="preserve">
+    <value>Окончание</value>
+  </data>
+  <data name="PrivKm" xml:space="preserve">
+    <value>Километраж, м</value>
+  </data>
+  <data name="PrivKmGeod" xml:space="preserve">
+    <value>Км геод., м</value>
+  </data>
+  <data name="PrivKoord" xml:space="preserve">
+    <value>Координаты</value>
+  </data>
+  <data name="PrivRbLeft" xml:space="preserve">
+    <value>Cлева</value>
+  </data>
+  <data name="PrivRbRight" xml:space="preserve">
+    <value>Cправа</value>
+  </data>
+  <data name="PrivShirot" xml:space="preserve">
+    <value>Широта,˚</value>
+  </data>
+  <data name="PrivTbKm_ist" xml:space="preserve">
+    <value>Расстояние, м</value>
+  </data>
+  <data name="PrivTitle" xml:space="preserve">
+    <value>Привязка</value>
+  </data>
+  <data name="PrivTitleBoxN" xml:space="preserve">
+    <value>Нить</value>
+  </data>
+  <data name="PrivTxtKm_Raspol" xml:space="preserve">
+    <value>Расположение</value>
+  </data>
+  <data name="PtivTitleBoxM" xml:space="preserve">
+    <value>МГ</value>
+  </data>
+  <data name="DeleteRelationButtonToolTip" xml:space="preserve">
+    <value>Удалить связь</value>
+  </data>
+  <data name="DictDataFiltr" xml:space="preserve">
+    <value>&lt;Не определено&gt;</value>
+  </data>
+  <data name="GridControlColumn" xml:space="preserve">
+    <value>Показать</value>
+  </data>
+  <data name="GridRelationNameEntity" xml:space="preserve">
+    <value>Название типа объекта</value>
+  </data>
+  <data name="GridRelationNameObj" xml:space="preserve">
+    <value>Название экземпляра объекта связи</value>
+  </data>
+  <data name="LinkTableTitle" xml:space="preserve">
+    <value>Связи объекта</value>
+  </data>
+  <data name="NewRelationButtonToolTip" xml:space="preserve">
+    <value>Создать новую связь</value>
+  </data>
+  <data name="PrivTitleBoxErr" xml:space="preserve">
+    <value>Ошибка создания привязки!</value>
+  </data>
+  <data name="PrivTitleBoxErrField" xml:space="preserve">
+    <value>Не все поля заполнены!</value>
+  </data>
+  <data name="BusyContent" xml:space="preserve">
+    <value>Загрузка данных</value>
+  </data>
+  <data name="FileUploadAddFileButon" xml:space="preserve">
+    <value>Выбрать файл</value>
+  </data>
+  <data name="FileUploadClearButton" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="FileUploadComment" xml:space="preserve">
+    <value>Коментарий к файлу</value>
+  </data>
+  <data name="FileUploadLoadButton" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="FileUploadMessage" xml:space="preserve">
+    <value>одинаковое название файлов</value>
+  </data>
+  <data name="FileUploadNameFile" xml:space="preserve">
+    <value>Название файла:</value>
+  </data>
+  <data name="FileUploadProgress" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="FileUploadSize" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="FileUploadStatus" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="FileUploadTypeFile" xml:space="preserve">
+    <value>Тип файла:</value>
+  </data>
+  <data name="GridControlAddRelationButtonToolTip" xml:space="preserve">
+    <value>Добавить объект связи</value>
+  </data>
+  <data name="GridControlDeleteRelationButtonToolTip" xml:space="preserve">
+    <value>Удалить связь объекта</value>
+  </data>
+  <data name="GridControlLinkObj" xml:space="preserve">
+    <value>Связи объекта</value>
+  </data>
+  <data name="GridControlMessage" xml:space="preserve">
+    <value>Не выбран в таблице объект удаления</value>
+  </data>
+  <data name="GridControlMessageDel" xml:space="preserve">
+    <value>Удалить связь  с объектом</value>
+  </data>
+  <data name="GridControlMessageTitle" xml:space="preserve">
+    <value>Подтверждение удаления</value>
+  </data>
+  <data name="HashControlTitleBox" xml:space="preserve">
+    <value>Повторить пароль</value>
+  </data>
+  <data name="PrivControl" xml:space="preserve">
+    <value>Привязка</value>
+  </data>
+  <data name="PrivControlDelete" xml:space="preserve">
+    <value>Удалить привязку?</value>
+  </data>
+  <data name="PrivControlLinkTableWindowTitle" xml:space="preserve">
+    <value>Привязка объекта</value>
+  </data>
+  <data name="TextNameDict2" xml:space="preserve">
+    <value>Название словаря</value>
+  </data>
+  <data name="TreeControlTabItem" xml:space="preserve">
+    <value>Список</value>
+  </data>
+  <data name="TreeControlTooltip" xml:space="preserve">
+    <value>Обновить дерево</value>
+  </data>
+  <data name="TreeControlTooltipCopy" xml:space="preserve">
+    <value>Копировать ветку дерева</value>
+  </data>
+  <data name="PassportChild" xml:space="preserve">
+    <value>Нет дочерних объектов</value>
+  </data>
+  <data name="PassportChildBuNuwChild" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="PassportChildTitleBox" xml:space="preserve">
+    <value>Удалить паспорт дочерних объектов вместе со связями?</value>
+  </data>
+  <data name="MediaDel" xml:space="preserve">
+    <value>Удалить медиаматериал?</value>
+  </data>
+  <data name="PassportViewAttantion" xml:space="preserve">
+    <value>Не выбран в таблице объект удаления.</value>
+  </data>
+  <data name="PassportViewNameEntityObj" xml:space="preserve">
+    <value>Все объекты</value>
+  </data>
+  <data name="PassportViewPopupWindow" xml:space="preserve">
+    <value>Удалить объект</value>
+  </data>
+  <data name="PassportViewPopupWindow1" xml:space="preserve">
+    <value>вместе со связями?</value>
+  </data>
+  <data name="NumberExeption" xml:space="preserve">
+    <value>Допустимы только  числа</value>
+  </data>
+  <data name="TreeControlTabItemTree" xml:space="preserve">
+    <value>Дерево</value>
+  </data>
+  <data name="PrintButtonToolbar" xml:space="preserve">
+    <value>Форматированная печать</value>
+  </data>
+  <data name="PrivSelectMg" xml:space="preserve">
+    <value>Выбрать МГ...</value>
+  </data>
+  <data name="exportGridDate" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="exportGridName" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="GridViewFilterDoesNotContain" xml:space="preserve">
+    <value>не содержит</value>
+  </data>
+  <data name="GridViewFilterIsContainedIn" xml:space="preserve">
+    <value>содержит в</value>
+  </data>
+  <data name="GridViewFilterIsNotContainedIn" xml:space="preserve">
+    <value>не содержит в</value>
+  </data>
+  <data name="GridViewFilterOr" xml:space="preserve">
+    <value>Или</value>
+  </data>
+  <data name="AllTreeControlTooltip" xml:space="preserve">
+    <value>Все объекты</value>
+  </data>
+  <data name="BackTreeControlTooltip" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="ForwardTreeControlTooltip" xml:space="preserve">
+    <value>Вперед</value>
+  </data>
+  <data name="LinkControlEditAdd" xml:space="preserve">
+    <value>Добавьте горизонтальную связь...</value>
+  </data>
+  <data name="ChildWindowLinkObj" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="LinkAll" xml:space="preserve">
+    <value>Отобразить все связанные элементы...</value>
+  </data>
+  <data name="LinkAllHide" xml:space="preserve">
+    <value>Cкрыть полный перечень связанных элементов...</value>
+  </data>
+  <data name="LinkButton" xml:space="preserve">
+    <value>Список паспортов</value>
+  </data>
+  <data name="ChildLinkObjAll" xml:space="preserve">
+    <value>Перечень связанных объектов</value>
+  </data>
+  <data name="Priv1" xml:space="preserve">
+    <value>Выберите протяженный объект...</value>
+  </data>
+  <data name="Priv2" xml:space="preserve">
+    <value>Введите геодезический километраж...</value>
+  </data>
+  <data name="Priv3" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="Priv4" xml:space="preserve">
+    <value>Введите широту WGS...</value>
+  </data>
+  <data name="Priv1P1" xml:space="preserve">
+    <value>Точечная привязка объекта</value>
+  </data>
+  <data name="Priv1P2" xml:space="preserve">
+    <value>на оси собственного газопровода</value>
+  </data>
+  <data name="Priv7" xml:space="preserve">
+    <value>(широта и долгота)</value>
+  </data>
+  <data name="Priv8" xml:space="preserve">
+    <value>ход газа</value>
+  </data>
+  <data name="Priv9" xml:space="preserve">
+    <value>МГ, Нитка</value>
+  </data>
+  <data name="PrivDolg2" xml:space="preserve">
+    <value>Введите долготу WGS...</value>
+  </data>
+  <data name="PrivDistLeft" xml:space="preserve">
+    <value>слева</value>
+  </data>
+  <data name="PrivDistRigth" xml:space="preserve">
+    <value>справа</value>
+  </data>
+  <data name="PrivKmA" xml:space="preserve">
+    <value>Километраж А, м</value>
+  </data>
+  <data name="PrivKmB" xml:space="preserve">
+    <value>Километраж B, м</value>
+  </data>
+  <data name="PrivDistTxt" xml:space="preserve">
+    <value>Введите расстояние до газопровода...</value>
+  </data>
+  <data name="PrivKmATxt" xml:space="preserve">
+    <value>Введите километраж начала объекта...</value>
+  </data>
+  <data name="PrivKmBTxt" xml:space="preserve">
+    <value>Введите километраж конца объекта...</value>
+  </data>
+  <data name="PrivLocation" xml:space="preserve">
+    <value>Расположение</value>
+  </data>
+  <data name="PrivShirotA" xml:space="preserve">
+    <value>Широта A,˚</value>
+  </data>
+  <data name="PrivShirotATxt" xml:space="preserve">
+    <value>Ведите начальную широту WGS...</value>
+  </data>
+  <data name="Priv2P2" xml:space="preserve">
+    <value>вне оси собственного газопровода</value>
+  </data>
+  <data name="Priv3P1" xml:space="preserve">
+    <value>Линейная привязка объекта</value>
+  </data>
+  <data name="PrivDolgA" xml:space="preserve">
+    <value>Долгота A,˚</value>
+  </data>
+  <data name="PrivDolgATxt" xml:space="preserve">
+    <value>Ведите начальную долготу WGS...</value>
+  </data>
+  <data name="PrivDolgB" xml:space="preserve">
+    <value>Долгота B,˚</value>
+  </data>
+  <data name="PrivDolgBTxt" xml:space="preserve">
+    <value>Ведите конечную долготу WGS...</value>
+  </data>
+  <data name="PrivShirot2" xml:space="preserve">
+    <value>Ведите широту WGS...</value>
+  </data>
+  <data name="PrivShirotB" xml:space="preserve">
+    <value>Широта B,˚</value>
+  </data>
+  <data name="PrivShirotBTxt" xml:space="preserve">
+    <value>Ведите конечную широту WGS...</value>
+  </data>
+  <data name="Priv5P2" xml:space="preserve">
+    <value>вне осей всех газопроводов коридора</value>
+  </data>
+  <data name="Priv9A" xml:space="preserve">
+    <value>МГ, Нитка 1</value>
+  </data>
+  <data name="Priv9B" xml:space="preserve">
+    <value>МГ, Нитка 2</value>
+  </data>
+  <data name="Priv9C" xml:space="preserve">
+    <value>МГ, Нитка N</value>
+  </data>
+  <data name="PrivTbKm_istA" xml:space="preserve">
+    <value>Расстояние A, м</value>
+  </data>
+  <data name="PrivTbKm_istB" xml:space="preserve">
+    <value>Расстояние B, м</value>
+  </data>
+  <data name="PrivKmA1" xml:space="preserve">
+    <value>Километраж А1, м</value>
+  </data>
+  <data name="PrivKmA2" xml:space="preserve">
+    <value>Километраж А2, м</value>
+  </data>
+  <data name="PrivKmB1" xml:space="preserve">
+    <value>Километраж B1, м</value>
+  </data>
+  <data name="PrivKmB2" xml:space="preserve">
+    <value>Километраж B2, м</value>
+  </data>
+  <data name="Priv71" xml:space="preserve">
+    <value>Широта и долгота 1</value>
+  </data>
+  <data name="Priv72" xml:space="preserve">
+    <value>Широта и долгота 2</value>
+  </data>
+  <data name="Priv73" xml:space="preserve">
+    <value>Широта и долгота 3</value>
+  </data>
+  <data name="Priv74" xml:space="preserve">
+    <value>Широта и долгота 4</value>
+  </data>
+  <data name="Priv10P1" xml:space="preserve">
+    <value>Точечная, линейная или полигональная привязка объекта</value>
+  </data>
+  <data name="Priv10P2" xml:space="preserve">
+    <value>без связи с газопроводами</value>
+  </data>
+  <data name="Priv7P2" xml:space="preserve">
+    <value>без связи с газопроводами</value>
+  </data>
+  <data name="Priv8P2" xml:space="preserve">
+    <value>на осях двух газопроводов коридора</value>
+  </data>
+  <data name="Priv9P2" xml:space="preserve">
+    <value>на осях нескольких газопроводов</value>
+  </data>
+  <data name="PrivControlEditAdd" xml:space="preserve">
+    <value>Добавьте привязку...</value>
+  </data>
+  <data name="Childpriv" xml:space="preserve">
+    <value>Километраж А</value>
+  </data>
+  <data name="ChildprivB" xml:space="preserve">
+    <value>Километраж B</value>
+  </data>
+  <data name="ChildprivM" xml:space="preserve">
+    <value>, м</value>
+  </data>
+  <data name="PrivDolgA1" xml:space="preserve">
+    <value>Долгота A</value>
+  </data>
+  <data name="PrivDolgB1" xml:space="preserve">
+    <value>Долгота B</value>
+  </data>
+  <data name="PrivGr" xml:space="preserve">
+    <value>,˚</value>
+  </data>
+  <data name="PrivShirotA1" xml:space="preserve">
+    <value>Широта A</value>
+  </data>
+  <data name="PrivShirotB1" xml:space="preserve">
+    <value>Широта B</value>
+  </data>
+  <data name="CheckLink0" xml:space="preserve">
+    <value>Пользовательская ошибка</value>
+  </data>
+  <data name="CheckLink1" xml:space="preserve">
+    <value>Нельзя добавить связь сверх разрешенного кардинальностью.</value>
+  </data>
+  <data name="CheckLink2" xml:space="preserve">
+    <value>Объекты не могут организовать связь "часть-содержит".</value>
+  </data>
+  <data name="CheckLink3" xml:space="preserve">
+    <value>Не удается определить сущность для родительского ообъекта.</value>
+  </data>
+  <data name="CheckLink4" xml:space="preserve">
+    <value>Нет прав на создание данного объекта</value>
+  </data>
+  <data name="ErrSavePasportMessage" xml:space="preserve">
+    <value>Ошибка сохранения паспорта</value>
+  </data>
+  <data name="Priv9Gr" xml:space="preserve">
+    <value>,˚</value>
+  </data>
+  <data name="PrivKm9m" xml:space="preserve">
+    <value>, м</value>
+  </data>
+  <data name="PrivKmA9" xml:space="preserve">
+    <value>Километраж А</value>
+  </data>
+  <data name="PrivKmB9" xml:space="preserve">
+    <value>Километраж В</value>
+  </data>
+  <data name="PrivDolg1" xml:space="preserve">
+    <value>Долгота</value>
+  </data>
+  <data name="PrivShirot1" xml:space="preserve">
+    <value>Широта</value>
+  </data>
+  <data name="UploadBrowseAppend" xml:space="preserve">
+    <value>Добавить файлы</value>
+  </data>
+  <data name="UploadCancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="UploadCaptionSelect" xml:space="preserve">
+    <value>Выберите файлы для загрузки</value>
+  </data>
+  <data name="UploadCaptionSelected" xml:space="preserve">
+    <value>Выбранные файлы::</value>
+  </data>
+  <data name="UploadComment" xml:space="preserve">
+    <value>Комментарий к добавленным файлам</value>
+  </data>
+  <data name="UploadDrag" xml:space="preserve">
+    <value>Перетащите файлы для загрузки</value>
+  </data>
+  <data name="UploadTotal" xml:space="preserve">
+    <value>Всего:</value>
+  </data>
+  <data name="UploadUpload" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="UploadBrowse" xml:space="preserve">
+    <value>Добавить файлы</value>
+  </data>
+  <data name="UploadFiles" xml:space="preserve">
+    <value>Добавление новых файлов</value>
+  </data>
+  <data name="photoAll" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="photoOther" xml:space="preserve">
+    <value>Прочее</value>
+  </data>
+  <data name="mediaComment" xml:space="preserve">
+    <value>Комментарии:</value>
+  </data>
+  <data name="UploadBufferSizeSoBig" xml:space="preserve">
+    <value>Размер буффера слишком большой.</value>
+  </data>
+  <data name="UploadCaptionUploaded" xml:space="preserve">
+    <value>Загрузка завершена</value>
+  </data>
+  <data name="UploadCaptionUploading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="UploadHandlerNotFoundOrFailed" xml:space="preserve">
+    <value>Обоаботчик не найден или обработчик с ошибкой</value>
+  </data>
+  <data name="UploadItemDismissed" xml:space="preserve">
+    <value>Итем удален.</value>
+  </data>
+  <data name="UploadPause" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="UploadRestriction" xml:space="preserve">
+    <value>Некоторые из выбранных файлов ограничены:</value>
+  </data>
+  <data name="UploadRestrictionCount" xml:space="preserve">
+    <value>Максимальное количество загруженных файлов;</value>
+  </data>
+  <data name="UploadRestrictionSize" xml:space="preserve">
+    <value>Максимальный размер файла;</value>
+  </data>
+  <data name="UploadRestrictionTotalSize" xml:space="preserve">
+    <value>Общий размер всех загруженных файлов;</value>
+  </data>
+  <data name="UploadResume" xml:space="preserve">
+    <value>Итог</value>
+  </data>
+  <data name="UploadUnknownError" xml:space="preserve">
+    <value>Неизвестная ошибка!</value>
+  </data>
+  <data name="UploadUploadServiceUrlInvalidPropertyValue" xml:space="preserve">
+    <value>Неверная ссылка . Пожалуйста, убедитесь, что URL правильный!</value>
+  </data>
+  <data name="UploadUploadServiceUrlSetProperty" xml:space="preserve">
+    <value>Не установлены свойства на UploadServiceUrl </value>
+  </data>
+  <data name="MediaDelToolTip" xml:space="preserve">
+    <value>Удалить медиаматериал</value>
+  </data>
+  <data name="saveMediaOnDisk" xml:space="preserve">
+    <value>Сохранить медиаматериал на диск</value>
+  </data>
+  <data name="NoMedia" xml:space="preserve">
+    <value>Не выбран медиаматериал</value>
+  </data>
+  <data name="NoMediaType" xml:space="preserve">
+    <value>Не выбран тип медиаматериала</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="NewPassport" xml:space="preserve">
+    <value>Новый паспорт</value>
+  </data>
+  <data name="EnterDate" xml:space="preserve">
+    <value>Выбрать дату</value>
+  </data>
+  <data name="GridViewFilterDateTime" xml:space="preserve">
+    <value>Выбрать дату</value>
+  </data>
+  <data name="GridViewFilterDistinctValueNull" xml:space="preserve">
+    <value>[нет данных]</value>
+  </data>
+  <data name="GridViewFilterDistinctValueStringEmpty" xml:space="preserve">
+    <value>[нет данных]</value>
+  </data>
+  <data name="GridViewFilterIsEmpty" xml:space="preserve">
+    <value>пусто</value>
+  </data>
+  <data name="GridViewFilterIsGreaterThan" xml:space="preserve">
+    <value>больше, чем</value>
+  </data>
+  <data name="GridViewFilterIsGreaterThanOrEqualTo" xml:space="preserve">
+    <value>больше или равно</value>
+  </data>
+  <data name="GridViewFilterIsLessThan" xml:space="preserve">
+    <value>меньше, чем</value>
+  </data>
+  <data name="GridViewFilterIsLessThanOrEqualTo" xml:space="preserve">
+    <value>меньше или равно</value>
+  </data>
+  <data name="GridViewFilterIsNotEmpty" xml:space="preserve">
+    <value>не пусто</value>
+  </data>
+  <data name="GridViewFilterIsNotNull" xml:space="preserve">
+    <value>не нулл</value>
+  </data>
+  <data name="GridViewFilterIsNull" xml:space="preserve">
+    <value>нулл</value>
+  </data>
+  <data name="RadDataPagerOf" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="RadDataPagerPage" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+</root>
